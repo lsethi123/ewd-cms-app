@@ -1,0 +1,11 @@
+<nav id="side-panel">
+  <ul class="menu-items">
+    {{#each menu as |item|}}
+      {{#link-to item.link}}
+        <li class="item-menu">
+          {{item.title}}
+        </li>
+      {{/link-to}}
+    {{/each}}
+  </ul>
+</nav>
