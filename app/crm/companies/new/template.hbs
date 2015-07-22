@@ -1,0 +1,18 @@
+<form id="company-form" class="create-form" {{action 'addCompany' on="submit"}}>
+  <label for="company-name">Company Name:</label>
+  {{input id="company-name" type="text" value=model.name placeholder="Company name"}}
+  <label for="company-description">Description:</label>
+  {{input id="company-description" type="text" value=model.description placeholder="Describe the business"}}
+  <label for="company-address">Address:</label>
+  {{input id="company-address" type="text" value=model.address placeholder="Company address"}}
+  <label for="company-city">City:</label>
+  {{input id="company-city" type="text" value=model.city placeholder="Company city"}}
+  <label for="company-state">State:</label>
+  {{input id="company-state" type="text" value=model.state placeholder="Company state"}}
+  <label for="company-phone">Phone number:</label>
+  {{input id="company-phone" type="phone" value=model.phone placeholder="Business phone"}}
+  <label for="company-email">Email:</label>
+  {{input id="company-email" type="email" value=model.email placeholder="Company email"}}
+  <button class="button primary" type="submit">Add</button>
+  <button {{action 'cancel'}} class="button">Cancel</button>
+</form>

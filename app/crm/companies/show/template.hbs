@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{model.name}}</td>
+      <td>{{model.address}}</td>
+      <td>{{model.city}}</td>
+      <td>{{model.state}}</td>
+      <td>{{model.phone}}</td>
+      <td>{{model.email}}</td>
+    </tr>
+  </tbody>
+</table>
+{{#link-to 'crm.companies.show.employees' class="button"}}Employees{{/link-to}}
+{{#link-to 'crm.companies.show.opportunities' class="button"}}Opportunities{{/link-to}}
+{{#link-to 'crm.companies.show.tasks' class="button"}}Tasks{{/link-to}}
