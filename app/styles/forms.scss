@@ -1,16 +1,55 @@
 input {
   position: relative;
-  display: inline-block;
+  display: block;
   padding: 9px;
-  border-radius: 0;
+  margin: 10px;
+  border-radius: 3px;
   border: 1px solid lightgray;
 }
 
-button {
+.button {
   position: relative;
   padding: 9px 20px;
-  border-radius: 0;
+  margin: 10px;
+  border-radius: 3px;
   border: 1px solid lightgray;
   cursor: pointer;
   display: inline-block;
+  text-decoration: none;
+  color: black;
+
+  &.primary {
+    color: white;
+    background-color: orange;
+    border-color: orange;
+    font-weight: bold;
+
+    &:hover {
+      background-color: darkorange;
+      border-color: darkorange;
+    }
+  }
+}
+
+
+.create-form {
+  width: 500px;
+
+  input {
+    width: 250px;
+  }
+
+  label {
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin: 8px;
+    width: 170px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button {
+    clear: both;
+  }
 }
