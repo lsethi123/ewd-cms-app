@@ -6,6 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('settings');
+  this.route('blog');
+  this.route('crm');
+  this.route('todos');
 });
 
 export default Router;
