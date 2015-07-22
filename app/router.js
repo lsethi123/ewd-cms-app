@@ -10,6 +10,8 @@ Router.map(function() {
   this.route('blog');
   this.route('crm');
   this.route('todos');
+  this.route('login');
+  this.route('signup');
 });
 
 export default Router;
