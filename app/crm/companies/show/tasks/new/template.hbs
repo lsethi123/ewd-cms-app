@@ -1,0 +1,19 @@
+<form class="create-form" {{action 'add' on="submit"}}>
+  <label>Name:</label>
+  {{input type="text" value=model.name placeholder="Enter name"}}
+  <label>Description:</label>
+  {{input type="text" value=model.description placeholder="Enter description"}}
+  <label>Due Date:</label>
+  {{input type="text" value=model.dueDate placeholder="Enter date"}}
+  <label>Employee:</label>
+  <select required>
+    <option value="">None</option>
+    {{#each employees as |person|}}
+      <option {{action 'selectEmployee' person}}>{{person.fullName}}</option>
+    {{/each}}
+  </select>
+  <label>Assign to:</label>
+  {{input type="text" value=model.user placeholder="Enter user"}}
+  <button class="button primary" type="submit">Add</button>
+  <button {{action 'cancel'}} class="button">Cancel</button>
+</form>

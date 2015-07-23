@@ -52,4 +52,51 @@ input {
   button {
     clear: both;
   }
+
+}
+
+select {
+  border: 1px solid lightgray;
+  padding: 9px;
+  margin: 10px;
+  display: block;
+  width: 250px;
+  border-radius: 3px;
+}
+
+table {
+  border: 1px solid lightgray;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  thead {
+    margin-bottom: 5px;
+  }
+
+  th {
+    width: 100px;
+    text-align: left;
+    padding: 5px;
+  }
+
+  tr {
+    border: 1px solid lightgray;
+  }
+
+  td {
+    width: 100px;
+    margin: 0;
+    padding: 5px;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+  }
+
+  button {
+
+    &.primary {
+      margin: 0;
+      padding: 5px;
+      width: 100%;
+    }
+  }
 }

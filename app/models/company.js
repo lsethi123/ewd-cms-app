@@ -9,5 +9,6 @@ export default DS.Model.extend({
   phone: DS.attr('string'),
   email: DS.attr('string'),
   employees: DS.hasMany('employee'),
-  opportunities: DS.hasMany('opportunity')
+  opportunities: DS.hasMany('opportunity'),
+  tasks: DS.hasMany('task')
 });

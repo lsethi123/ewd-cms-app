@@ -5,5 +5,6 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   dueDate: DS.attr(),
   employee: DS.belongsTo('employee'),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+  company: DS.belongsTo('company')
 });

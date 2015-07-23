@@ -1,0 +1,36 @@
+{{#if isEditing}}
+  {{input type="text" value=model.name placeholder="Name"}}
+  {{input type="text" value=model.description placeholder="Description"}}
+  {{input type="text" value=model.dueDate placeholder="Due date"}}
+  <select required>
+    <option value="">None</option>
+    {{#each employees as |person|}}
+      <option {{action 'selectEmployee' person}}>{{person.fullName}}</option>
+    {{/each}}
+  </select>
+  {{input type="text" value=model.user placeholder="Assigned to"}}
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Employee</th>
+      <th>Assigned to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>{{model.name}}</td>
+        <td>{{model.description}}</td>
+        <td>{{model.dueDate}}</td>
+        <td>{{#link-to 'crm.companies.show.employees.show' model.employee}}{{model.employee.fullName}}{{/link-to}}</td>
+        <td>{{model.user}}</td>
+      <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+{{/if}}
