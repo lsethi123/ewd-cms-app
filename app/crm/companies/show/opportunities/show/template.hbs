@@ -1,3 +1,11 @@
+{{#if isEditing}}
+  {{input type="text" value=model.title placeholder="Title"}}
+  {{input type="text" value=model.stage placeholder="Stage"}}
+  {{input type="text" value=model.estimatedClose placeholder="Estimated Close"}}
+  {{input type="text" value=model.estimatedAmount placeholder="Estimated Amount"}}
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
 <table>
   <thead>
     <tr>
@@ -17,3 +25,4 @@
     </tr>
   </tbody>
 </table>
+{{/if}}
