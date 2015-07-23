@@ -2,7 +2,12 @@
   {{input type="text" value=model.firstName placeholder="First name"}}
   {{input type="text" value=model.lastName placeholder="Last name"}}
   {{input type="text" value=model.email placeholder="Email"}}
-  {{input type="text" value=model.role placeholder="Role"}}
+  <select required>
+    <option value="">None</option>
+    {{#each roles as |role|}}
+      <option {{action 'selectRole' role}}>{{role}}</option>
+    {{/each}}
+  </select>
   {{input type="text" value=model.title placeholder="Title"}}
   {{input type="text" value=model.phone placeholder="Phone"}}
   <button class="button primary" {{action 'save'}}>Save</button>

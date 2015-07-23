@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   isEditing: false,
+  roles: ["Buyer", "Recommender", "Tester"],
 
   actions: {
     edit: function() {
@@ -13,9 +14,13 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
-      this.get('model').save().then((employee) => {
+      this.get('model').set('role', this.get('selectedRole')).save().then((employee) => {
         this.toggleProperty('isEditing');
       });
+    },
+
+    selectRole: function(role) {
+      this.set('selectedRole', role);
     }
   }
 });

@@ -6,7 +6,12 @@
   <label for="employee-email">Email:</label>
   {{input id="employee-email" type="email" value=model.email placeholder="Enter email"}}
   <label for="employee-role">Role:</label>
-  {{input id="employee-role" type="text" value=model.role placeholder="Enter role"}}
+  <select required>
+    <option value="">None</option>
+    {{#each roles as |role|}}
+      <option {{action 'selectRole' role}}>{{role}}</option>
+    {{/each}}
+  </select>
   <label for="employee-title">Title:</label>
   {{input id="employee-title" type="text" value=model.title placeholder="Enter title"}}
   <label for="employee-phone">Phone number:</label>
