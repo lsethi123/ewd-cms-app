@@ -1,6 +1,11 @@
 {{#if isEditing}}
   {{input type="text" value=model.title placeholder="Title"}}
-  {{input type="text" value=model.stage placeholder="Stage"}}
+  <select required>
+    <option value="">None</option>
+    {{#each stages as |stage|}}
+      <option {{action 'selectStage' stage}}>{{stage}}</option>
+    {{/each}}
+  </select>
   {{input type="text" value=model.estimatedClose placeholder="Estimated Close"}}
   {{input type="text" value=model.estimatedAmount placeholder="Estimated Amount"}}
   <button class="button primary" {{action 'save'}}>Save</button>
@@ -20,7 +25,7 @@
       <td>{{model.title}}</td>
       <td>{{model.stage}}</td>
       <td>{{model.estimatedClose}}</td>
-      <td>{{model.estimatedAmount}}</td>
+      <td>${{model.estimatedAmount}}</td>
       <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
     </tr>
   </tbody>

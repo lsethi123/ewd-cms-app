@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     {{#each model as |task|}}
-        <tr>
+        <tr class="item">
           <td>{{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}</td>
           <td>{{task.description}}</td>
           <td>{{task.dueDate}}</td>

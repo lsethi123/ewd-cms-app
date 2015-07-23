@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   isEditing: false,
+  stages: ["Demo", "Evaluation", "Solutions Planning Call", "Quote", "Quote Review", "Won & Closed", "Lost & Closed"],
 
   actions: {
     edit: function() {
@@ -13,9 +14,13 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
-      this.get('model').save().then((opportunity) => {
+      this.get('model').set('stage', this.get('selectedStage')).save().then((opportunity) => {
         this.toggleProperty('isEditing');
       });
+    },
+
+    selectStage: function(stage) {
+      this.set('selectedStage', stage);
     }
   }
 });

@@ -2,7 +2,12 @@
   <label for="opportunity-first-name">Title:</label>
   {{input id="opportunity-first-name" type="text" value=model.title placeholder="Enter title"}}
   <label for="opportunity-last-name">Stage:</label>
-  {{input id="opportunity-last-name" type="text" value=model.stage placeholder="Enter stage"}}
+  <select required>
+    <option value="">None</option>
+    {{#each stages as |stage|}}
+      <option {{action 'selectStage' stage}}>{{stage}}</option>
+    {{/each}}
+  </select>
   <label for="opportunity-email">Estimated Close:</label>
   {{input id="opportunity-email" type="text" value=model.estimatedClose placeholder="Enter close"}}
   <label for="opportunity-role">Estimated Amount:</label>

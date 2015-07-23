@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     {{#each model as |employee|}}
-        <tr>
+        <tr class="item">
           <td>{{#link-to 'crm.companies.show.employees.show' employee}}{{employee.fullName}}{{/link-to}}</td>
           <td>{{employee.email}}</td>
           <td>{{employee.role}}</td>
