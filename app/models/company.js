@@ -7,5 +7,7 @@ export default DS.Model.extend({
   city: DS.attr('string'),
   state: DS.attr('string'),
   phone: DS.attr('string'),
-  email: DS.attr('string')
+  email: DS.attr('string'),
+  employees: DS.hasMany('employee'),
+  opportunities: DS.hasMany('opportunity')
 });

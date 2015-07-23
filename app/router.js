@@ -14,7 +14,10 @@ Router.map(function() {
       this.route('show', { path: ':company_id' }, function() {
         this.route('opportunities');
         this.route('tasks');
-        this.route('employees');
+        this.route('employees', function() {
+          this.route('new');
+          this.route('show', { path: ':employee_id' } );
+        });
       });
     });
   });
