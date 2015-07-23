@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Stage</th>
+      <th>Estimated Close</th>
+      <th>Estimated Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{model.title}}</td>
+      <td>{{model.stage}}</td>
+      <td>{{model.estimatedClose}}</td>
+      <td>{{model.estimatedAmount}}</td>
+      <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
+    </tr>
+  </tbody>
+</table>

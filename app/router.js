@@ -12,7 +12,10 @@ Router.map(function() {
     this.route('companies', function() {
       this.route('new');
       this.route('show', { path: ':company_id' }, function() {
-        this.route('opportunities');
+        this.route('opportunities', function() {
+          this.route('new');
+          this.route('show', { path: ':opportunity_id' } );
+        });
         this.route('tasks');
         this.route('employees', function() {
           this.route('new');
