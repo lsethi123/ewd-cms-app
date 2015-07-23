@@ -1,0 +1,27 @@
+{{#if model}}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Employee</th>
+      <th>Assigned to</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |task|}}
+        <tr class="item">
+          <td>{{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}</td>
+          <td>{{task.description}}</td>
+          <td>{{task.dueDate}}</td>
+          <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
+          <td>{{task.user}}</td>
+          <td><button class="button primary" {{action 'delete' task}}>Delete</button></td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+No tasks. Start by adding the one.
+{{/if}}

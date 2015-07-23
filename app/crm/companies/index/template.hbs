@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |company|}}
+        <tr class="item">
+          <td>{{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}</td>
+          <td>{{company.address}}</td>
+          <td>{{company.city}}</td>
+          <td>{{company.state}}</td>
+          <td>{{company.phone}}</td>
+          <td>{{company.email}}</td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

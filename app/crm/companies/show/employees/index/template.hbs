@@ -1,0 +1,27 @@
+{{#if model}}
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Title</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |employee|}}
+        <tr class="item">
+          <td>{{#link-to 'crm.companies.show.employees.show' employee}}{{employee.fullName}}{{/link-to}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.role}}</td>
+          <td>{{employee.title}}</td>
+          <td>{{employee.phone}}</td>
+          <td><button class="button primary" {{action 'deleteEmployee' employee}}>Delete</button></td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+No employees. Start by adding the one.
+{{/if}}

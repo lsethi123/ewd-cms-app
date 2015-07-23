@@ -1,0 +1,33 @@
+{{#if isEditing}}
+  {{input type="text" value=model.title placeholder="Title"}}
+  <select required>
+    <option value="">None</option>
+    {{#each stages as |stage|}}
+      <option {{action 'selectStage' stage}}>{{stage}}</option>
+    {{/each}}
+  </select>
+  {{input type="text" value=model.estimatedClose placeholder="Estimated Close"}}
+  {{input type="text" value=model.estimatedAmount placeholder="Estimated Amount"}}
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Stage</th>
+      <th>Estimated Close</th>
+      <th>Estimated Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{model.title}}</td>
+      <td>{{model.stage}}</td>
+      <td>{{model.estimatedClose}}</td>
+      <td>${{model.estimatedAmount}}</td>
+      <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+{{/if}}

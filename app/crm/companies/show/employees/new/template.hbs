@@ -1,0 +1,21 @@
+<form id="employee-form" class="create-form" {{action 'addEmployee' on="submit"}}>
+  <label for="employee-first-name">First name:</label>
+  {{input id="employee-first-name" type="text" value=model.firstName placeholder="Enter first name"}}
+  <label for="employee-last-name">Last name:</label>
+  {{input id="employee-last-name" type="text" value=model.lastName placeholder="Enter last name"}}
+  <label for="employee-email">Email:</label>
+  {{input id="employee-email" type="email" value=model.email placeholder="Enter email"}}
+  <label for="employee-role">Role:</label>
+  <select required>
+    <option value="">None</option>
+    {{#each roles as |role|}}
+      <option {{action 'selectRole' role}}>{{role}}</option>
+    {{/each}}
+  </select>
+  <label for="employee-title">Title:</label>
+  {{input id="employee-title" type="text" value=model.title placeholder="Enter title"}}
+  <label for="employee-phone">Phone number:</label>
+  {{input id="employee-phone" type="phone" value=model.phone placeholder="Enter phone number"}}
+  <button class="button primary" type="submit">Add</button>
+  <button {{action 'cancel'}} class="button">Cancel</button>
+</form>

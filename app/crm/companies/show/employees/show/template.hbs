@@ -1,0 +1,37 @@
+{{#if isEditing}}
+  {{input type="text" value=model.firstName placeholder="First name"}}
+  {{input type="text" value=model.lastName placeholder="Last name"}}
+  {{input type="text" value=model.email placeholder="Email"}}
+  <select required>
+    <option value="">None</option>
+    {{#each roles as |role|}}
+      <option {{action 'selectRole' role}}>{{role}}</option>
+    {{/each}}
+  </select>
+  {{input type="text" value=model.title placeholder="Title"}}
+  {{input type="text" value=model.phone placeholder="Phone"}}
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Title</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>{{model.fullName}}</td>
+        <td>{{model.email}}</td>
+        <td>{{model.role}}</td>
+        <td>{{model.title}}</td>
+        <td>{{model.phone}}</td>
+      <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+{{/if}}
