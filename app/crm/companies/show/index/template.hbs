@@ -1,0 +1,71 @@
+<h3>{{model.name}}'s Tasks</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Employee</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{model.name}}</td>
+      <td>{{model.description}}</td>
+      <td>{{model.dueDate}}</td>
+      <td>{{model.employee}}</td>
+      <td>{{model.user}}</td>
+      <td>{{model.company}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<h3>{{model.name}}'s Opportunities</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Stage</th>
+      <th>Estimated Close</th>
+      <th>Estimated Amount</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{model.title}}</td>
+      <td>{{model.stage}}</td>
+      <td>{{model.estimatedClose}}</td>
+      <td>{{model.estimatedAmount}}</td>
+      <td>{{model.company}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<h3>{{model.name}}'s Employees</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Title</th>
+      <th>Phone #</th>
+      <th>Tasks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{model.fullName}}</td>
+      <td>{{model.role}}</td>
+      <td>{{model.title}}</td>
+      <td>{{model.phone}}</td>
+      <td>{{model.tasks}}</td>
+    </tr>
+  </tbody>
+</table>
