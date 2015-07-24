@@ -7,6 +7,16 @@ input {
   border: 1px solid lightgray;
 }
 
+textarea {
+  position: relative;
+  display: block;
+  padding: 9px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  width: 229px;
+  font: 14px Open Sans;
+  margin: 10px;
+}
 .button {
   position: relative;
   padding: 9px 20px;
@@ -55,6 +65,10 @@ input {
 
   select {
     width: 270px;
+  }
+
+  textarea {
+    width: 250px;
   }
 
 }
