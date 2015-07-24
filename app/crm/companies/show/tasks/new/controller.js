@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       if error, then transition back to the form
     */
     add: function() {
-      this.get('model').set('company', this.get('company')).set('employee', this.get('selectedEmployee')).save().then((task) => {
+      this.get('model').set('company', this.get('company')).set('employee', this.get('selectedEmployee')).set('user', this.get('selectedUser')).save().then((task) => {
         this.transitionToRoute('crm.companies.show.tasks.show', task);
       }, (error) => {
         console.log(error);

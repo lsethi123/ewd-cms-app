@@ -3,12 +3,17 @@
   {{textarea value=model.description placeholder="Description"}}
   {{input type="text" value=model.dueDate placeholder="Due date"}}
   <select required>
-    <option value="">None</option>
+    <option value="">Employee</option>
     {{#each employees as |person|}}
       <option {{action 'selectEmployee' person}}>{{person.fullName}}</option>
     {{/each}}
   </select>
-  {{input type="text" value=model.user placeholder="Assigned to"}}
+  <select required>
+    <option value="">User</option>
+    {{#each users as |person|}}
+      <option {{action 'selectUser' person}}>{{person.fullName}}</option>
+    {{/each}}
+  </select>
   <button class="button primary" {{action 'save'}}>Save</button>
   <button class="button" {{action 'cancel'}}>Cancel</button>
 {{else}}
@@ -28,7 +33,7 @@
         <td>{{model.description}}</td>
         <td>{{model.dueDate}}</td>
         <td>{{#link-to 'crm.companies.show.employees.show' model.employee}}{{model.employee.fullName}}{{/link-to}}</td>
-        <td>{{model.user}}</td>
+        <td>{{model.user.fullName}}</td>
       <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
     </tr>
   </tbody>

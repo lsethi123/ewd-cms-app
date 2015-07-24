@@ -13,7 +13,12 @@
     {{/each}}
   </select>
   <label>Assign to:</label>
-  {{input type="text" value=model.user placeholder="Enter user"}}
+  <select required>
+    <option value="">None</option>
+    {{#each users as |person|}}
+      <option {{action 'selectUser' person}}>{{person.fullName}}</option>
+    {{/each}}
+  </select>
   <button class="button primary" type="submit">Add</button>
   <button {{action 'cancel'}} class="button">Cancel</button>
 </form>

@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
-      this.get('model').set('employee', this.get('selectedEmployee')).save().then((task) => {
+      this.get('model').set('employee', this.get('selectedEmployee')).set('user', this.get('selectedUser')).save().then((task) => {
         this.toggleProperty('isEditing');
       });
     },
