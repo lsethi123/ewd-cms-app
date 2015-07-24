@@ -1,2 +1,8 @@
 <h2>Dashboard</h2>
+{{#if session.isAuthenticated}}
+Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
+<button class="button primary" {{action 'invalidateSession'}}>Log out</button>
+{{else}}
+You're currently not logged in. Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
+{{/if}}
 {{outlet}}

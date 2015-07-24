@@ -1,1 +1,6 @@
-{{outlet}}
+<form {{action 'logIn'}}>
+  {{input type="email" value=identification placeholder="Email"}}
+  {{input type="password" value=password placeholder="Password"}}
+  <button type="submit" class="button primary">Log in</button> or
+  <button class="button primary" {{action 'signUp'}}>Sign up</button>
+</form>

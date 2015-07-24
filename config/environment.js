@@ -19,6 +19,12 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['simple-auth'] = {
+    crossOriginWhitelist: ['http://localhost:3000'],
+    store: 'simple-auth-session-store:local-storage',
+    authorizer: 'authorizer:ewd-cms'
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
