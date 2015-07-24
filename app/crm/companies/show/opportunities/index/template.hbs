@@ -15,7 +15,7 @@
           <td>{{opportunity.stage}}</td>
           <td>{{opportunity.estimatedClose}}</td>
           <td>${{opportunity.estimatedAmount}}</td>
-          <td><button class="button primary" {{action 'deleteOpportunity' opportunity}}>Delete</button></td>
+          <td><button class="button primary" {{action 'editOpportunity' opportunity}}>Edit</button><button class="button primary" {{action 'deleteOpportunity' opportunity}}>Delete</button></td>
         </tr>
     {{/each}}
   </tbody>

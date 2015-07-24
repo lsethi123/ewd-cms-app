@@ -5,6 +5,11 @@ export default Ember.Controller.extend({
     delete: function(task) {
       task.destroyRecord();
       return false;
+    },
+
+    editTask: function(task) {
+      this.transitionToRoute('crm.companies.show.tasks.show', task);
+      this.controllerFor('crm.companies.show.tasks.show').set('isEditing', true);
     }
   }
 });

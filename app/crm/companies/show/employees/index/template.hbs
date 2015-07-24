@@ -17,7 +17,7 @@
           <td>{{employee.role}}</td>
           <td>{{employee.title}}</td>
           <td>{{employee.phone}}</td>
-          <td><button class="button primary" {{action 'deleteEmployee' employee}}>Delete</button></td>
+          <td><button class="button primary" {{action 'editEmployee' employee}}>Edit</button><button class="button primary" {{action 'deleteEmployee' employee}}>Delete</button></td>
         </tr>
     {{/each}}
   </tbody>

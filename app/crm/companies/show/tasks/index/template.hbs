@@ -17,7 +17,7 @@
           <td>{{task.dueDate}}</td>
           <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
           <td>{{task.user.fullName}}</td>
-          <td><button class="button primary" {{action 'delete' task}}>Delete</button></td>
+          <td><button class="button primary" {{action 'editTask' task}}>Edit</button><button class="button primary" {{action 'delete' task}}>Delete</button></td>
         </tr>
     {{/each}}
   </tbody>
