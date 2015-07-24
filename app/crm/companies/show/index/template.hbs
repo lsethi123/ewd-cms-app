@@ -7,18 +7,21 @@
       <th>Description</th>
       <th>Due Date</th>
       <th>Employee</th>
+      <th>Assigned to</th>
       <th>Company</th>
     </tr>
   </thead>
   <tbody>
+    {{#each model.tasks as |task|}}
     <tr>
-      <td>{{model.name}}</td>
-      <td>{{model.description}}</td>
-      <td>{{model.dueDate}}</td>
-      <td>{{model.employee}}</td>
-      <td>{{model.user}}</td>
-      <td>{{model.company}}</td>
+      <td>{{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.dueDate}}</td>
+      <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
+      <td>{{task.user.fullName}}</td>
+      <td>{{#link-to 'crm.companies.show' task.company}}{{task.company.name}}{{/link-to}}</td>
     </tr>
+    {{/each}}
   </tbody>
 </table>
 
@@ -36,13 +39,15 @@
     </tr>
   </thead>
   <tbody>
+    {{#each model.opportunities as |opportunity|}}
     <tr>
-      <td>{{model.title}}</td>
-      <td>{{model.stage}}</td>
-      <td>{{model.estimatedClose}}</td>
-      <td>{{model.estimatedAmount}}</td>
-      <td>{{model.company}}</td>
+      <td>{{#link-to 'crm.companies.show.opportunities.show' opportunity}}{{opportunity.title}}{{/link-to}}</td>
+      <td>{{opportunity.stage}}</td>
+      <td>{{opportunity.estimatedClose}}</td>
+      <td>{{opportunity.estimatedAmount}}</td>
+      <td>{{#link-to 'crm.companies.show' opportunity.company}}{{opportunity.company.name}}{{/link-to}}</td>
     </tr>
+    {{/each}}
   </tbody>
 </table>
 
@@ -60,12 +65,18 @@
     </tr>
   </thead>
   <tbody>
+    {{#each model.employees as |employee|}}
     <tr>
-      <td>{{model.fullName}}</td>
-      <td>{{model.role}}</td>
-      <td>{{model.title}}</td>
-      <td>{{model.phone}}</td>
-      <td>{{model.tasks}}</td>
+      <td>{{#link-to 'crm.companies.show.employees.show' employee}}{{employee.fullName}}{{/link-to}}</td>
+      <td>{{employee.role}}</td>
+      <td>{{employee.title}}</td>
+      <td>{{employee.phone}}</td>
+      <td>
+        {{#each employee.tasks as |task|}}
+          {{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}<br/>
+        {{/each}}
+      </td>
     </tr>
+    {{/each}}
   </tbody>
 </table>
