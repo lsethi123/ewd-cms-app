@@ -5,5 +5,5 @@ export default DS.Model.extend({
   stage: DS.attr('string'),
   estimatedClose: DS.attr(),
   estimatedAmount: DS.attr('string'),
-  company: DS.belongsTo('company')
+  company: DS.belongsTo('company', { async: true } )
 });

@@ -42,17 +42,19 @@
       <th>Stage</th>
       <th>Estimated Close</th>
       <th>Estimated Amount</th>
+      <th>Company</th>
     </tr>
   </thead>
   <tbody>
-    <!-- {{#each model as |opportunity|}}
+     {{#each opportunities as |opportunity|}}
         <tr class="item">
-          <td>{{#link-to 'crm.opportunities.show' opportunity}}{{opportunity.title}}{{/link-to}}</td>
+          <td>{{opportunity.title}}</td>
           <td>{{opportunity.stage}}</td>
           <td>{{opportunity.estimatedClose}}</td>
           <td>{{opportunity.estimatedAmount}}</td>
+          <td>{{opportunity.company.name}}</td>
         </tr>
-    {{/each}} -->
+    {{/each}}
   </tbody>
 </table>
 
@@ -74,13 +76,14 @@
     </tr>
   </thead>
   <tbody>
-    <!-- {{#each model as |opportunity|}}
+    {{#each tasks as |task|}}
         <tr class="item">
-          <td>{{#link-to 'crm.opportunities.show' opportunity}}{{opportunity.title}}{{/link-to}}</td>
-          <td>{{opportunity.stage}}</td>
-          <td>{{opportunity.estimatedClose}}</td>
-          <td>{{opportunity.estimatedAmount}}</td>
+          <td>{{task.name}}</td>
+          <td>{{task.description}}</td>
+          <td>{{task.dueDate}}</td>
+          <td>{{task.employee.fullName}}</td>
+          <td>{{task.company.name}}</td>
         </tr>
-    {{/each}} -->
+    {{/each}}
   </tbody>
 </table>

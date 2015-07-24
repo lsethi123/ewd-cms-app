@@ -8,8 +8,8 @@ export default DS.Model.extend({
   role: DS.attr('string'),
   title: DS.attr('string'),
   phone: DS.attr('string'),
-  company: DS.belongsTo('company'),
-  tasks: DS.hasMany('task'),
+  company: DS.belongsTo('company', { async: true } ),
+  tasks: DS.hasMany('task', { async: true } ),
   fullName: Ember.computed('firstName', 'lastName', function() {
     return this.get('firstName') + ' ' + this.get('lastName');
   })
