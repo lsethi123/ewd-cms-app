@@ -26,6 +26,7 @@ Router.map(function() {
           this.route('show', { path: ':task_id'} );
         });
         this.route('employees', function() {
+          this.route('email');
           this.route('new');
           this.route('show', { path: ':employee_id' } );
         });

@@ -2,6 +2,12 @@ export default function () {
   var duration = 500;
   this.transition(
     this.fromRoute('login'),
+    this.toRoute('signup'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+  this.transition(
+    this.fromRoute('login'),
     this.toRoute('index'),
     this.use('fade'),
     this.reverse('fade')
