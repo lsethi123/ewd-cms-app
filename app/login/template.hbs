@@ -1,6 +1,9 @@
-<form {{action 'logIn'}}>
-  {{input type="email" value=identification placeholder="Email"}}
-  {{input type="password" value=password placeholder="Password"}}
-  <button type="submit" class="button primary">Log in</button> or
-  <button class="button primary" {{action 'signUp'}}>Sign up</button>
-</form>
+<div class="flexbox-container">
+    <form {{action 'logIn'}} class="flexbox-item">
+      <h1>Login</h1>
+      {{input class="m-top-50" type="email" value=identification placeholder="Email"}}
+      {{input class="m-bottom-50" type="password" value=password placeholder="Password"}}
+      <button type="submit" class="button primary">Log in</button> or
+      <button class="button primary" {{action 'signUp'}}>Sign up</button>
+    </form>
+</div>

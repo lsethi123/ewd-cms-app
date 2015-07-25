@@ -1,8 +1,11 @@
-<form id="user-form" class="create-form" {{action 'signUp' on="submit"}}>
-  {{input type="text" value=model.firstName placeholder="First name"}}
-  {{input type="text" value=model.lastName placeholder="Last name"}}
-  {{input type="email" value=model.email placeholder="Email"}}
-  {{input type="password" value=model.password placeholder="Password"}}
-  <button class="button primary" type="submit">Sign up</button>
-</form>
-Don't have an account? You can {{#link-to 'login'}}log in{{/link-to}}.
+<div class="flexbox-container">
+  <form id="user-form" class="create-form flexbox-item" {{action 'signUp' on="submit"}}>
+    <h1>Sign Up</h1>
+    {{input class="m-top-20" type="text" value=model.firstName placeholder="First name"}}
+    {{input type="text" value=model.lastName placeholder="Last name"}}
+    {{input type="email" value=model.email placeholder="Email"}}
+    {{input type="password" value=model.password placeholder="Password"}}
+    <button class="button primary" type="submit">Sign up</button>
+    Already have an account? {{#link-to 'login'}}Login{{/link-to}}.
+  </form>
+</div>
