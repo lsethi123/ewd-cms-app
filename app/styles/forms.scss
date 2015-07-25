@@ -39,6 +39,16 @@ textarea {
       border-color: darkorange;
     }
   }
+  &.primary-inverse {
+    color:white;
+    background-color:orange;
+    border-color: white;
+    font-weight:bold;
+    &:hover {
+      background-color:white;
+      color:black;
+    }
+  }
 }
 
 

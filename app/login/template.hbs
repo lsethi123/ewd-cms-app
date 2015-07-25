@@ -1,9 +1,21 @@
 <div class="flexbox-container">
-    <form {{action 'logIn'}} class="flexbox-item">
+    <form {{action 'logIn'}} class="create-form login-form shadow1">
       <h1>Login</h1>
-      {{input class="m-top-50" type="email" value=identification placeholder="Email"}}
-      {{input class="m-bottom-50" type="password" value=password placeholder="Password"}}
-      <button type="submit" class="button primary">Log in</button> or
-      <button class="button primary" {{action 'signUp'}}>Sign up</button>
+      {{input class="m-top-20" type="email" value=identification placeholder="Email"}}
+      {{input type="password" value=password placeholder="Password"}}
+      <button type="submit" class="button primary-inverse">Log in</button> or
+      <button class="button primary-inverse" {{action 'signUp'}}>Sign up</button>
     </form>
 </div>
+<!--
+<div class="flexbox-container">
+  <form id="user-form" class="create-form signup-form shadow1" {{action 'signUp' on="submit"}}>
+    <h1>Sign Up</h1>
+    {{input class="m-top-50" type="text" value=model.firstName placeholder="First name"}}
+    {{input type="text" value=model.lastName placeholder="Last name"}}
+    {{input type="email" value=model.email placeholder="Email"}}
+    {{input type="password" value=model.password placeholder="Password"}}
+    <button class="button primary-inverse" type="submit">Sign up</button>
+    Already have an account? {{#link-to 'login'}}Login{{/link-to}}.
+  </form>
+</div> -->

@@ -17,10 +17,47 @@
   text-align:center;
 }
 
-
-.flexbox-item {
+.signup-form {
   height:300px;
   width:300px;
   border:1px solid orange;
   text-align:center;
+  background:orange;
+}
+
+.shadow1 {
+    margin:20px auto 0;
+    position:relative;
+}
+.shadow1 h1{
+  color:white;
+}
+
+.shadow1:before, .shadow1:after {
+    bottom:30px;
+    box-shadow:0 15px 15px 15px #000;
+    content:'';
+    display:block;
+    left:30px;
+    opacity:.7;
+    position:absolute;
+    right:30px;
+    top:50px;
+    transform-origin:center top;
+        -moz-transform-origin:center top;
+        -o-transform-origin:center top;
+        -webkit-transform-origin:center top;
+    z-index:-1;
+}
+.shadow1:before {
+    transform:skew(0, 3deg);
+        -moz-transform:skew(0, 3deg);
+        -o-transform:skew(0, 3deg);
+        -webkit-transform:skew(0, 3deg);
+}
+.shadow1:after {
+    transform:skew(0, -3deg);
+        -moz-transform:skew(0, -3deg);
+        -o-transform:skew(0, -3deg);
+        -webkit-transform:skew(0, -3deg);
 }
