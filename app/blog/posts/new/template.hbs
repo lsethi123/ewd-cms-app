@@ -5,9 +5,10 @@
   {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
   <label>Body:</label>
   {{textarea type="text" value=model.body placeholder="Post body..."}}
+  <label>Published?</label>
   {{input type="checkbox" checked=model.published}}<br/>
   <label>Tags:</label>
-  {{input type="text" value=model.tags}}
+  {{input type="text"}}
   <button class="button primary" type="submit">Create</button>
   <button {{action 'cancel'}} class="button">Cancel</button>
 </form>

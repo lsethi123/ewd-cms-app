@@ -1,1 +1,26 @@
-{{outlet}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Body</th>
+      <th>Published</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |post|}}
+      <tr>
+        <td>{{#link-to 'blog.posts.show' post}}{{post.title}}{{/link-to}}</td>
+        <td>{{post.subtitle}}</td>
+        <td>{{post.body}}</td>
+        {{#if post.published}}
+          <td><button class="button primary" {{action 'unpublish' post}}>Unpublish</button></td>
+        {{else}}
+          <td><button class="button primary" {{action 'publish' post}}>Publish</button></td>
+        {{/if}}
+        <td><button class="button primary" {{action 'edit' post}}>Edit</button></td>
+        <td><button class="button primary" {{action 'delete' post}}>Delete</button></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

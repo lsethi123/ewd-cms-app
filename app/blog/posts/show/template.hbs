@@ -1,1 +1,32 @@
-{{outlet}}
+{{#if isEditing}}
+  {{input type="text" value=model.title placeholder="Post title"}}
+  {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
+  {{textarea type="text" value=model.body placeholder="Post body..."}}
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Body</th>
+      <th>Published</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{model.title}}</td>
+      <td>{{model.subtitle}}</td>
+      <td>{{model.body}}</td>
+      {{#if model.published}}
+        <td><button class="button primary" {{action 'unpublish' model}}>Unpublish</button></td>
+      {{else}}
+        <td><button class="button primary" {{action 'publish' model}}>Publish</button></td>
+      {{/if}}
+      <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
+      <td><button class="button primary" {{action 'delete' model}}>Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+{{/if}}
