@@ -1,0 +1,8 @@
+{
+  "name": "ewd-cms",
+  "root": "./dist",
+  "routes": {
+    "/**": "index.html"
+  },
+  "prerender": true
+}
