@@ -1,1 +1,13 @@
-{{outlet}}
+<form id="post-form" class="create-form" {{action 'add' on="submit"}}>
+  <label>Title:</label>
+  {{input type="text" value=model.title placeholder="Post title"}}
+  <label>Subtitle:</label>
+  {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
+  <label>Body:</label>
+  {{textarea type="text" value=model.body placeholder="Post body..."}}
+  {{input type="checkbox" checked=model.published}}<br/>
+  <label>Tags:</label>
+  {{input type="text" value=model.tags}}
+  <button class="button primary" type="submit">Create</button>
+  <button {{action 'cancel'}} class="button">Cancel</button>
+</form>
