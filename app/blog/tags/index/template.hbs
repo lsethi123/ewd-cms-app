@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |tag|}}
+      <tr>
+        <td>{{tag.name}}</td>
+        <td><button class="button primary" {{action 'delete' tag}}>Delete</button></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

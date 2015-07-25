@@ -1,0 +1,6 @@
+<form id="tag-form" class="create-form" {{action 'add' on="submit"}}>
+  <label>Name:</label>
+  {{input type="text" value=model.name placeholder="Tag name"}}
+  <button class="button primary" type="submit">Add</button>
+  <button {{action 'cancel'}} class="button">Cancel</button>
+</form>

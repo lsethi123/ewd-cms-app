@@ -12,6 +12,9 @@ Router.map(function() {
       this.route('new');
       this.route('show', { path: ':post_id' } );
     });
+    this.route('tags', function() {
+      this.route('new');
+    });
   });
   this.route('crm', function() {
     this.route('companies', function() {
