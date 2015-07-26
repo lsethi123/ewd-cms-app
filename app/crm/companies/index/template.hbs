@@ -9,7 +9,7 @@
             {{company.description}}
         {{/md-card-content}}
         {{#md-card-action}}
-        {{#link-to 'crm.companies.show' company}}View{{/link-to}}
+        {{link-to 'View' 'crm.companies.show' company}}
         <a {{action 'edit' company}}>Edit</a>
         <a {{action 'delete' company}}>Delete</a>
         {{/md-card-action}}

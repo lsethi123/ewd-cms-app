@@ -1,4 +1,31 @@
-<h3>{{model.name}}'s Tasks</h3>
+<!-- {{#md-table content=content class='responsive-table' as |row|}}
+  {{md-table-col row=row valueBindingPath='name'}}
+  {{md-table-col row=row valueBindingPath='description'}}
+  {{md-table-col row=row valueBindingPath='dueDate'}}
+  {{md-table-col row=row valueBindingPath='employee'}}
+  {{md-table-col row=row valueBindingPath='assignedTo'}}
+{{/md-table}} -->
+
+{{#md-collection content=content
+  header='Tasks' as |task|}}
+  <div class='collection-item'>yolo
+    <!-- {{task.name}} -->
+  </div>
+  <!-- {{#each model.tasks as |task|}}
+    <div class='collection-item'>
+      {{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}
+      {{task.description}}
+      {{task.dueDate}}
+      {{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}
+      {{task.user.fullName}}
+    </div>
+  {{/each}} -->
+{{/md-collection}}
+
+
+<hr>
+
+<h5>{{model.name}}'s Tasks</h5>
 
 <table>
   <thead>
@@ -8,7 +35,6 @@
       <th>Due Date</th>
       <th>Employee</th>
       <th>Assigned to</th>
-      <th>Company</th>
     </tr>
   </thead>
   <tbody>
@@ -19,15 +45,15 @@
       <td>{{task.dueDate}}</td>
       <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
       <td>{{task.user.fullName}}</td>
-      <td>{{#link-to 'crm.companies.show' task.company}}{{task.company.name}}{{/link-to}}</td>
     </tr>
     {{/each}}
   </tbody>
 </table>
 
 <br>
+<hr>
 
-<h3>{{model.name}}'s Opportunities</h3>
+<h5>{{model.name}}'s Opportunities</h5>
 <table>
   <thead>
     <tr>
@@ -35,7 +61,6 @@
       <th>Stage</th>
       <th>Estimated Close</th>
       <th>Estimated Amount</th>
-      <th>Company</th>
     </tr>
   </thead>
   <tbody>
@@ -45,15 +70,15 @@
       <td>{{opportunity.stage}}</td>
       <td>{{opportunity.estimatedClose}}</td>
       <td>{{opportunity.estimatedAmount}}</td>
-      <td>{{#link-to 'crm.companies.show' opportunity.company}}{{opportunity.company.name}}{{/link-to}}</td>
     </tr>
     {{/each}}
   </tbody>
 </table>
 
 <br>
+<hr>
 
-<h3>{{model.name}}'s Employees</h3>
+<h5>{{model.name}}'s Employees</h5>
 <table>
   <thead>
     <tr>

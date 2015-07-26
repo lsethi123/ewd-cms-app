@@ -1,24 +1,25 @@
 <form class="create-form" {{action 'add' on="submit"}}>
-  <label>Name:</label>
-  {{input type="text" value=model.name placeholder="Enter name"}}
-  <label>Description:</label>
-  {{textarea value=model.description placeholder="Enter description"}}
-  <label>Due Date:</label>
-  {{input type="text" value=model.dueDate placeholder="Enter date"}}
-  <label>Employee:</label>
-  <select required>
+  {{md-input type="text" value=model.name label="Enter name"}}
+  {{md-textarea value=model.description label="Enter description"}}
+  {{md-input-date type="text" value=model.dueDate label="Enter date"}}
+  <!-- <select required>
     <option value="">None</option>
     {{#each employees as |person|}}
       <option {{action 'selectEmployee' person}}>{{person.fullName}}</option>
     {{/each}}
   </select>
-  <label>Assign to:</label>
   <select required>
     <option value="">None</option>
     {{#each users as |person|}}
       <option {{action 'selectUser' person}}>{{person.fullName}}</option>
     {{/each}}
-  </select>
+  </select> -->
+  {{md-select content=employees
+  value=employee
+  label="Employee"
+  prompt="Please choose..."
+  optionLabelPath="content.value"
+  optionValuePath="content"}}
   <button class="button primary" type="submit">Add</button>
   <button {{action 'cancel'}} class="button">Cancel</button>
 </form>

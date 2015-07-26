@@ -3,7 +3,6 @@
   {{md-input type="text" value=model.subtitle label="Subtitle"}}
   {{md-textarea type="text" value=model.body label="Body Text"}}
   {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
-  <label>Tags:</label>
   <select required>
     <option value="none">None</option>
     {{#each tags as |tag|}}

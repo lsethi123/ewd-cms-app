@@ -1,25 +1,13 @@
+<hr>
 {{#if model}}
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Stage</th>
-      <th>Estimated Close</th>
-      <th>Estimated Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model as |opportunity|}}
-        <tr class="item">
-          <td>{{#link-to 'crm.companies.show.opportunities.show' opportunity}}{{opportunity.title}}{{/link-to}}</td>
-          <td>{{opportunity.stage}}</td>
-          <td>{{opportunity.estimatedClose}}</td>
-          <td>${{opportunity.estimatedAmount}}</td>
-          <td><button class="button primary" {{action 'editOpportunity' opportunity}}>Edit</button><button class="button primary" {{action 'deleteOpportunity' opportunity}}>Delete</button></td>
-        </tr>
-    {{/each}}
-  </tbody>
-</table>
+  {{#each model as |opportunity|}}
+    {{#link-to 'crm.companies.show.opportunities.show' opportunity}}{{opportunity.title}}{{/link-to}}
+    {{opportunity.stage}}
+    {{opportunity.estimatedClose}}
+    {{opportunity.estimatedAmount}}
+    <button {{action 'editOpportunity' opportunity}}>Edit</button><button class="button primary" {{action 'deleteOpportunity' opportunity}}>Delete</button>
+    <hr>
+  {{/each}}
 {{else}}
 No opportunities. Start by adding one.
 {{/if}}

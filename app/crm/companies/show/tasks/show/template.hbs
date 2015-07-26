@@ -1,7 +1,7 @@
 {{#if isEditing}}
-  {{input type="text" value=model.name placeholder="Name"}}
-  {{textarea value=model.description placeholder="Description"}}
-  {{input type="text" value=model.dueDate placeholder="Due date"}}
+  {{md-input type="text" value=model.name label="Name"}}
+  {{md-textarea value=model.description label="Description"}}
+  {{md-input type="text" value=model.dueDate label="Due date"}}
   <select required>
     <option value="">Employee</option>
     {{#each employees as |person|}}
@@ -14,28 +14,13 @@
       <option {{action 'selectUser' person}}>{{person.fullName}}</option>
     {{/each}}
   </select>
-  <button class="button primary" {{action 'save'}}>Save</button>
-  <button class="button" {{action 'cancel'}}>Cancel</button>
+  <button {{action 'save'}}>Save</button>
+  <button {{action 'cancel'}}>Cancel</button>
 {{else}}
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Due Date</th>
-      <th>Employee</th>
-      <th>Assigned to</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-        <td>{{model.name}}</td>
-        <td>{{model.description}}</td>
-        <td>{{model.dueDate}}</td>
-        <td>{{#link-to 'crm.companies.show.employees.show' model.employee}}{{model.employee.fullName}}{{/link-to}}</td>
-        <td>{{model.user.fullName}}</td>
-      <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
-    </tr>
-  </tbody>
-</table>
+  {{model.name}}
+  {{model.description}}
+  {{model.dueDate}}
+  {{#link-to 'crm.companies.show.employees.show' model.employee}}{{model.employee.fullName}}{{/link-to}}
+  {{model.user.fullName}}
+  <button {{action 'edit'}}>Edit</button>
 {{/if}}
