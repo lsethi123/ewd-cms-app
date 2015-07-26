@@ -1,5 +1,4 @@
 <div class="row">
-
     {{#each model as |post|}}
       <div class="col l4 m6 s12">
         {{#md-card title=post.title
@@ -8,12 +7,12 @@
         id="card-reveal"}}
           {{#md-card-content}}
               {{post.subtitle}}
-              <!-- {{#link-to 'blog.posts.show' post}}{{post.title}}{{/link-to}} -->
           {{/md-card-content}}
 
           {{#md-card-action}}
             {{#if post.published}}
-              <a{{action 'unpublish' post}}>Unpublish</a>
+              {{#link-to 'blog.posts.show' post}}View{{/link-to}}
+              <!-- <a{{action 'unpublish' post}}>Unpublish</a> -->
             {{else}}
               <a {{action 'publish' post}}>Publish</a>
             {{/if}}

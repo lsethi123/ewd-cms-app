@@ -1,24 +1,26 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Phone</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model as |company|}}
-        <tr class="item">
-          <td>{{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}</td>
-          <td>{{company.address}}</td>
-          <td>{{company.city}}</td>
-          <td>{{company.state}}</td>
-          <td>{{company.phone}}</td>
-          <td>{{company.email}}</td>
-        </tr>
-    {{/each}}
-  </tbody>
-</table>
+<div class="row">
+  {{#each model as |company|}}
+  <div class="col l4 m6 s12">
+    {{#md-card title=company.name
+        titleClass="orange-text"
+        image="http://placehold.it/200x100"
+        id="image-card"}}
+        {{#md-card-content}}
+            {{company.description}}
+        {{/md-card-content}}
+        {{#md-card-action}}
+        {{#link-to 'crm.companies.show' company}}View{{/link-to}}
+        <a {{action 'edit' company}}>Edit</a>
+        <a {{action 'delete' company}}>Delete</a>
+        {{/md-card-action}}
+    {{/md-card}}
+      </div>
+  {{/each}}
+</div>
+
+<!-- {{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}
+          {{company.address}}
+          {{company.city}}
+          {{company.state}}
+          {{company.phone}}
+          {{company.email}} -->
