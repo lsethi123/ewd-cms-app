@@ -16,8 +16,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    sassOptions: {
+      includePaths: ['bower_components/materialize/sass']
+     }
   };
+
 
   ENV['simple-auth'] = {
     crossOriginWhitelist: ['http://localhost:3000'],
