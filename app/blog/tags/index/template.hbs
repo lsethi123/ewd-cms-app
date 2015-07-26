@@ -1,16 +1,19 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="row">
+  <div class="col l4 m6 s12">
     {{#each model as |tag|}}
-      <tr>
-        <td>{{tag.name}}</td>
-        <td><button class="button primary" {{action 'delete' tag}}>Delete</button></td>
-      </tr>
+      {{#md-card title=tag.name
+          titleClass="orange-text"
+          image="images/ember-707b388afd234247e9d4ff3a8e73af3d.png"
+          id="image-card"}}
+
+          {{#md-card-content}}
+            Content Describing the Tag Goes Here
+          {{/md-card-content}}
+
+          {{#md-card-action}}
+            <a {{action 'delete' tag}}>Delete</a>
+          {{/md-card-action}}
+      {{/md-card}}
     {{/each}}
-  </tbody>
-</table>
+    </div>
+</div>

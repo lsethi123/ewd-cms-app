@@ -5,28 +5,14 @@
   <button class="button primary" {{action 'save'}}>Save</button>
   <button class="button" {{action 'cancel'}}>Cancel</button>
 {{else}}
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Body</th>
-      <th>Published</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{model.title}}</td>
-      <td>{{model.subtitle}}</td>
-      <td>{{model.body}}</td>
-      {{#if model.published}}
-        <td><button class="button primary" {{action 'unpublish' model}}>Unpublish</button></td>
-      {{else}}
-        <td><button class="button primary" {{action 'publish' model}}>Publish</button></td>
-      {{/if}}
-      <td><button class="button primary" {{action 'edit'}}>Edit</button></td>
-      <td><button class="button primary" {{action 'delete' model}}>Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+  <h1>{{model.title}}</h1>
+  <h3>{{model.subtitle}}</h3>
+  <p>{{model.body}}</p>
+  {{#if model.published}}
+    <a {{action 'unpublish' model}}>Unpublish</a>
+  {{else}}
+    <a {{action 'publish' model}}>Publish</a>
+  {{/if}}
+      <a {{action 'edit'}}>Edit</a>
+      <a {{action 'delete' model}}>Delete</a>
 {{/if}}
