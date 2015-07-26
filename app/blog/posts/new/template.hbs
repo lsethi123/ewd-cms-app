@@ -8,7 +8,12 @@
   <label>Published?</label>
   {{input type="checkbox" checked=model.published}}<br/>
   <label>Tags:</label>
-  {{input type="text"}}
+  <select required>
+    <option value="none">None</option>
+    {{#each tags as |tag|}}
+      <option {{action 'selectTag' tag}}>{{tag.name}}</option>
+    {{/each}}
+  </select>
   <button class="button primary" type="submit">Create</button>
   <button {{action 'cancel'}} class="button">Cancel</button>
 </form>
