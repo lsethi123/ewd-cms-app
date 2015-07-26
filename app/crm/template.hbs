@@ -1,4 +1,14 @@
-<h2>CRM</h2>
-{{#link-to 'crm.companies.new' class="button primary"}}Add Company{{/link-to}}
-{{#link-to 'crm.companies.index' class="button"}}View Companies{{/link-to}}
+{{#md-tabs selected=basicTabsSelection}}
+  {{#link-to 'crm.companies' class="white-text"}}
+    {{md-tab value='a' title="CRM Dashboard"}}
+  {{/link-to}}
+  {{#link-to 'crm.companies.new' class="white-text"}}
+    {{md-tab value='b' title="Create Company"}}
+  {{/link-to}}
+
+  <!-- {{#link-to 'crm.companies.index' class="white-text"}}
+    {{md-tab value='c' title="Eighth"}}
+  {{/link-to}} -->
+{{/md-tabs}}
+
 {{outlet}}

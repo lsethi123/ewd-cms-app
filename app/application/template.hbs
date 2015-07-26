@@ -1,4 +1,19 @@
-{{side-panel}}
-<div class="wrapper">
+{{#md-navbar name='eWebDesign.co' class='deep-purple'}}
+  {{#link-to 'crm' tagName='li'}}
+    {{link-to 'CRM' 'crm'}}
+  {{/link-to}}
+  {{#link-to 'blog' tagName='li'}}
+    {{link-to 'Blog' 'blog'}}
+  {{/link-to}}
+  {{#link-to 'todos' tagName='li'}}
+    {{link-to 'Todos' 'todos'}}
+  {{/link-to}}
+  {{#link-to 'settings' tagName='li'}}
+    {{link-to 'Settings' 'settings'}}
+  {{/link-to}}
+{{/md-navbar}}
+
+
+<div class="container">
   {{liquid-outlet}}
 </div>

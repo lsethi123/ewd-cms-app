@@ -1,7 +1,19 @@
-<h2>Blog</h2>
-{{#link-to 'blog.posts.new' class="button primary"}}New Post{{/link-to}}
-{{#link-to 'blog.posts.index' class="button"}}View All Posts{{/link-to}}
-<br/>
-{{#link-to 'blog.tags.new' class="button primary"}}Add Tag{{/link-to}}
-{{#link-to 'blog.tags.index' class="button"}}View All Tags{{/link-to}}
+{{#md-tabs selected=basicTabsSelection}}
+  {{#link-to 'blog.index' class="white-text"}}
+    {{md-tab value='a' title="All"}}
+  {{/link-to}}
+  {{#link-to 'blog.posts' class="white-text"}}
+    {{md-tab value='a' title="Posts"}}
+  {{/link-to}}
+  {{#link-to 'blog.posts.new' class="white-text"}}
+    {{md-tab value='a' title="Add Post"}}
+  {{/link-to}}
+  {{#link-to 'blog.tags.index' class="white-text"}}
+    {{md-tab value='a' title="Tags"}}
+  {{/link-to}}
+  {{#link-to 'blog.tags.new' class="white-text"}}
+    {{md-tab value='a' title="Add Tag"}}
+  {{/link-to}}
+{{/md-tabs}}
+
 {{outlet}}

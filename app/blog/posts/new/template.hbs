@@ -1,12 +1,8 @@
 <form id="post-form" class="create-form" {{action 'add' on="submit"}}>
-  <label>Title:</label>
-  {{input type="text" value=model.title placeholder="Post title"}}
-  <label>Subtitle:</label>
-  {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
-  <label>Body:</label>
-  {{textarea type="text" value=model.body placeholder="Post body..."}}
-  <label>Published?</label>
-  {{input type="checkbox" checked=model.published}}<br/>
+  {{md-input type="text" value=model.title label="Post title"}}
+  {{md-input type="text" value=model.subtitle label="Subtitle"}}
+  {{md-textarea type="text" value=model.body label="Body Text"}}
+  {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
   <label>Tags:</label>
   <select required>
     <option value="none">None</option>

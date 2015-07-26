@@ -1,26 +1,32 @@
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Body</th>
-      <th>Published</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="row">
+
     {{#each model as |post|}}
-      <tr>
-        <td>{{#link-to 'blog.posts.show' post}}{{post.title}}{{/link-to}}</td>
-        <td>{{post.subtitle}}</td>
-        <td>{{post.body}}</td>
-        {{#if post.published}}
-          <td><button class="button primary" {{action 'unpublish' post}}>Unpublish</button></td>
-        {{else}}
-          <td><button class="button primary" {{action 'publish' post}}>Publish</button></td>
-        {{/if}}
-        <td><button class="button primary" {{action 'edit' post}}>Edit</button></td>
-        <td><button class="button primary" {{action 'delete' post}}>Delete</button></td>
-      </tr>
+      <div class="col l4 m6 s12">
+        {{#md-card title=post.title
+        image="http://placehold.it/200x200"
+        activator=true
+        id="card-reveal"}}
+          {{#md-card-content}}
+              {{post.subtitle}}
+              <!-- {{#link-to 'blog.posts.show' post}}{{post.title}}{{/link-to}} -->
+          {{/md-card-content}}
+
+          {{#md-card-action}}
+            {{#if post.published}}
+              <a{{action 'unpublish' post}}>Unpublish</a>
+            {{else}}
+              <a {{action 'publish' post}}>Publish</a>
+            {{/if}}
+            <a {{action 'edit' post}}>Edit</a>
+            <a {{action 'delete' post}}>Delete</a>
+          {{/md-card-action}}
+
+          {{#md-card-reveal}}
+              {{post.body}}
+              <button {{action 'edit' post}}>Edit</button>
+              <button {{action 'delete' post}}>Delete</button>
+          {{/md-card-reveal}}
+        {{/md-card}}
+      </div>
     {{/each}}
-  </tbody>
-</table>
+</div>
