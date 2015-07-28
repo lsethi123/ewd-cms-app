@@ -1,11 +1,28 @@
-<div class="row">
+<table>
+  <thead>
+    <tr>
+      <th>
+        <h4>Products</h4>
+      </th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>In stock</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
     {{#each model as |product|}}
-      <div class="col l4 m6 s12">
-        {{#link-to 'estore.products.show' product}}{{product.title}}{{/link-to}}
-        {{product.description}}
-        {{product.price}}
-        {{product.inStock}}
-        <button {{action 'delete' product}}>Delete</button>
-      </div>
+        <tr class="item">
+          <td>{{#link-to 'estore.products.show' product}}{{product.title}}{{/link-to}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.inStock}}</td>
+          <td><button {{action 'edit' product}}>Edit</button></td>
+          <td><button {{action 'delete' product}}>Delete</button></td>
+        </tr>
     {{/each}}
-</div>
+  </tbody>
+</table>
