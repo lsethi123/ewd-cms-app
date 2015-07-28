@@ -39,6 +39,12 @@ Router.map(function() {
   this.route('todos');
   this.route('login');
   this.route('signup');
+  this.route('estore', function() {
+    this.route('products', function() {
+      this.route('new');
+      this.route('show', { path: ':product_id' } );
+    });
+  });
 });
 
 export default Router;

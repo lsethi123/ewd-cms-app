@@ -13,6 +13,11 @@ export default Ember.Component.extend({
       icon: ''
     },
     {
+      title: 'eStore',
+      link: 'estore',
+      icon: ''
+    },
+    {
       title: 'Blog',
       link: 'blog',
       icon: ''

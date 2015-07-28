@@ -1,0 +1,14 @@
+{{#if isEditing}}
+  {{md-input type="text" value=model.title label="First name"}}
+  {{md-input type="text" value=model.description label="Last name"}}
+  {{md-input type="text" value=model.price label="Email"}}
+  {{md-switch checked=model.inStock onLabel="In Stock" offLabel="Out of Stock"}}<br>
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
+        <h2>{{model.title}}</h2>
+        <h4>{{model.description}}</h4>
+        <h4>{{model.price}}</h4>
+        <h4>{{model.inStock}}</h4>
+      <button {{action 'edit'}}>Edit</button>
+{{/if}}

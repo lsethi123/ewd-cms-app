@@ -1,0 +1,11 @@
+<div class="row">
+    {{#each model as |product|}}
+      <div class="col l4 m6 s12">
+        {{#link-to 'estore.products.show' product}}{{product.title}}{{/link-to}}
+        {{product.description}}
+        {{product.price}}
+        {{product.inStock}}
+        <button {{action 'delete' product}}>Delete</button>
+      </div>
+    {{/each}}
+</div>
