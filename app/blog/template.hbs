@@ -1,19 +1,28 @@
-{{#md-tabs selected=basicTabsSelection}}
+<br>
   {{#link-to 'blog.index' class="white-text"}}
-    {{md-tab value='a' title="All"}}
+  {{md-btn text='All'
+  	class='indigo darken-2'}}
   {{/link-to}}
+
   {{#link-to 'blog.posts' class="white-text"}}
-    {{md-tab value='a' title="Posts"}}
+  {{md-btn text='Posts'
+  	class='indigo darken-2'}}
   {{/link-to}}
+
   {{#link-to 'blog.posts.new' class="white-text"}}
-    {{md-tab value='a' title="Add Post"}}
+  {{md-btn text='Add Post'
+  	class='indigo darken-2'}}
   {{/link-to}}
+
   {{#link-to 'blog.tags.index' class="white-text"}}
-    {{md-tab value='a' title="Tags"}}
+  {{md-btn text='Tags'
+    class='indigo darken-2'}}
   {{/link-to}}
+
   {{#link-to 'blog.tags.new' class="white-text"}}
-    {{md-tab value='a' title="Add Tag"}}
+  {{md-btn text='Add Tag'
+    class='indigo darken-2'}}
   {{/link-to}}
-{{/md-tabs}}
+
 
 {{outlet}}
