@@ -1,1 +1,25 @@
-{{outlet}}
+<table>
+  <thead>
+    <tr>
+      <th>
+        <h4>Order No. {{model.id}}</h4>
+        Total: ${{model.total}}<br/>
+        State: {{model.state}}<br/>
+      </th>
+    </tr>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model.lineItems as |item|}}
+        <tr class="item">
+          <td>{{#link-to 'estore.products.show' item.product}}{{item.product.title}}{{/link-to}}</td>
+          <td>{{item.quantity}}</td>
+          <td>${{item.price}}</td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -10,7 +10,6 @@
       <th>Total</th>
       <th>State</th>
       <th>User</th>
-      <th>Items</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -18,10 +17,13 @@
     {{#each model as |order|}}
         <tr class="item">
           <td>{{#link-to 'estore.orders.show' order}}{{order.id}}{{/link-to}}</td>
-          <td>{{order.total}}</td>
+          <td>${{order.total}}</td>
           <td>{{order.state}}</td>
-          <td>{{order.user}}</td>
-          <td>Items ordered</td>
+          {{#if order.user}}
+            <td>{{order.user}}</td>
+          {{else}}
+            <td>Guest</td>
+          {{/if}}
           <td><button {{action 'delete' order}}>Delete</button></td>
         </tr>
     {{/each}}
