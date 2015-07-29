@@ -1,27 +1,14 @@
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Phone</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{model.name}}</td>
-      <td>{{model.address}}</td>
-      <td>{{model.city}}</td>
-      <td>{{model.state}}</td>
-      <td>{{model.phone}}</td>
-      <td>{{model.email}}</td>
-    </tr>
-  </tbody>
-</table>
-{{#link-to 'crm.companies.show.employees' class="button"}}Employees{{/link-to}}
-{{#link-to 'crm.companies.show.opportunities' class="button"}}Opportunities{{/link-to}}
-{{#link-to 'crm.companies.show.tasks' class="button"}}Tasks{{/link-to}}
+<ul class="collection with-header">
+   <li class="collection-header"><h4>{{model.name}}</h4></li>
+   <label>Address:</label>{{model.address}}
+   <label>City:</label>{{model.city}}
+   <label>State:</label>{{model.state}}
+   <label>Phone:</label>{{model.phone}}
+   <label>Email:</label>{{model.email}}
+</ul>
+
+{{#link-to 'crm.companies.show.employees' class="button"}}{{md-btn text='Employees' class='indigo darken-2'}} {{/link-to}}
+{{#link-to 'crm.companies.show.opportunities' class="button"}}{{md-btn text='Opportunities' class='indigo darken-2'}} {{/link-to}}
+{{#link-to 'crm.companies.show.tasks' class="button"}}{{md-btn text='Tasks' class='indigo darken-2'}} {{/link-to}}
 <br/>
 {{outlet}}

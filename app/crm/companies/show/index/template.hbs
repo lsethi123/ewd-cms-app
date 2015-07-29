@@ -1,107 +1,35 @@
-<!-- {{#md-table content=content class='responsive-table' as |row|}}
-  {{md-table-col row=row valueBindingPath='name'}}
-  {{md-table-col row=row valueBindingPath='description'}}
-  {{md-table-col row=row valueBindingPath='dueDate'}}
-  {{md-table-col row=row valueBindingPath='employee'}}
-  {{md-table-col row=row valueBindingPath='assignedTo'}}
-{{/md-table}} -->
 
-{{#md-collection content=content
-  header='Tasks' as |task|}}
-  <div class='collection-item'>yolo
-    <!-- {{task.name}} -->
-  </div>
-  <!-- {{#each model.tasks as |task|}}
-    <div class='collection-item'>
-      {{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}
-      {{task.description}}
-      {{task.dueDate}}
-      {{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}
-      {{task.user.fullName}}
-    </div>
-  {{/each}} -->
-{{/md-collection}}
+<ul class="collection with-header">
+   <li class="collection-header"><h4>Tasks</h4></li>
+   {{#each model.tasks as |task|}}
+   <label>Task Name:</label>{{task.name}}
+   <label>Description:</label>{{task.description}}
+   <label>Due Date:</label>{{task.dueDate}}
+   <label>Employee:</label>{{task.employee.fullName}}
+   <label>User:</label>{{task.user.fullName}}
+   {{/each}}
+</ul>
 
 
-<hr>
+<ul class="collection with-header">
+   <li class="collection-header"><h4>Opportunities</h4></li>
+   {{#each model.opportunities as |opportunity|}}
+   <label>Title:</label>{{opportunity.title}}
+   <label>Stage:</label>{{opportunity.stage}}
+   <label>Estimated Close:</label>{{opportunity.estimatedClose}}
+   <label>Estimated Amount:</label>${{opportunity.estimatedAmount}}
+   {{/each}}
+</ul>
 
-<h5>{{model.name}}'s Tasks</h5>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Due Date</th>
-      <th>Employee</th>
-      <th>Assigned to</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model.tasks as |task|}}
-    <tr>
-      <td>{{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}</td>
-      <td>{{task.description}}</td>
-      <td>{{task.dueDate}}</td>
-      <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
-      <td>{{task.user.fullName}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
-
-<br>
-<hr>
-
-<h5>{{model.name}}'s Opportunities</h5>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Stage</th>
-      <th>Estimated Close</th>
-      <th>Estimated Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model.opportunities as |opportunity|}}
-    <tr>
-      <td>{{#link-to 'crm.companies.show.opportunities.show' opportunity}}{{opportunity.title}}{{/link-to}}</td>
-      <td>{{opportunity.stage}}</td>
-      <td>{{opportunity.estimatedClose}}</td>
-      <td>{{opportunity.estimatedAmount}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
-
-<br>
-<hr>
-
-<h5>{{model.name}}'s Employees</h5>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Role</th>
-      <th>Title</th>
-      <th>Phone #</th>
-      <th>Tasks</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model.employees as |employee|}}
-    <tr>
-      <td>{{#link-to 'crm.companies.show.employees.show' employee}}{{employee.fullName}}{{/link-to}}</td>
-      <td>{{employee.role}}</td>
-      <td>{{employee.title}}</td>
-      <td>{{employee.phone}}</td>
-      <td>
-        {{#each employee.tasks as |task|}}
-          {{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}<br/>
-        {{/each}}
-      </td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+<ul class="collection with-header">
+   <li class="collection-header"><h4>Employees</h4></li>
+   {{#each model.employees as |employee|}}
+   <label>Name:</label>{{employee.fullName}}
+   <label>Role:</label>{{employee.role}}
+   <label>Title:</label>{{employee.title}}
+   <label>Phone:</label>${{employee.phone}}
+     {{#each employee.tasks as |task|}}
+       {{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}<br/>
+     {{/each}}
+   {{/each}}
+</ul>

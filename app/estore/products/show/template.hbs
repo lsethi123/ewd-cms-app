@@ -6,9 +6,17 @@
   <button class="button primary" {{action 'save'}}>Save</button>
   <button class="button" {{action 'cancel'}}>Cancel</button>
 {{else}}
-        <h2>{{model.title}}</h2>
-        <h4>{{model.description}}</h4>
-        <h4>{{model.price}}</h4>
-        <h4>{{model.inStock}}</h4>
-      <button {{action 'edit'}}>Edit</button>
+  {{#md-card title=model.title
+      titleClass="orange-text"
+      image="http://placehold.it/900x200"
+      id="image-card"}}
+      {{#md-card-content}}
+      <p>{{model.description}}</p>
+      <h4><label>Price:</label>${{model.price}}</h4>
+      <h4><label>Available:</label>{{model.inStock}}</h4>
+      {{/md-card-content}}
+      {{#md-card-action}}
+        <button {{action 'edit'}}>Edit</button>
+      {{/md-card-action}}
+  {{/md-card}}
 {{/if}}

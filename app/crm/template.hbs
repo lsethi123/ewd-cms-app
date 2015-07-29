@@ -1,14 +1,16 @@
-{{#md-tabs selected=basicTabsSelection}}
-  {{#link-to 'crm.companies' class="white-text"}}
-    {{md-tab value='a' title="CRM Dashboard"}}
-  {{/link-to}}
-  {{#link-to 'crm.companies.new' class="white-text"}}
-    {{md-tab value='b' title="Create Company"}}
-  {{/link-to}}
+<br>
+{{#link-to 'crm.companies' class="white-text"}}
+{{md-btn text='Companies'
+  class='indigo darken-2'}}
+{{/link-to}}
+{{#link-to 'crm.companies.new' class="white-text"}}
+{{md-btn text='Create New Company'
+  class='indigo darken-2'}}
+{{/link-to}}
 
   <!-- {{#link-to 'crm.companies.index' class="white-text"}}
     {{md-tab value='c' title="Eighth"}}
   {{/link-to}} -->
-{{/md-tabs}}
+
 
 {{outlet}}
