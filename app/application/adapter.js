@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.ActiveModelAdapter.extend({
-  host: 'http://45.55.161.203',
+  host: 'http://api.ewebdesign.co',
+  /* host: 'http://localhost:3000', */
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Expose-Headers': 'ETag',
