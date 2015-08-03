@@ -2,7 +2,7 @@
     {{#each model as |post|}}
       <div class="col l4 m6 s12">
         {{#md-card title=post.title
-        image="http://placehold.it/200x100"
+        image=post.imageUrl
         activator=true
         id="card-reveal"}}
           {{#md-card-content}}
