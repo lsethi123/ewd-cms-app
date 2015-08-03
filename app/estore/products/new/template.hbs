@@ -2,6 +2,7 @@
   {{md-input type="text" value=model.title label="Product title"}}
   {{md-textarea type="text" value=model.description label="Product description"}}
   {{md-input type="text" value=model.price label="Product price"}}
+  <input type='file' id='file-field'/> Upload an image
   {{md-switch checked=model.inStock onLabel="In Stock" offLabel="Out of Stock"}}<br>
   <button class="button primary" type="submit">Add</button>
   <button {{action 'cancel'}} class="button">Cancel</button>
