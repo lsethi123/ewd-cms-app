@@ -1,0 +1,11 @@
+<div class="collection">
+  {{#each model as |user|}}
+    {{#link-to 'users.show' user class="collection-item"}}
+      <label>Id </label>{{user.id}}
+      <label>Full Name </label>{{user.fullName}}
+      <label>Email </label>{{user.email}}
+      <button {{action 'edit' user}}>Edit</button>
+      <button {{action 'delete' user}}>Delete</button>
+    {{/link-to}}
+  {{/each}}
+</div>

@@ -1,0 +1,28 @@
+{{#if isEditing}}
+  {{md-input type="text" value=model.firstName label="First name"}}
+  {{md-input type="text" value=model.lastName label="Last name"}}
+  {{md-input type="text" value=model.email label="Email"}}
+  {{md-input type="text" value=model.password label="Password"}}
+  <select required>
+    <option value="">Select Team</option>
+    {{#each teams as |team|}}
+      <option {{action 'selectTeam' team}}>{{team.name}}</option>
+    {{/each}}
+  </select><br/>
+  <input type='file' id='file-field'/> Upload an avatar
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
+{{#md-card title=model.fullName
+    titleClass="orange-text"
+    image=model.avatarUrl
+    id="image-card"}}
+    {{#md-card-content}}
+    <h4><label>Email:</label> {{model.email}}</h4>
+    <h4><label>Team:</label> {{model.team.name}}</h4>
+    {{/md-card-content}}
+    {{#md-card-action}}
+      <button {{action 'edit'}}>Edit</button>
+    {{/md-card-action}}
+{{/md-card}}
+{{/if}}
