@@ -48,6 +48,13 @@ Router.map(function() {
       this.route('show', { path: ':order_id' } );
     });
   });
+  this.route('users', function() {
+    this.route('show', { path: ':user_id' } );
+  });
+  this.route('teams', function() {
+    this.route('show', { path: ':team_id' } );
+    this.route('new');
+  });
 });
 
 export default Router;
