@@ -1,5 +1,5 @@
 <div class="flexbox-container">
-    <form {{action 'logIn'}} class="create-form login-form shadow1">
+    <form {{action 'logIn' on="submit"}} class="create-form login-form shadow1">
       <h1>Login</h1>
       {{input class="m-top-20" type="email" value=identification placeholder="Email"}}
       {{input type="password" value=password placeholder="Password"}}
