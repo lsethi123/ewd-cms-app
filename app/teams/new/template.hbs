@@ -1,0 +1,5 @@
+<form id="team-form" class="create-form" {{action 'add' on="submit"}}>
+  {{md-input type="text" value=model.name label="Team name"}}
+  <button class="button primary" type="submit">Add</button>
+  <button {{action 'cancel'}} class="button">Cancel</button>
+</form>

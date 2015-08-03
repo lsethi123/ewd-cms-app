@@ -1,0 +1,10 @@
+<div class="collection">
+  {{#each model as |team|}}
+    {{#link-to 'teams.show' team class="collection-item"}}
+      <label>Id </label>{{team.id}}
+      <label>Name </label>{{team.name}}
+      <button {{action 'edit' team}}>Edit</button>
+      <button {{action 'delete' team}}>Delete</button>
+    {{/link-to}}
+  {{/each}}
+</div>

@@ -1,0 +1,18 @@
+{{#if isEditing}}
+  {{md-input type="text" value=model.name label="Team name"}}
+  <button class="button primary" {{action 'save'}}>Save</button>
+  <button class="button" {{action 'cancel'}}>Cancel</button>
+{{else}}
+  <h1>{{model.name}}</h1>
+  <div class="collection">
+    {{#each model.users as |user|}}
+      {{#link-to 'users.show' user class="collection-item"}}
+        <label>Full name </label>{{user.fullName}}
+        <label>Email </label>{{user.email}}
+        <button {{action 'edit' team}}>Edit</button>
+        <button {{action 'delete' team}}>Delete</button>
+      {{/link-to}}
+    {{/each}}
+  </div>
+
+{{/if}}
