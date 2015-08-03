@@ -5,7 +5,8 @@ export default Ember.Controller.extend({
     add: function() {
       let tags = this.get('tags');
       let tag = this.get('selectedTag');
-      this.get('model').set('tags', tags).save().then((post) => {
+      let file = document.getElementById('file-field').files[0];
+      this.get('model').set('tags', tags).set('image', file).save().then((post) => {
         this.transitionToRoute('blog.posts.show', post);
       });
 
