@@ -2,12 +2,12 @@
   {{md-input type="text" value=model.firstName label="First name"}}
   {{md-input type="text" value=model.lastName label="Last name"}}
   {{md-input type="text" value=model.email label="Email"}}
-  <select required>
-    <option value="">None</option>
-    {{#each roles as |role|}}
-      <option {{action 'selectRole' role}}>{{role}}</option>
-    {{/each}}
-  </select>
+  {{md-select content=roles
+  value=selectedRole
+  label="Role"
+  prompt="Please choose..."
+  optionLabelPath="content"
+  optionValuePath="content"}}
   {{md-input type="text" value=model.title label="Title"}}
   {{md-input type="text" value=model.phone label="Phone"}}
   <button class="button primary" {{action 'save'}}>Save</button>
