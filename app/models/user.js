@@ -10,7 +10,7 @@ export default DS.Model.extend({
     return "http://api.ewebdesign.co" + this.get('avatar');
   }),
   password: DS.attr('string'),
-  team: DS.belongsTo('team'),
+  team: DS.belongsTo('team', { async: true } ),
   tasks: DS.hasMany('task'),
   fullName: Ember.computed('firstName', 'lastName', function() {
     return this.get('firstName') + ' ' + this.get('lastName');
