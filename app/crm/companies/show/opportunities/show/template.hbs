@@ -1,11 +1,11 @@
 {{#if isEditing}}
   {{md-input type="text" value=model.title label="Title"}}
-  <select required>
-    <option value="">None</option>
-    {{#each stages as |stage|}}
-      <option {{action 'selectStage' stage}}>{{stage}}</option>
-    {{/each}}
-  </select>
+  {{md-select content=stages
+  value=selectedStage
+  label="Stages"
+  prompt="Please choose..."
+  optionLabelPath="content"
+  optionValuePath="content"}}
   {{md-input type="text" value=model.estimatedClose label="Estimated Close"}}
   {{md-input type="text" value=model.estimatedAmount label="Estimated Amount"}}
   <button class="button primary" {{action 'save'}}>Save</button>

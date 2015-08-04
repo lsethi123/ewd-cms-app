@@ -7,11 +7,10 @@
     {{/each}}
   </select> -->
   {{md-select content=stages
-  value=stages
+  value=selectedStage
   label="Stages"
-  action="selectStage"
   prompt="Please choose..."
-  optionLabelPath="content.value"
+  optionLabelPath="content"
   optionValuePath="content"}}
   {{md-input-date type="text" value=model.estimatedClose label="Enter Close"}}
   {{md-input type="text" value=model.estimatedAmount label="Enter Amount"}}
