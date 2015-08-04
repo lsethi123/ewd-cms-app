@@ -15,10 +15,17 @@
     {{/each}}
   </select> -->
   {{md-select content=employees
-  value=employee
+  value=selectedEmployee
   label="Employee"
   prompt="Please choose..."
-  optionLabelPath="content.value"
+  optionLabelPath="content.fullName"
+  optionValuePath="content"}}
+
+  {{md-select content=users
+  value=selectedUser
+  label="Assigned to"
+  prompt="Please choose..."
+  optionLabelPath="content.fullName"
   optionValuePath="content"}}
   <button class="button primary" type="submit">Add</button>
   <button {{action 'cancel'}} class="button">Cancel</button>

@@ -2,18 +2,19 @@
   {{md-input type="text" value=model.name label="Name"}}
   {{md-textarea value=model.description label="Description"}}
   {{md-input type="text" value=model.dueDate label="Due date"}}
-  <select required>
-    <option value="">Employee</option>
-    {{#each employees as |person|}}
-      <option {{action 'selectEmployee' person}}>{{person.fullName}}</option>
-    {{/each}}
-  </select>
-  <select required>
-    <option value="">User</option>
-    {{#each users as |person|}}
-      <option {{action 'selectUser' person}}>{{person.fullName}}</option>
-    {{/each}}
-  </select>
+  {{md-select content=employees
+  value=selectedEmployee
+  label="Employee"
+  prompt="Please choose..."
+  optionLabelPath="content.fullName"
+  optionValuePath="content"}}
+
+  {{md-select content=users
+  value=selectedUser
+  label="Assigned to"
+  prompt="Please choose..."
+  optionLabelPath="content.fullName"
+  optionValuePath="content"}}
   <button {{action 'save'}}>Save</button>
   <button {{action 'cancel'}}>Cancel</button>
 {{else}}
