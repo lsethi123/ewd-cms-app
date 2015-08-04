@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
 
   actions: {
     edit: function() {
-      this.toggleProperty('isEditing');
+      this.set('isEditing', true);
     },
 
     cancel: function() {
@@ -18,8 +18,15 @@ export default Ember.Controller.extend({
 
     save: function() {
       let file = document.getElementById('file-field').files[0];
-      this.get('model').set('avatar', file).set('team', this.get('selectedTeam')).save().then((user) => {
-        this.toggleProperty('isEditing');
+      let user = this.get('model');
+        user.set('avatar', file);
+      if(this.get('selectedTeam')) {
+        user.set('team', this.get('selectedTeam'));
+      }
+      user.save().then((user) => {
+        this.set('isEditing', false);
+      }, (error) => {
+        this.set('isEditing', false);
       });
     }
   }
