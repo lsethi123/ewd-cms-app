@@ -36,7 +36,6 @@ Router.map(function() {
       });
     });
   });
-  this.route('todos');
   this.route('login');
   this.route('signup');
   this.route('estore', function() {
@@ -57,6 +56,14 @@ Router.map(function() {
   });
   this.route('events', function() {
     this.route('show', { path: ':event_id' } );
+  });
+  this.route('todos', function() {
+    this.route('boards', function() {
+      this.route('show', { path: ':board_id' } );
+      this.route('new');
+    });
+    this.route('new');
+    this.route('show', { path: ':todo_id' } );
   });
 });
 
