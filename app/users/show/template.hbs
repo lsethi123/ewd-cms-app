@@ -1,4 +1,13 @@
 {{#if isEditing}}
+{{#md-modal close='cancel' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
+<div class="modal-content">
   {{md-input type="text" value=model.firstName label="First name"}}
   {{md-input type="text" value=model.lastName label="Last name"}}
   {{md-input type="text" value=model.email label="Email"}}
@@ -9,8 +18,17 @@
   optionLabelPath="content.name"
   optionValuePath="content"}}
   <input type='file' id='file-field'/> Upload an avatar
-  <br/><button class="button primary" {{action 'save'}}>Save</button>
-  <button class="button" {{action 'cancel'}}>Cancel</button>
+</div>
+<div class="modal-footer">
+    <button class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" type="submit" {{action 'save'}}>
+        Save!
+    </button>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
+{{/if}}
+{{/md-modal}}
 {{else}}
 {{#md-card title=model.fullName
     titleClass="orange-text"

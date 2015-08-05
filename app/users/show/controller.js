@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
+      this.set('sendingData', true);
       let file = document.getElementById('file-field').files[0];
       let user = this.get('model');
         user.set('avatar', file);
@@ -24,8 +25,10 @@ export default Ember.Controller.extend({
         user.set('team', this.get('selectedTeam'));
       }
       user.save().then((user) => {
+        this.set('sendingData', false);
         this.set('isEditing', false);
       }, (error) => {
+        this.set('sendingData', false);
         this.set('isEditing', false);
       });
     }
