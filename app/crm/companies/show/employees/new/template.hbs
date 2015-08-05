@@ -1,4 +1,13 @@
+{{#md-modal close='closeModal' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
 <form id="employee-form" class="create-form" {{action 'addEmployee' on="submit"}}>
+  <div class="modal-content">
   {{md-input type="text" value=model.firstName label="Enter First Name"}}
   {{md-input type="text" value=model.lastName label="Enter Last Name"}}
   {{md-input type="email" value=model.email label="Enter Email"}}
@@ -10,6 +19,15 @@
   optionValuePath="content"}}
   {{md-input type="text" value=model.title label="Enter Title"}}
   {{md-input type="tel" value=model.phone label="Enter Phone Number"}}
-  <button type="submit">Add</button>
-  <button {{action 'cancel'}} class="button">Cancel</button>
+</div>
+<div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+        Add
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
 </form>
+{{/if}}
+{{/md-modal}}
