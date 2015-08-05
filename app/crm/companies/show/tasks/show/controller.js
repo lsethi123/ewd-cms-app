@@ -13,7 +13,9 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
+      this.set('sendingData', true);
       this.get('model').set('employee', this.get('selectedEmployee')).set('user', this.get('selectedUser')).save().then((task) => {
+        this.set('sendingData', false);
         this.toggleProperty('isEditing');
       });
     },

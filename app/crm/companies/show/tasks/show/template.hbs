@@ -1,4 +1,13 @@
 {{#if isEditing}}
+{{#md-modal close='cancel' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
+<div class="modal-content">
   {{md-input type="text" value=model.name label="Name"}}
   {{md-textarea value=model.description label="Description"}}
   {{md-input type="text" value=model.dueDate label="Due date"}}
@@ -15,8 +24,17 @@
   prompt="Please choose..."
   optionLabelPath="content.fullName"
   optionValuePath="content"}}
-  <button {{action 'save'}}>Save</button>
-  <button {{action 'cancel'}}>Cancel</button>
+</div>
+<div class="modal-footer">
+    <button class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" type="submit" {{action 'save'}}>
+        Save!
+    </button>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
+{{/if}}
+{{/md-modal}}
 {{else}}
   {{model.name}}
   {{model.description}}
