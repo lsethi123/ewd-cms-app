@@ -18,9 +18,7 @@ export default Ember.Controller.extend({
 
     save: function() {
       this.set('sendingData', true);
-      let file = document.getElementById('file-field').files[0];
       let user = this.get('model');
-        user.set('avatar', file);
       if(this.get('selectedTeam')) {
         user.set('team', this.get('selectedTeam'));
       }
