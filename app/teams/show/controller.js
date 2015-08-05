@@ -13,7 +13,9 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
+      this.set('sendingData', true);
       this.get('model').save().then((team) => {
+        this.set('sendingData', false);
         this.toggleProperty('isEditing');
       });
     }
