@@ -16,9 +16,21 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
-      this.get('model').save().then((product) => {
-        this.toggleProperty('isEditing');
+      this.set('sendingData', true);
+      let file = document.getElementById('file-field').files[0];
+      let product = this.get('model');
+      product.set('image', file);
+      product.save().then((product) => {
+        this.set('sendingData', false);
+        this.set('isEditing', false);
+      }, (error) => {
+        this.set('sendingData', false);
+        this.set('isEditing', false);
       });
+    },
+
+    closeModal: function() {
+      this.set('isEditing', false);
     }
   }
 });
