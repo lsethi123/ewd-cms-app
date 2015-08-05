@@ -1,8 +1,17 @@
+{{#md-modal close='closeModal' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
 <form id="post-form" class="create-form" {{action 'add' on="submit"}}>
+  <div class="modal-content">
   {{md-input type="text" value=model.title label="Post title"}}
   {{md-input type="text" value=model.subtitle label="Subtitle"}}
   {{md-textarea type="text" value=model.body label="Body Text"}}
-  <input type='file' id='file-field'/> Upload an image
+  <input type='file' id='file-field' /> Upload an image
   {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
   <select required>
     <option value="none">None</option>
@@ -10,6 +19,15 @@
       <option {{action 'selectTag' tag}}>{{tag.name}}</option>
     {{/each}}
   </select>
-  <button class="button primary" type="submit">Create</button>
-  <button {{action 'cancel'}} class="button">Cancel</button>
+</div>
+<div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+        Add
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
 </form>
+{{/if}}
+{{/md-modal}}

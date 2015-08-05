@@ -13,8 +13,16 @@ export default Ember.Controller.extend({
     },
 
     save: function() {
-      this.get('model').save().then((post) => {
-        this.toggleProperty('isEditing');
+      this.set('sendingData', true);
+      let file = document.getElementById('file-field').files[0];
+      let post = this.get('model');
+      post.set('image', file);
+      post.save().then((post) => {
+        this.set('sendingData', false);
+        this.set('isEditing', false);
+      }, (error) => {
+        this.set('sendingData', false);
+        this.set('isEditing', false);
       });
     },
 
@@ -34,6 +42,10 @@ export default Ember.Controller.extend({
       post.destroyRecord().then((response) => {
         this.transitionToRoute('blog.posts.index');
       });
+    },
+
+    closeModal: function() {
+      this.set('isEditing', false);
     }
   }
 });

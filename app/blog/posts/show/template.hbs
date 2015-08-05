@@ -1,9 +1,29 @@
 {{#if isEditing}}
+{{#md-modal close='cancel' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
+<div class="modal-content">
   {{input type="text" value=model.title placeholder="Post title"}}
   {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
   {{textarea type="text" value=model.body placeholder="Post body..."}}
-  <button class="button primary" {{action 'save'}}>Save</button>
-  <button class="button" {{action 'cancel'}}>Cancel</button>
+  <input type='file' id='file-field' /> Upload an image
+  {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
+</div>
+<div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'save'}}>
+        Save!
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
+{{/if}}
+{{/md-modal}}
 {{else}}
   {{#md-card title=model.title
     titleClass="orange-text"

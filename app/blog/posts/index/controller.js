@@ -4,8 +4,8 @@ export default Ember.Controller.extend({
 
   actions: {
     edit: function(post) {
-      this.transitionToRoute('blog.posts.show', post);
       this.controllerFor('blog.posts.show').set('isEditing', true);
+      this.transitionToRoute('blog.posts.show', post);
     },
 
     unpublish: function(post) {
