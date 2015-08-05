@@ -1,0 +1,39 @@
+{{#md-modal close='closeModal' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
+<form id="todo-form" class="create-form" {{action 'add' on="submit"}}>
+  <div class="modal-content">
+  {{md-input type="text" value=model.title label="Todo name"}}
+  {{md-select
+  content=users
+  value=selectedUser
+  label="Select Assignee"
+  prompt="Please choose..."
+  optionLabelPath="content.fullName"
+  optionValuePath="content"}}
+  <h5 class="checklists">Checklists:</h5>
+  <span class="checklist-item"></span>
+  {{#if isAddingStep}}
+    {{input type="number" value=checklistStep}}
+    {{input type="text" value=checklistDescription placeholder="Describe the step"}}
+    <button class="waves-effect waves-orange" {{action 'saveStep'}}>Save</button>
+  {{else}}
+    <button id="add-step" class="waves-effect waves-orange btn-flat" {{action 'addStep'}}>Add Step</button>
+  {{/if}}
+</div>
+<div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+        Add
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
+</form>
+{{/if}}
+{{/md-modal}}
