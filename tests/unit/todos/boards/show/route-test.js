@@ -6,17 +6,16 @@ import {
 } from 'ember-mocha';
 
 describeModule(
-  'controller:todos',
-  'TodosController',
+  'route:todos/boards/show',
+  'TodosBoardsShowRoute',
   {
     // Specify the other units that are required for this test.
     // needs: ['controller:foo']
   },
   function() {
-    // Replace this with your real tests.
     it('exists', function() {
-      var controller = this.subject();
-      expect(controller).to.be.ok;
+      var route = this.subject();
+      expect(route).to.be.ok;
     });
   }
 );
