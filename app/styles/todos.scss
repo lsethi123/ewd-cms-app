@@ -22,8 +22,12 @@
 
   .board-title {
     margin: 0;
-    padding: 10px;
-    display: block;
+    padding: 10px 0 10px 10px;
+    display: inline-block;
+  }
+
+  .delete-board {
+    margin: 5px;
   }
 
   .modal-action {
