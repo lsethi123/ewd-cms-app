@@ -13,14 +13,20 @@ export default Ember.Controller.extend({
       this.set('sendingData', true);
       this.get('model').set('company', this.get('company')).set('employee', this.get('selectedEmployee')).set('user', this.get('selectedUser')).save().then((task) => {
         this.set('sendingData', false);
-        this.transitionToRoute('crm.companies.show.tasks.show', task);
+        this.transitionToRoute('crm.companies.show.tasks.index');
       }, (error) => {
         this.set('sendingData', false);
         console.log(error);
       });
     },
-    
+
+    cancel: function() {
+      this.get('model').destroyRecord();
+      window.history.back();
+    },
+
     closeModal: function() {
+      this.get('model').destroyRecord();
       window.history.back();
     },
 
