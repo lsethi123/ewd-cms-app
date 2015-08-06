@@ -11,11 +11,13 @@ export default Ember.Controller.extend({
     },
 
     cancel: function() {
+      this.get('model').destroyRecord();
       window.history.back();
     },
 
     closeModal: function() {
+      this.get('model').destroyRecord();
       window.history.back();
-    },
+    }
   }
 });
