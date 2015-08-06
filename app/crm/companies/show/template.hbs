@@ -1,3 +1,32 @@
+{{#if isEditing}}
+{{#md-modal close='closeModal' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
+<div class="modal-content">
+  {{md-input type="text" value=model.name label="Company name"}}
+  {{md-input type="text" value=model.description label="Describe the business"}}
+  {{md-input type="text" value=model.address label="Company address"}}
+  {{md-input type="text" value=model.city label="Company City"}}
+  {{md-input type="text" value=model.state label="Company State"}}
+  {{md-input type="tel" value=model.phone label="Business Phone"}}
+  {{md-input type="email" value=model.email label="Company Email"}}
+</div>
+<div class="modal-footer">
+    <button class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" type="submit" {{action 'save'}}>
+        Save!
+    </button>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
+{{/if}}
+{{/md-modal}}
+{{else}}
 <ul class="collection with-header">
    <li class="collection-header"><h4>{{model.name}}</h4></li>
    <label>Address:</label>{{model.address}}
@@ -5,10 +34,12 @@
    <label>State:</label>{{model.state}}
    <label>Phone:</label>{{model.phone}}
    <label>Email:</label>{{model.email}}
+   {{md-btn text='Edit' class='indigo darken-2' action='edit'}}
 </ul>
 
 {{#link-to 'crm.companies.show.employees' class="button"}}{{md-btn text='Employees' class='indigo darken-2'}} {{/link-to}}
 {{#link-to 'crm.companies.show.opportunities' class="button"}}{{md-btn text='Opportunities' class='indigo darken-2'}} {{/link-to}}
 {{#link-to 'crm.companies.show.tasks' class="button"}}{{md-btn text='Tasks' class='indigo darken-2'}} {{/link-to}}
 <br/>
+{{/if}}
 {{outlet}}
