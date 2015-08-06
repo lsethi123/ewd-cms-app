@@ -7,17 +7,18 @@
       <th>Due Date</th>
       <th>Employee</th>
       <th>Assigned to</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     {{#each model as |task|}}
-        <tr class="item">
+        <tr>
           <td>{{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}</td>
           <td>{{task.description}}</td>
           <td>{{task.dueDate}}</td>
           <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
           <td>{{task.user.fullName}}</td>
-          <td><button class="button primary" {{action 'editTask' task}}>Edit</button><button class="button primary" {{action 'delete' task}}>Delete</button></td>
+          <td>{{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=task}}{{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=task}}</td>
         </tr>
     {{/each}}
   </tbody>

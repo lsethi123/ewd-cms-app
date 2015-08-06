@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       return false;
     },
 
-    editTask: function(task) {
+    edit: function(task) {
       this.transitionToRoute('crm.companies.show.tasks.show', task);
       this.controllerFor('crm.companies.show.tasks.show').set('isEditing', true);
     }
