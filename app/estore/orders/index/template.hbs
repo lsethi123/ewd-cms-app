@@ -24,7 +24,7 @@
           {{else}}
             <td>Guest</td>
           {{/if}}
-          <td><button {{action 'delete' order}}>Delete</button></td>
+          <td>{{md-btn text='Edit' class='indigo darken-2' action='delete' actionArg=order}}</td>
         </tr>
     {{/each}}
   </tbody>
