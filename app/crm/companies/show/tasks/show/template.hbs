@@ -1,5 +1,5 @@
 {{#if isEditing}}
-{{#md-modal close='cancel' class="test-modal"}}
+{{#md-modal close='closeModal' class="test-modal"}}
 {{#if sendingData}}
 <div class="modal-content">
 <div class="col s10">
@@ -41,5 +41,5 @@
   {{model.dueDate}}
   {{#link-to 'crm.companies.show.employees.show' model.employee}}{{model.employee.fullName}}{{/link-to}}
   {{model.user.fullName}}
-  <button {{action 'edit'}}>Edit</button>
+  {{md-btn text='Edit' class='indigo darken-2' action='edit'}}
 {{/if}}
