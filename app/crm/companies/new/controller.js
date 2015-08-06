@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       this.set('sendingData', true);
       this.get('model').save().then((company) => {
         this.set('sendingData', false);
-        this.transitionToRoute('crm.companies.show', company);
+        this.transitionToRoute('crm.companies.index');
       }, (error) => {
         this.set('sendingData', false);
         console.log(error);
@@ -19,6 +19,12 @@ export default Ember.Controller.extend({
     },
 
     closeModal: function() {
+      this.get('model').destroyRecord();
+      window.history.back();
+    },
+
+    cancel: function() {
+      this.get('model').destroyRecord();
       window.history.back();
     }
   }
