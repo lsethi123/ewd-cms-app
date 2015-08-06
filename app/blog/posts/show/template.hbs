@@ -25,22 +25,9 @@
 {{/if}}
 {{/md-modal}}
 {{else}}
-  {{#md-card title=model.title
-    titleClass="orange-text"
-    image=model.imageUrl
-    id="image-card"}}
-    {{#md-card-content}}
-    <h4>{{model.subtitle}}</h4>
-    <p>{{model.body}}</p>
-    {{/md-card-content}}
-    {{#md-card-action}}
-      {{#if model.published}}
-        <a {{action 'unpublish' model}}>Unpublish</a>
-      {{else}}
-        <a {{action 'publish' model}}>Publish</a>
-      {{/if}}
-      <button {{action 'edit'}}>Edit</button>
-      <button {{action 'delete' model}}>Delete</button>
-    {{/md-card-action}}
-  {{/md-card}}
+<h4>{{model.title}}</h4>
+<strong>Subtitle:</strong> {{model.subtitle}}<br/>
+<p>{{model.body}}</p><br/>
+{{#if post.published}}{{md-btn text='Unpublish' class='indigo darken-2' action='unpublish' actionArg=post}}{{else}}{{md-btn text='Publish' class='indigo darken-2' action='publish' actionArg=post}}{{/if}} 
+{{md-btn text='Edit' class='indigo darken-2' action='edit'}}
 {{/if}}

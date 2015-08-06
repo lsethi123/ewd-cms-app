@@ -20,6 +20,7 @@ export default Ember.Controller.extend({
       post.save().then((post) => {
         this.set('sendingData', false);
         this.set('isEditing', false);
+        this.transitionToRoute('blogs.posts.index');
       }, (error) => {
         this.set('sendingData', false);
         this.set('isEditing', false);
