@@ -1,16 +1,5 @@
-<div class="collection">
-  {{#each model as |product|}}
-    {{#link-to 'estore.products.show' product class="collection-item"}}
-      <label>Name </label>{{product.title}}
-      <label>Description </label>{{product.description}}
-      <label>Price </label>${{product.price}}
-      <label>In Stock </label>{{product.inStock}}
-      <button {{action 'edit' product}}>Edit</button>
-      <button {{action 'delete' product}}>Delete</button>
-    {{/link-to}}
-  {{/each}}
-</div>
-<!-- <table>
+{{#if model}}
+<table>
   <thead>
     <tr>
       <th>
@@ -32,9 +21,11 @@
           <td>{{product.description}}</td>
           <td>{{product.price}}</td>
           <td>{{product.inStock}}</td>
-          <td><button {{action 'edit' product}}>Edit</button></td>
-          <td><button {{action 'delete' product}}>Delete</button></td>
+          <td>{{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=product}}{{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=product}}</td>
         </tr>
     {{/each}}
   </tbody>
-</table> -->
+</table>
+{{else}}
+No products to show. Start by adding one.
+{{/if}}
