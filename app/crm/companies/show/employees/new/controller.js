@@ -13,11 +13,16 @@ export default Ember.Controller.extend({
       this.set('sendingData', true);
       this.get('model').set('company', this.get('company')).set('role', this.get('selectedRole')).save().then((employee) => {
         this.set('sendingData', false);
-        this.transitionToRoute('crm.companies.show.employees.show', employee);
+        this.transitionToRoute('crm.companies.show.employees.index');
       }, (error) => {
         this.set('sendingData', false);
         console.log(error);
       });
+    },
+
+    cancel: function() {
+      this.get('model').destroyRecord();
+      window.history.back();
     },
 
     selectRole: function(role) {
@@ -25,6 +30,7 @@ export default Ember.Controller.extend({
     },
 
     closeModal: function() {
+      this.get('model').destroyRecord();
       window.history.back();
     }
   }
