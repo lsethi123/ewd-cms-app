@@ -1,30 +1,26 @@
-<div class="row">
+{{#if model}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Body</th>
+      <th>Published?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
     {{#each model as |post|}}
-      <div class="col l4 m6 s12">
-        {{#md-card title=post.title
-        image=post.imageUrl
-        activator=true
-        id="card-reveal"}}
-          {{#md-card-content}}
-              {{post.subtitle}}
-          {{/md-card-content}}
-
-          {{#md-card-action}}
-            {{#if post.published}}
-              {{#link-to 'blog.posts.show' post}}View{{/link-to}}
-              <!-- <a{{action 'unpublish' post}}>Unpublish</a> -->
-            {{else}}
-              <a {{action 'publish' post}}>Publish</a>
-            {{/if}}
-            <a {{action 'edit' post}}>Edit</a>
-            <a {{action 'delete' post}}>Delete</a>
-          {{/md-card-action}}
-
-          {{#md-card-reveal}}
-              {{post.body}}
-              <a {{action 'edit' post}}>Edit Post</a>
-          {{/md-card-reveal}}
-        {{/md-card}}
-      </div>
+        <tr>
+          <td>{{#link-to 'blog.posts.show' post}}{{post.title}}{{/link-to}}</td>
+          <td>{{post.subtitle}}</td>
+          <td>{{post.body}}</td>
+          <td>{{#if post.published}}{{md-btn text='Unpublish' class='indigo darken-2' action='unpublish' actionArg=post}}{{else}}{{md-btn text='Publish' class='indigo darken-2' action='publish' actionArg=post}}{{/if}}</td>
+          <td>{{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=post}}{{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=post}}</td>
+        </tr>
     {{/each}}
-</div>
+  </tbody>
+</table>
+{{else}}
+No posts. Start by adding the one.
+{{/if}}
