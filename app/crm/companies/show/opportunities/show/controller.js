@@ -13,11 +13,16 @@ export default Ember.Controller.extend({
       this.toggleProperty('isEditing');
     },
 
+    closeModal: function() {
+      this.set('isEditing', false);
+    },
+
     save: function() {
       this.set('sendingData', true);
       this.get('model').set('stage', this.get('selectedStage')).save().then((opportunity) => {
         this.set('sendingData', false);
         this.toggleProperty('isEditing');
+        this.transitionToRoute('crm.companies.show.opportunities.index');
       });
     },
 
