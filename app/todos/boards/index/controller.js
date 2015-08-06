@@ -13,6 +13,11 @@ export default Ember.Controller.extend({
       return false;
     },
 
+    deleteBoard: function(board) {
+      board.destroyRecord();
+      return false;
+    },
+
     createTodo: function(board) {
       console.log('todo created');
     },
