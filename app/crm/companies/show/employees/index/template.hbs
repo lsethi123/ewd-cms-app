@@ -1,15 +1,28 @@
-<hr>
 {{#if model}}
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Title</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
     {{#each model as |employee|}}
-          {{#link-to 'crm.companies.show.employees.show' employee}}{{employee.fullName}}{{/link-to}}
-          {{employee.email}}
-          {{employee.role}}
-          {{employee.title}}
-          {{employee.phone}}
-          <button {{action 'editEmployee' employee}}>Edit</button><button class="button primary" {{action 'deleteEmployee' employee}}>Delete</button>
-          <hr>
+    <tr>
+      <td>{{#link-to 'crm.companies.show.employees.show' employee}}{{employee.fullName}}{{/link-to}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.role}}</td>
+      <td>{{employee.title}}</td>
+      <td>{{employee.phone}}</td>
+      <td>{{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=employee}}{{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=employee}}{{md-btn text='Send Email' class='indigo darken-2' action='sendEmail' actionArg=employee}}</td>
+    </tr>
     {{/each}}
-<button class="button primary">Send Email</button>
+  </tbody>
+</table>
 {{else}}
 No employees. Start by adding the one.
 {{/if}}
