@@ -23,6 +23,7 @@ export default Ember.Controller.extend({
       product.save().then((product) => {
         this.set('sendingData', false);
         this.set('isEditing', false);
+        this.transitionToRoute('estore.products.index');
       }, (error) => {
         this.set('sendingData', false);
         this.set('isEditing', false);

@@ -27,17 +27,15 @@
   {{/if}}
 {{/md-modal}}
 {{else}}
-  {{#md-card title=model.title
-      titleClass="orange-text"
-      image=model.imageUrl
-      id="image-card"}}
-      {{#md-card-content}}
-      <p>{{model.description}}</p>
-      <h4><label>Price:</label>${{model.price}}</h4>
-      <h4><label>Available:</label>{{model.inStock}}</h4>
-      {{/md-card-content}}
-      {{#md-card-action}}
-        <button {{action 'edit'}}>Edit</button>
-      {{/md-card-action}}
-  {{/md-card}}
+  <h4>{{model.title}}</h4>
+  <img src={{model.imageUrl}}>
+      <p>{{model.description}}</p><br/>
+      <strong>Price:</strong> ${{model.price}}<br/>
+      <strong>Available:</strong>
+      {{#if model.inStock}}
+        Yes
+      {{else}}
+        No
+      {{/if}}<br/>
+      {{md-btn text='Edit' class='indigo darken-2' action='edit'}}
 {{/if}}
