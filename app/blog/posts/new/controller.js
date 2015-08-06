@@ -18,7 +18,13 @@ export default Ember.Controller.extend({
       this.set('selectedTag', tag);
     },
 
+    cancel: function() {
+      this.get('model').destroyRecord();
+      window.history.back();
+    },
+
     closeModal: function() {
+      this.get('model').destroyRecord();
       window.history.back();
     }
   }
