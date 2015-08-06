@@ -27,7 +27,22 @@ module.exports = function(environment) {
     crossOriginWhitelist: ['http://localhost:3000'],
     store: 'simple-auth-session-store:local-storage',
     authorizer: 'authorizer:ewd-cms'
-  }
+  };
+
+  ENV['mandrill'] = {
+    api: {
+      host: 'https://mandrillapp.com/api/1.0/',
+      key: 'fAYDGli8RCVZfWMTz76vnQ'
+    },
+
+    smtp: {
+      host: 'smtp.mandrillapp.com',
+      port: 587,
+      username: 'djbradyla@gmail.com',
+      password: 'fAYDGli8RCVZfWMTz76vnQ'
+    }
+
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
