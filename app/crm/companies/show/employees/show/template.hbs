@@ -1,5 +1,5 @@
 {{#if isEditing}}
-{{#md-modal close='cancel' class="test-modal"}}
+{{#md-modal close='closeModal' class="test-modal"}}
 {{#if sendingData}}
 <div class="modal-content">
 <div class="col s10">
@@ -36,5 +36,5 @@
         <h4>{{model.role}}</h4>
         <h4>{{model.title}}</h4>
         <h4>{{model.phone}}</h4>
-      <button {{action 'edit'}}>Edit</button>
+        {{md-btn text='Edit' class='indigo darken-2' action='edit'}}
 {{/if}}

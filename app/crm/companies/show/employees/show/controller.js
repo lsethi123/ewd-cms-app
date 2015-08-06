@@ -9,6 +9,10 @@ export default Ember.Controller.extend({
       this.toggleProperty('isEditing');
     },
 
+    closeModal: function() {
+      this.set('isEditing', false);
+    },
+
     cancel: function() {
       this.toggleProperty('isEditing');
     },
@@ -18,6 +22,7 @@ export default Ember.Controller.extend({
       this.get('model').set('role', this.get('selectedRole')).save().then((employee) => {
         this.set('sendingData', false);
         this.toggleProperty('isEditing');
+        this.transitionToRoute('crm.companies.show.employees.index');
       });
     },
 
