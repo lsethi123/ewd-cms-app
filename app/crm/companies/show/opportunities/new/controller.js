@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
       this.set('sendingData', true);
       this.get('model').set('company', this.get('company')).set('stage', this.get('selectedStage')).save().then((opportunity) => {
         this.set('sendingData', false);
-        this.transitionToRoute('crm.companies.show.opportunities.show', opportunity);
+        this.transitionToRoute('crm.companies.show.opportunities.index');
       }, (error) => {
         this.set('sendingData', false);
         console.log(error);
@@ -20,6 +20,12 @@ export default Ember.Controller.extend({
     },
 
     closeModal: function() {
+      this.get('model').destroyRecord();
+      window.history.back();
+    },
+
+    cancel: function() {
+      this.get('model').destroyRecord();
       window.history.back();
     },
 
