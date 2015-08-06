@@ -10,20 +10,22 @@ export default Ember.Controller.extend({
       this.set('sendingData', true);
       let todo = this.get('model');
       todo.set('board', this.get('board')).set('user', this.get('selectedUser')).save().then((todo) => {
-        this.get('checklists').forEach((checklist) => {
-          let newChecklist = this.store.createRecord('checklist', {
-            step: checklist.step,
-            description: checklist.description,
-            todo: todo
+        if(this.get('checklists')) {
+          this.get('checklists').forEach((checklist) => {
+            let newChecklist = this.store.createRecord('checklist', {
+              step: checklist.step,
+              description: checklist.description,
+              todo: todo
+            });
+            newChecklist.save().then((checklist) => {
+            });
           });
-          newChecklist.save().then((checklist) => {
-            this.set('checklists', []);
-            this.set('checklistStep', 1);
-            this.set('checklistDescription', null);
-            this.set('sendingData', false);
-            this.transitionToRoute('todos.boards.index');
-          });
-        });
+        }
+        this.set('checklists', []);
+        this.set('checklistStep', 1);
+        this.set('checklistDescription', null);
+        this.set('sendingData', false);
+        this.transitionToRoute('todos.boards.index');
       });
     },
 
