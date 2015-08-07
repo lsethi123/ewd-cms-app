@@ -1,13 +1,21 @@
-<form id="employee-form" class="create-form">
-    <select required>
-      <option value="">Template 1</option>
-      <option value="">Template 2</option>
-      <option value="">Template 3</option>
-      <option value="">Template 4</option>
-    </select>
-    <label>Email Preview:</label><br/><br>
-    <div class="preview-box shadow1">
-      <div class="template-1"><h2 class="center">Template 1</h2></div>
-    </div>
-  <button class="button primary">Send Email</button>
-</form>
+{{#if sentSuccessfully}}
+{{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+            <h4>Email sent.</h4>
+            <p>Successfully sent the email to {{model.fullName}}!</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'done'}}>
+                Done!
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{else}}
+<h4>Please enter a message to send:</h4>
+{{md-input type="text" value=emailSubject label="Subject"}}
+{{md-textarea label='Message' value=emailMessage}}<br/><br/>
+{{md-btn text='Send Email' class='indigo darken-2' action='sendEmail'}}
+{{/if}}
