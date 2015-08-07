@@ -1,0 +1,34 @@
+<h4>Carousel</h4>
+{{md-btn text='Add Image'
+	action='addImage'
+	class='indigo darken-2'}}
+<br/>
+{{#slick-carousel class="ember-carousel" autoplay=true autoplaySpeed=2000 fade=true slidesToShow=1 dots=true}}
+  {{#if model}}
+    {{#each model as |image|}}
+      <div><img src={{image.imgUrl}}></div>
+    {{/each}}
+  {{else}}
+    <div><img src="http://placehold.it/300?text=Slide+1"></div>
+    <div><img src="http://placehold.it/300?text=Slide+2"></div>
+    <div><img src="http://placehold.it/300?text=Slide+3"></div>
+    <div><img src="http://placehold.it/300?text=Slide+4"></div>
+    <div><img src="http://placehold.it/300?text=Slide+5"></div>
+  {{/if}}
+{{/slick-carousel}}
+{{#if isAddingImage}}
+{{#md-modal close='closeModal' class="test-modal"}}
+  <div class="modal-content">
+      <h4>Adding Image to Carousel</h4>
+      <input type='file' id='file-field' />
+  </div>
+  <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'done'}}>
+          Done!
+      </a>
+      <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+          Cancel
+      </a>
+  </div>
+{{/md-modal}}
+{{/if}}

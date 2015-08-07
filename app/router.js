@@ -65,6 +65,7 @@ Router.map(function() {
     this.route('new');
     this.route('show', { path: ':todo_id' } );
   });
+  this.route('pages');
 });
 
 export default Router;
