@@ -65,7 +65,15 @@ Router.map(function() {
     this.route('new');
     this.route('show', { path: ':todo_id' } );
   });
-  this.route('pages');
+  this.route('pages', function() {
+    this.route('show', { path: ':page_id' }, function() {
+      this.route('slider', function() {
+        this.route('edit');
+        this.route('new');
+      });
+    });
+    this.route('new');
+  });
 });
 
 export default Router;
