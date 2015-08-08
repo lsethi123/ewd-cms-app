@@ -1,0 +1,20 @@
+{{#if model}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Slider</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |page|}}
+        <tr>
+          <td>{{#link-to 'pages.show' page}}{{page.title}}{{/link-to}}</td>
+          <td>{{#if page.slider}}{{#link-to 'pages.show.slider.edit' page.slider}}Edit Slider{{/link-to}}{{else}}{{#link-to 'pages.show.slider.new' page}}Add Slider{{/link-to}}{{/if}}</td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+No pages. Start by adding the one.
+{{/if}}
