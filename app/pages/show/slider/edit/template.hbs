@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col s12 m6">
+{{#slick-carousel class="carousel-preview" accessibility=model.accessibility adaptiveHeight=model.adaptiveHeight autoplay=model.autoplay autoplaySpeed=model.autoplaySpeed arrows=model.arrows asNavFor=model.asNavFor appendArrows=model.appendArrows prevArrow=model.prevArrow nextArrow=model.nextArrow centerMode=model.centerMode centerPadding=model.centerPadding cssEase=model.cssEase dots=model.dots draggable=model.draggable fade=model.fade focusOnSelect=model.focusOnSelect easing=model.easing edgeFriction=model.edgeFriction infinite=model.infinite initialSlide=model.initialSlide lazyLoad=model.lazyLoad mobileFirst=model.mobileFirst pauseOnHover=model.pauseOnHover pauseOnDotsHover=model.pauseOnDotsHover rows=model.rows slide=model.slide slidesPerRow=model.slidesPerRow slidesToShow=model.slidesToShow slidesToScroll=model.slidesToScroll speed=model.speed swipe=model.swipe swipeToSlide=model.swipeToSlide touchMove=model.touchMove touchThreshold=model.touchThreshold useCss=model.useCss variableWidth=model.variableWidth vertical=model.vertical verticalSwiping=model.verticalSwiping rtl=model.rtl}}
+<div><img src="http://placehold.it/300?text=Slide+1"></div>
+<div><img src="http://placehold.it/300?text=Slide+2"></div>
+<div><img src="http://placehold.it/300?text=Slide+3"></div>
+{{/slick-carousel}}
+</div>
+</div>
+<div class="row">
+  <div class="col s12 m6">
+<p>{{md-switch checked=model.accessibility onLabel="Accessibility" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.adaptiveHeight onLabel="Adaptive Height" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.autoplay onLabel="Autoplay" offLabel="Disabled"}}</p>
+
+<p>{{md-input value=model.autoplaySpeed label='Autoplay Speed' type="number"}}</p>
+
+<p>{{md-switch checked=model.arrows onLabel="Arrows" offLabel="Disabled"}}</p>
+
+<p>{{md-input value=model.asNavFor label='As Nav For'}}</p>
+
+<p>{{md-input value=model.appendArrows label='Append Arrows'}}</p>
+
+<p>{{md-input value=model.prevArrow label='Prev Arrow'}}</p>
+
+<p>{{md-input value=model.nextArrow label='Next Arrow'}}</p>
+
+<p>{{md-switch checked=model.centerMode onLabel="Center Mode" offLabel="Disabled"}}</p>
+
+<p>{{md-input value=model.centerPadding label='Center Padding'}}</p>
+
+<p>{{md-input value=model.cssEase label='CSS Ease'}}</p>
+
+<p>{{md-switch checked=model.dots onLabel="Dots" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.draggable onLabel="Draggable" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.fade onLabel="Fade" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.draggable onLabel="Draggable" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.focusOnSelect onLabel="Focus on Select" offLabel="Disabled"}}</p>
+
+<p>{{md-input value=model.easing label='Easing'}}</p>
+
+<p>{{md-input value=model.edgeFriction label='Edge Friction' type="number"}}</p>
+
+<p>{{md-switch checked=model.infinite onLabel="Infinite" offLabel="Disabled"}}</p>
+
+<p>{{md-input value=model.initialSlide label='Initial Slide' type="number"}}</p>
+
+<p>{{md-input value=model.lazyLoad label='Lazy Load'}}</p>
+
+<p>{{md-switch checked=model.mobileFirst onLabel="Mobile First" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.pauseOnHover onLabel="Pause on Hover" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.pauseOnDotsHover onLabel="Pause on Dots Hover" offLabel="Disabled"}}</p>
+
+<p>{{md-input value=model.respondTo label='Respond To'}}</p>
+
+<p>{{md-input value=model.rows label='Rows' type="number"}}</p>
+
+<p>{{md-input value=model.slide label='Slide'}}</p>
+
+<p>{{md-input value=model.slidesPerRow label='Slides per Row' type="number"}}</p>
+
+<p>{{md-input value=model.slidesToShow label='Slides to Show' type="number"}}</p>
+
+<p>{{md-input value=model.slidesToScroll label='Slides to Scroll' type="number"}}</p>
+
+<p>{{md-input value=model.speed label='Speed' type="number"}}</p>
+
+<p>{{md-switch checked=model.swipe onLabel="Swipe" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.swipeToSlide onLabel="Swipe to Slide" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.touchMove onLabel="Touch Move" offLabel="Disabled"}}</p>
+
+<p>{{md-input value=model.touchThreshold label='Touch Threshold' type="number"}}</p>
+
+<p>{{md-switch checked=model.useCss onLabel="Use CSS Transitions" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.variableWidth onLabel="Variable Width" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.vertical onLabel="Vertical" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.verticalSwiping onLabel="Vertical Swiping" offLabel="Disabled"}}</p>
+
+<p>{{md-switch checked=model.rtl onLabel="Right-to-Left" offLabel="Disabled"}}</p>
+<br/>
+{{md-btn text='Save'
+	action='save'
+	class='indigo darken-2'}}
+</div>
+</div>

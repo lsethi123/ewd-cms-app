@@ -1,0 +1,9 @@
+<h4>{{model.title}}</h4>
+{{#if model.slider}}
+{{#link-to 'pages.show.slider.edit' class="btn indigo darken-2"}}Edit Slider{{/link-to}}
+{{else}}
+{{#link-to 'pages.show.slider.new' class="btn indigo darken-2"}}Add Slider{{/link-to}}
+{{/if}}
+<br/>
+
+    {{outlet}}
