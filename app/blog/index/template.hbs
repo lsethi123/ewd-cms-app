@@ -1,0 +1,26 @@
+{{#if model}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Body</th>
+      <th>Published?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |post|}}
+        <tr>
+          <td>{{#link-to 'blog.posts.show' post}}{{post.title}}{{/link-to}}</td>
+          <td>{{post.subtitle}}</td>
+          <td>{{post.body}}</td>
+          <td>{{#if post.published}}{{md-btn text='Unpublish' class='indigo darken-2' action='unpublish' actionArg=post}}{{else}}{{md-btn text='Publish' class='indigo darken-2' action='publish' actionArg=post}}{{/if}}</td>
+          <td>{{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=post}}{{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=post}}</td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+No posts. Start by adding the one.
+{{/if}}
