@@ -14,7 +14,7 @@
 
 <ul class="collection with-header">
    <li class="collection-header"><h4>Opportunities</h4></li>
-   {{#each model as |opportunity|}}
+   {{#each opportunities as |opportunity|}}
      <!-- {{#link-to 'crm.companies.show.opportunities.show' task class="collection-item"}} -->
      {{opportunity.title}}
      {{opportunity.stage}}
@@ -27,7 +27,7 @@
 
 <ul class="collection with-header">
    <li class="collection-header"><h4>Tasks</h4></li>
-   {{#each model as |task|}}
+   {{#each tasks as |task|}}
      <!-- {{#link-to 'crm.companies.show.tasks.show' task class="collection-item"}} -->
     <div class="collection-item">
      {{task.name}}
