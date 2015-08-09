@@ -1,13 +1,40 @@
-<br>
-  {{#link-to 'blog.posts' class="white-text"}}
-  {{md-btn text='Posts'
-  	class='indigo darken-2'}}
-  {{/link-to}}
 
-  {{#link-to 'blog.posts.new' class="white-text"}}
-  {{md-btn text='Add Post'
-  	class='indigo darken-2'}}
-  {{/link-to}}
+  <div class="blog-index-banner-header">
+    <div class="user-profile-banner-footer">
+      <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
+      <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+      <img class="user-icon center clip-polygon" src="assets/images/Sarrah.jpg"/>
+      <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+      <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+    </div>
+  </div>
+  <hr>
+  <div class="col s6 offset-s3">
+    {{#md-tabs selected=basicTabsSelection}}
+      {{#link-to 'blog.index' class="blog-nav"}}{{md-tab color="indigo" value='a' class="s4" title="Index"}}{{/link-to}}
+      {{#link-to 'blog.hopper' class="blog-nav"}}{{md-tab value='b' class="s4" title="Hopper"}}{{/link-to}}
+      {{#link-to 'blog.posts' class="blog-nav"}}{{md-tab value='c' class="s4" title="Published"}}{{/link-to}}
+    {{/md-tabs}}
+  </div>
+
+  {{outlet}}
 
 
-{{outlet}}
+
+
+
+
+  <!-- <h3 class="center">Main</h3> -->
+  <!-- <div class=flexbox-container>
+    <div class="user-icon"><i class="mdi-hardware-keyboard-voice"></i></div>
+    <p>
+      <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+      <label for="filled-in-box">Filled in</label>
+    </p>
+  </div> -->
+  <!-- <nav class="center">
+    <h6>Right Item</h6>
+  </nav> -->
+  <!-- <li class="list-group-item"><h6 class="center">Un-Published</h6></li>
+  <li class="list-group-item"><h6 class="center">Published</h6></li> -->
+  <!-- <footer><h6 class="center white-text footer-text">Footer</h6></footer> -->

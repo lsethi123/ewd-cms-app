@@ -1,0 +1,148 @@
+
+.blog-index-banner-header {
+  display:flex;
+  width: 100%;
+  height:150px;
+  flex-direction: column;
+  align-items: center;
+  // background: url('http://placehold.it/1800x350') no-repeat center;
+}
+
+  /* User Profile Image + User Name */
+  img.user-icon {
+      max-width:100px;
+      height:auto;
+  }
+  .user-item-blog-title {
+    .center {
+      padding-top:20px;
+    }
+  }
+  /* css-mask for hexagon */
+  .clip-polygon {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  /* Sortable User Icons */
+  .blog-index-banner-footer {
+    width:100%;
+    min-height:15vh;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background:white;
+  }
+
+
+.published-container {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 100%;
+  min-height:270px;
+  background:indigo;
+  .wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap:wrap;
+  }
+  .published-item {
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+    background:white;
+  }
+}
+
+// vertical top
+.published-container {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 100%;
+  min-height:270px;
+  background:indigo;
+  .wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap:wrap;
+  }
+  .published-item {
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+    background:white;
+  }
+}
+
+.column {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  float: left;
+}
+.hopper-container {
+  padding: 0;
+  margin: 5px;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  .wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap:wrap;
+  }
+  .hopper-item {
+    width:300px;
+    height: 250px;
+    margin: 5px;
+    background:indigo;
+  }
+  .hopper-stage-banner {
+    width:100%;
+    height:75px;
+  }
+}
+
+.blog-dashboard {
+  height:200px;
+}
+
+
+.hopper-container-vertical {
+  padding: 0;
+  margin: 5px;
+  min-width:18.5vw;
+  list-style: none;
+  -ms-box-orient: vertical;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  .wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap:wrap;
+  }
+  .hopper-item-vertical {
+    width:300px;
+    height: 250px;
+    margin: 5px;
+    background:indigo;
+  }
+}

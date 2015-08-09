@@ -1,0 +1,43 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+aside  {
+  flex: 0 0 18rem;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+
+aside {
+  order: 0;
+  width: 300px;
+}
+
+main {
+  order:1;
+}
+
+.footer-text {
+  padding: 20px 0;
+  font-size:150%;
+}
+
+.list-group-item {
+  padding:10px 15px;
+  margin-bottom: -1px;
+  border: 1px solid #ddd;
+}
+
+
+// header, footer, aside  {
+//   background:red;
+// }
+// .layout-hf-holy-grail {
+//
+// }

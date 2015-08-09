@@ -1,33 +1,47 @@
 {{#if isEditing}}
-{{#md-modal close='cancel' class="test-modal"}}
-{{#if sendingData}}
-<div class="modal-content">
-<div class="col s10">
-  {{md-loader}}
-</div>
-</div>
+  {{#md-modal close='cancel' class="test-modal"}}
+    {{#if sendingData}}
+      <div class="modal-content">
+      <div class="col s10">
+        {{md-loader}}
+      </div>
+      </div>
+    {{else}}
+      <div class="modal-content">
+        {{input type="text" value=model.title placeholder="Post title"}}
+        {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
+        {{textarea type="text" value=model.body placeholder="Post body..."}}
+        <input type='file' id='file-field' /> Upload an image
+        {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
+      </div>
+      <div class="modal-footer">
+          <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'save'}}>
+              Save!
+          </a>
+          <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+              Cancel
+          </a>
+      </div>
+    {{/if}}
+  {{/md-modal}}
 {{else}}
-<div class="modal-content">
-  {{input type="text" value=model.title placeholder="Post title"}}
-  {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
-  {{textarea type="text" value=model.body placeholder="Post body..."}}
-  <input type='file' id='file-field' /> Upload an image
-  {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
-</div>
-<div class="modal-footer">
-    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'save'}}>
-        Save!
-    </a>
-    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
-        Cancel
-    </a>
-</div>
-{{/if}}
-{{/md-modal}}
-{{else}}
-<h4>{{model.title}}</h4>
-<strong>Subtitle:</strong> {{model.subtitle}}<br/>
-<p>{{model.body}}</p><br/>
-{{#if post.published}}{{md-btn text='Unpublish' class='indigo darken-2' action='unpublish' actionArg=post}}{{else}}{{md-btn text='Publish' class='indigo darken-2' action='publish' actionArg=post}}{{/if}} 
-{{md-btn text='Edit' class='indigo darken-2' action='edit'}}
+  <div class="blog-post-banner-header one-edge-shadow">
+    <div class="container">
+      <h3 class="center white-text">{{model.title}}</h3>
+      <h5 class="center white-text">{{model.subtitle}}</h5>
+    </div>
+  </div>
+  <div class="blog-post-body">
+    <p class="blog-post-body-text">{{model.body}}</p><br/>
+    <div class="blog-post-banner-footer">
+      {{#if post.published}}
+        {{md-btn text='Unpublish' class='indigo darken-2' action='unpublish' actionArg=post}}
+      {{else}}
+        {{md-btn text='Publish' class='indigo darken-2' action='publish' actionArg=post}}
+      {{/if}}
+      {{md-btn text='Edit' class='indigo darken-2' action='edit'}}
+      <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
+      <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div>
+      </div>
+  </div>
 {{/if}}

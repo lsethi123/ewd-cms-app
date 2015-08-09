@@ -1,7 +1,24 @@
 <h2>Dashboard</h2>
 {{#if session.isAuthenticated}}
+
+{{#md-card-panel class="teal"
+    bodyClass="white-text"
+    id="card-panel"}}
+        I am a very simple card.
+        I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.
+        I am similar to what is called a panel in other frameworks.
+{{/md-card-panel}}
+
+
+
+
 Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
 <button class="button primary" {{action 'invalidateSession'}}>Log out</button>
+
+
+
+
 {{else}}
 You're currently not logged in. Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
 {{/if}}

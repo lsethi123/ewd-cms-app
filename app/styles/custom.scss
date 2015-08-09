@@ -1,4 +1,4 @@
-.flexbox-container {
+.flexbox-container-login {
   display: -ms-flexbox;
 	display: -webkit-flex;
   display:flex;
@@ -10,6 +10,21 @@
 	align-items: center;
   justify-content:center;
 }
+.flexbox-container {
+  display: -ms-flexbox;
+	display: -webkit-flex;
+  display:flex;
+  min-height:100vh;
+
+  // -ms-flex-align: center;
+	// -webkit-box-align: center;
+  // -webkit-align-items: center;
+	// align-items: center;
+
+  // justify-content:center;
+}
+
+
 .login-form {
   padding:0 20px;
   height:400px;

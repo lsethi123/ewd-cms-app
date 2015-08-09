@@ -1,1 +1,23 @@
-{{outlet}}
+<div class="layout-hf-holy-grail">
+  <div class="body">
+    <main>
+      {{outlet}}
+    </main>
+    <aside>
+      <ul>
+        <li class="center">
+          {{#link-to 'blog.posts' class="white-text"}}{{md-btn text='Posts' class='indigo darken-2'}}{{/link-to}}
+          {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
+        </li><br>
+        {{#each model as |post|}}
+          {{#link-to 'blog.posts.show' post}}
+            <div class="list-group-item">
+            <h5 class="o-hidden"><strong>{{post.title}}</strong></h5>
+            <p class="o-hidden">{{post.subtitle}}</p>
+            </div>
+          {{/link-to}}
+        {{/each}}
+      </ul>
+    </aside>
+  </div>
+</div>

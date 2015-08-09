@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
       post.save().then((post) => {
         this.set('sendingData', false);
         this.set('isEditing', false);
-        this.transitionToRoute('blogs.posts.index');
+        this.transitionToRoute('blogs.posts.show');
       }, (error) => {
         this.set('sendingData', false);
         this.set('isEditing', false);
@@ -35,13 +35,12 @@ export default Ember.Controller.extend({
 
     publish: function(post) {
       post.set('published', true).save().then((post) => {
-
       });
     },
 
     delete: function(post) {
       post.destroyRecord().then((response) => {
-        this.transitionToRoute('blog.posts.index');
+        this.transitionToRoute('blog.posts.show');
       });
     },
 

@@ -1,9 +1,20 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
-@import 'todos';
-@import 'pages';
 
-/* New Additions */
+// FX
+@import 'fx/box-shadow';
+
+// Layout Types
+@import "layouts/types/holy-grail";
+@import "layouts/types/sticky-footer";
+
+
+// Pages
+@import 'layouts/todos/todos';
+@import 'layouts/pages/carousel';
+@import "layouts/users/user-profile";
+@import "layouts/blog/left-nav-blog";
+@import "layouts/blog/post";
+@import "layouts/blog/index";
+
 @import 'custom';
-@import 'user-profile';
-@import 'box-shadow';

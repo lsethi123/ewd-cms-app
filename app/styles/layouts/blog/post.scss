@@ -1,0 +1,79 @@
+
+/* User Profile Header */
+.blog-post-banner-header {
+  display:flex;
+  width: 100%;
+  min-height:35vh;
+  flex-direction: column;
+  align-items: center;
+  background: url('http://placehold.it/1800x350') no-repeat center;
+}
+
+  /* User Profile Image + User Name */
+  .user-item {
+    padding:30px 0;
+  }
+  /* css-mask for hexagon */
+  .hex {
+
+  }
+  .clip-polygon {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  /* Sortable User Icons */
+  .blog-post-banner-footer {
+    width:100%;
+    min-height:15vh;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background:white;
+  }
+  .user-icon {
+    font-size:400%;
+    flex: wrap;
+  }
+
+  .blog-nav {
+    flex:wrap;
+  }
+
+  .indigo-color {
+    color:indigo;
+  }
+  .deep-purple-color {
+    color: deep-purple;
+  }
+
+/* Content below */
+
+.blog-post-body {
+  width:100%;
+  min-height:35vh;
+}
+h5.o-hidden {
+    max-height:55px;
+    overflow:hidden;
+}
+
+p.blog-post-body-text {
+  padding: 40px;
+  font-size:140%;
+}
+h3.center {
+  margin-top:10%;
+}
+
+.tabs .tab a {
+  color: indigo;
+  &:hover {
+    color: darken(indigo, 6);
+  }
+}
+.tabs .indicator {
+  // background-color: indigo!important;
+  display:none;
+  width: 20%;
+}

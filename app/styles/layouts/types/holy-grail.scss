@@ -1,0 +1,39 @@
+header, footer, nav {
+  background:red;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+aside, nav {
+  flex: 0 0 8rem;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+
+aside {
+  order: 0;
+}
+
+main {
+  order:1;
+}
+
+nav {
+  order:2;
+}
+
+.layout-hf-holy-grail {
+
+}
+
+.header-text, .footer-text {
+  padding: 20px 0;
+  font-size:150%;
+}
