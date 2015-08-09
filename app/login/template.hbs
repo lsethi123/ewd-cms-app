@@ -1,12 +1,18 @@
 <div class="flexbox-container">
-    <form {{action 'logIn' on="submit"}} class="create-form login-form shadow1">
-      <h1>Login</h1>
-      {{input class="m-top-20" type="email" value=identification placeholder="Email"}}
-      {{input type="password" value=password placeholder="Password"}}
-      <button type="submit" class="button primary-inverse">Log in</button> or
-      <button class="button primary-inverse" {{action 'signUp'}}>Sign up</button>
-    </form>
+  <div class="login-form indigo hoverable">
+      <form {{action 'logIn' on="submit"}}>
+        <h3 class="white-text center">Login</h3>
+        {{input type="email" value=identification placeholder="Email"}}
+        {{input type="password" value=password placeholder="Password"}}
+        <div class="v-pad-20"></div>
+        <button type="submit" class="btn-large">Log in</button>
+        <!-- <button {{action 'signUp'}}>Sign up</button> -->
+        <br><br>
+        <span>Don't have an account? {{#link-to 'signup'}} Signup{{/link-to}}</span>
+      </form>
+  </div>
 </div>
+
 <!--
 <div class="flexbox-container">
   <form id="user-form" class="create-form signup-form shadow1" {{action 'signUp' on="submit"}}>

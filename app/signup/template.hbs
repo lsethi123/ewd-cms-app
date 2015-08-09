@@ -1,11 +1,13 @@
 <div class="flexbox-container">
-  <form id="user-form" class="create-form signup-form shadow1" {{action 'signUp' on="submit"}}>
-    <h1>Sign Up</h1>
-    {{input class="m-top-20" type="text" value=model.firstName placeholder="First name"}}
-    {{input type="text" value=model.lastName placeholder="Last name"}}
-    {{input type="email" value=model.email placeholder="Email"}}
-    {{input type="password" value=model.password placeholder="Password"}}
-    <button class="button primary-inverse" type="submit">Sign up</button>
-    Already have an account? {{#link-to 'login'}}Login{{/link-to}}.
-  </form>
+  <div class="register-form indigo hoverable">
+    <form {{action 'signUp' on="submit"}}>
+      <h3 class="white-text center">Sign Up</h3>
+      {{input type="text" value=model.firstName placeholder="First name"}}
+      {{input type="text" value=model.lastName placeholder="Last name"}}
+      {{input type="email" value=model.email placeholder="Email"}}
+      {{input type="password" value=model.password placeholder="Password"}}
+      <button class="btn-large" type="submit">Sign up</button>
+      <span class="align-right">Already have an account? {{#link-to 'login'}}Login{{/link-to}}.</span>
+    </form>
+  </div>
 </div>
