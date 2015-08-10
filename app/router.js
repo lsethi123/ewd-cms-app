@@ -36,6 +36,8 @@ Router.map(function() {
         });
       });
     });
+    this.route('craigslist');
+    this.route('forecast');
   });
   this.route('login');
   this.route('signup');

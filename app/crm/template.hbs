@@ -1,12 +1,11 @@
 <br>
 <div class="row">
   <div class="flex-container-column col l1">
-    <i class="flex-item fa fa-contao"></i>
-    <i class="flex-item mdi-communication-business medium"></i>
-    <i class="flex-item mdi-communication-phone medium"></i>
-    <i class="flex-item mdi-social-group medium"></i>
-    <i class="flex-item mdi-action-event medium"></i>
-    <i class="flex-item mdi-action-assignment medium"></i>
+    {{#link-to 'crm.craigslist.index' class="flex-item"}}<i class="flex-item fa fa-contao"></i>{{/link-to}}
+    {{#link-to 'crm.companies.index' class="flex-item"}}<i class="mdi-communication-business medium"></i>{{/link-to}}
+    {{#link-to 'crm.craigslist.index' class="flex-item"}}<i class="flex-item mdi-communication-phone medium"></i>{{/link-to}}
+    {{#link-to 'crm.companies.index' class="flex-item"}}<i class="flex-item mdi-social-group medium"></i>{{/link-to}}
+    {{#link-to 'crm.forecast.index' class="flex-item"}}<i class="flex-item mdi-action-event medium"></i>{{/link-to}}
   </div>
   <div class="col l8">
     {{outlet}}
