@@ -1,5 +1,7 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
+@import "bower_components/font-awesome/scss/font-awesome";
+@import "pod-styles";
 
 // FX
 @import 'fx/box-shadow';
@@ -16,6 +18,7 @@
 @import "layouts/blog/left-nav-blog";
 @import "layouts/blog/post";
 @import "layouts/blog/index";
+@import "layouts/crm/index";
 @import "responsive";
 @import "flexbox";
-@import 'custom';
+@import "custom";
