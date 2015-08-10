@@ -3,7 +3,7 @@
   margin-bottom: 10px;
   cursor: pointer;
   height: auto;
-  min-height: 150px;
+  min-height: 90px;
   &:hover {
     cursor: pointer;
   }
@@ -17,7 +17,7 @@
 .board-item {
   padding: 10px;
   margin: 0 20px;
-  min-height: 300px;
+  min-height: 250px;
   height: auto;
 
   .board-title {
@@ -34,6 +34,10 @@
   }
 
   .modal-action {
-    display: block;
+    display: inline;
   }
+}
+
+.btn-floating.btn-large {
+  margin-right: 1rem;
 }
