@@ -1,0 +1,23 @@
+& {
+  border: solid 1px grey;
+  min-height:200px;
+  margin-bottom:10px;
+  header {
+    padding:0;
+  }
+  main {
+    height:350px;
+    background:white;
+  }
+  h5 {
+    text-align:center;
+    margin:0;
+    padding:10px;
+  }
+  .white-text-color {
+    color:white;
+  }
+  .card-panel {
+    margin: 0;
+  }
+}

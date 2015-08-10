@@ -1,4 +1,34 @@
 {{#if session.isAuthenticated}}
+<br>
+<div class="dashboard-container">
+  <article class="box1">
+    {{#dash-dash}}
+      Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
+      <button class="button primary" {{action 'invalidateSession'}}>Log out</button>
+    {{/dash-dash}}
+    {{dash-news-feed}}
+    {{dash-forecast}}
+  </article>
+  <aside class="box2">
+    {{dash-events}}
+    {{dash-support}}
+  </aside>
+  <aside class="box3">
+    {{dash-craigslist}}
+    {{dash-sales-manager}}
+    {{dash-sales-employee}}
+  </aside>
+</div>
+
+{{else}}
+You're currently not logged in. Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
+{{/if}}
+{{liquid-outlet}}
+
+
+
+
+
 <!-- <body class="HolyGrail">
   <header>h</header>
   <div class="HolyGrail-body">
@@ -9,7 +39,7 @@
   <footer>Footer</footer>
 </body> -->
 
-<header><h6 class="center white-text header-text">Header</h6></header>
+<!-- <header><h6 class="center white-text header-text">Header</h6></header>
   <div class="body">
     <main>
       <div class="icon-item container wrap"></div>
@@ -55,15 +85,4 @@
 {{/md-card-panel}}
 
 
-
-
-Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
-<button class="button primary" {{action 'invalidateSession'}}>Log out</button>
  -->
-
-
-
-{{else}}
-You're currently not logged in. Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
-{{/if}}
-{{liquid-outlet}}
