@@ -1,14 +1,44 @@
+{{#if isShowingImagesForm}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+    {{#if sendingData}}
+    <div class="modal-content">
+    <div class="col s10">
+      {{md-loader}}
+    </div>
+    </div>
+    {{else}}
+        <div class="modal-content">
+          <strong>Tip:</strong> Use the Control or the Shift key to select multiple files.
+            <p class="file-input-field"><input type='file' multiple id='file-field'/> Upload an image</p>
+          <div class="file-list">
+
+          </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'uploadImages'}}>
+                Done!
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                Cancel
+            </a>
+        </div>
+        {{/if}}
+    {{/md-modal}}
+{{/if}}
 <div class="row">
   <div class="col s12 m6">
-{{#slick-carousel class="carousel-preview" accessibility=model.accessibility adaptiveHeight=model.adaptiveHeight autoplay=model.autoplay autoplaySpeed=model.autoplaySpeed arrows=model.arrows asNavFor=model.asNavFor appendArrows=model.appendArrows prevArrow=model.prevArrow nextArrow=model.nextArrow centerMode=model.centerMode centerPadding=model.centerPadding cssEase=model.cssEase dots=model.dots draggable=model.draggable fade=model.fade focusOnSelect=model.focusOnSelect easing=model.easing edgeFriction=model.edgeFriction infinite=model.infinite initialSlide=model.initialSlide lazyLoad=model.lazyLoad mobileFirst=model.mobileFirst pauseOnHover=model.pauseOnHover pauseOnDotsHover=model.pauseOnDotsHover rows=model.rows slide=model.slide slidesPerRow=model.slidesPerRow slidesToShow=model.slidesToShow slidesToScroll=model.slidesToScroll speed=model.speed swipe=model.swipe swipeToSlide=model.swipeToSlide touchMove=model.touchMove touchThreshold=model.touchThreshold useCss=model.useCss variableWidth=model.variableWidth vertical=model.vertical verticalSwiping=model.verticalSwiping rtl=model.rtl}}
-<div><img src="http://placehold.it/300?text=Slide+1"></div>
-<div><img src="http://placehold.it/300?text=Slide+2"></div>
-<div><img src="http://placehold.it/300?text=Slide+3"></div>
+{{#slick-carousel class="carousel-preview" accessibility=model.accessibility adaptiveHeight=model.adaptiveHeight autoplay=model.autoplay autoplaySpeed=model.autoplaySpeed arrows=model.arrows asNavFor=model.asNavFor appendArrows=model.appendArrows prevArrow=model.prevArrow nextArrow=model.nextArrow centerMode=model.centerMode centerPadding=model.centerPadding cssEase=model.cssEase dots=model.dots draggable=model.draggable fade=model.fade focusOnSelect=model.focusOnSelect easing=model.easing edgeFriction=model.edgeFriction infinite=model.infinite initialSlide=model.initialSlide lazyLoad=model.lazyLoad mobileFirst=model.mobileFirst pauseOnHover=model.pauseOnHover pauseOnDotsHover=model.pauseOnDotsHover rows=model.rows slidesPerRow=model.slidesPerRow slidesToShow=model.slidesToShow slidesToScroll=model.slidesToScroll speed=model.speed swipe=model.swipe swipeToSlide=model.swipeToSlide touchMove=model.touchMove touchThreshold=model.touchThreshold useCss=model.useCss variableWidth=model.variableWidth vertical=model.vertical verticalSwiping=model.verticalSwiping rtl=model.rtl}}
+{{#each model.images as |image|}}
+<img src={{image.imgUrl}}>
+{{/each}}
 {{/slick-carousel}}
 </div>
 </div>
 <div class="row">
   <div class="col s12 m6">
+    {{md-btn text='Add Images'
+    	action='openImagesForm'
+    	class='indigo darken-2'}}
 <p>{{md-switch checked=model.accessibility onLabel="Accessibility" offLabel="Disabled"}}</p>
 
 <p>{{md-switch checked=model.adaptiveHeight onLabel="Adaptive Height" offLabel="Disabled"}}</p>
