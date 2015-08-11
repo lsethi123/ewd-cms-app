@@ -9,5 +9,5 @@ export default DS.Model.extend({
     return "http://api.ewebdesign.co" + this.get('image');
   }),
   published: DS.attr('boolean'),
-  tags: DS.hasMany('tag')
+  tags: DS.hasMany('tag', { async: true } )
 });
