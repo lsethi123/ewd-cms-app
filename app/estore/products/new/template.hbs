@@ -11,8 +11,16 @@
   {{md-input type="text" value=model.title label="Product title"}}
   {{md-textarea type="text" value=model.description label="Product description"}}
   {{md-input type="text" value=model.price label="Product price"}}
-  <input type='file' id='file-field'/> Upload an image
+  <input type='file' id='file-field' multiple /> Upload an image
   {{md-switch checked=model.inStock onLabel="In Stock" offLabel="Out of Stock"}}<br>
+  Categories:
+  {{ember-chosen
+    content=categories
+    optionLabelPath="name"
+    optionValuePath="id"
+    placeholder="Select product categories"
+    multiple=true
+    value=selectedCategories}}
 </div>
   <div class="modal-footer">
       <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
