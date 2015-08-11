@@ -1,0 +1,12 @@
+&{
+  .InputAddOn {
+    display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.5em;
+  }
+}
+.InputAddOn-item:first-child {
+    border-radius: 2px 0 0 2px;
+}

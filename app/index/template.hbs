@@ -1,5 +1,79 @@
-<h2>Dashboard</h2>
 {{#if session.isAuthenticated}}
+<br>
+<div class="dashboard-container">
+  <article class="box1">
+    {{#dash-dash}}
+      Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
+      <button class="button primary" {{action 'invalidateSession'}}>Log out</button>
+    {{/dash-dash}}
+    {{dash-news-feed}}
+    {{dash-forecast}}
+  </article>
+  <aside class="box2">
+    {{dash-events}}
+    {{dash-support}}
+  </aside>
+  <aside class="box3">
+    {{dash-craigslist}}
+    {{dash-sales-manager}}
+    {{dash-sales-employee}}
+  </aside>
+</div>
+
+{{else}}
+You're currently not logged in. Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
+{{/if}}
+{{liquid-outlet}}
+
+
+
+
+
+<!-- <body class="HolyGrail">
+  <header>h</header>
+  <div class="HolyGrail-body">
+    <main class="HolyGrail-content">Content</main>
+    <nav class="HolyGrail-nav">Nav</nav>
+    <aside class="HolyGrail-ads">Side</aside>
+  </div>
+  <footer>Footer</footer>
+</body> -->
+
+<!-- <header><h6 class="center white-text header-text">Header</h6></header>
+  <div class="body">
+    <main>
+      <div class="icon-item container wrap"></div>
+    </main>
+    <nav class="center">
+      <h6>Right Item</h6>
+    </nav>
+    <aside class="indigo-bg">
+      <h6 class="center white-text">Left</h6>
+      <h6 class="center white-text">Left Item</h6>
+      <h6 class="center white-text">Left Item</h6>
+      <h6 class="center white-text">Left Item</h6>
+      <h6 class="center white-text">Left Item</h6>
+      <h6 class="center white-text">Left Item</h6>
+      <h6 class="center white-text">Left Item</h6>
+      <h6 class="center white-text">Left Item</h6>
+      <h6 class="center white-text">Left Item</h6>
+    </aside>
+  </div>
+<footer><h6 class="center white-text footer-text">Footer</h6></footer>
+
+
+<div class="Grid Grid--gutters Grid--full large-Grid--fit u-textCenter">
+  <div class="Grid-cell">
+    <div class="demo">Yo</div>
+  </div>
+  <div class="Grid-cell">
+    <div class="demo">Hey</div>
+  </div>
+  <div class="Grid-cell">
+    <div class="demo">Stuff</div>
+  </div>
+</div>
+
 
 {{#md-card-panel class="teal"
     bodyClass="white-text"
@@ -11,15 +85,4 @@
 {{/md-card-panel}}
 
 
-
-
-Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
-<button class="button primary" {{action 'invalidateSession'}}>Log out</button>
-
-
-
-
-{{else}}
-You're currently not logged in. Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
-{{/if}}
-{{liquid-outlet}}
+ -->

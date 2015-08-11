@@ -1,42 +1,75 @@
-<ul class="collection with-header">
-   <li class="collection-header"><h4>Companies</h4></li>
-   {{#each model as |company|}}
-     {{#link-to 'crm.companies.show' company class="collection-item"}}
-       {{company.name}}
-       {{company.address}}
-       {{company.city}}
-       {{company.state}}
-       {{company.phone}}
-       {{company.email}}
-     {{/link-to}}
-   {{/each}}
-</ul>
+<div class="crm-hero">
+  <div class="row">
+    <div class="col s12">
+      <p class="hero-text left-align">
+      Welcome {{user.fullName}}Ryan Brady,<br>
+      You Have {{!user.events.today}} 2 Events today.<br>
+      {{md-btn text='View Calendar' action='debug' class='btn-flat purple darken-4 white-text'}}</p>
+      <p class="left-align">{{!user.events.demo}}1 Demo
+      1 Quote Review{{!other event/or KPI data thats relavent to the day}}
+      <span class="3x">20</span> New Tasks.
+      <span class="3x">10</span> New Leads.
+      </p>
+    </div>
+  </div>
 
-<ul class="collection with-header">
-   <li class="collection-header"><h4>Opportunities</h4></li>
-   {{#each opportunities as |opportunity|}}
-     <!-- {{#link-to 'crm.companies.show.opportunities.show' task class="collection-item"}} -->
+  <div class="row">
+    <div class="col s12">
+      {{crm-news-feed}}
+    </div>
+  </div>
+
+      <!-- <header>
+        <h5 class="white-text-color purple darken-4">Todays Tasks</h5>
+      </header>
+      <main>
+        {{#md-card-panel class="purple darken white-text" id="card-panel"}}
+          {{#each tasks as |task|}}
+           <div class="collection-item">
+            {{task.name}}
+            {{task.description}}
+            {{task.dueDate}}
+            {{task.employee.fullName}}
+            {{task.user.fullName}}
+            {{task.company.name}}
+           </div>
+          {{/each}}
+        {{/md-card-panel}}
+      </main> -->
+  <div class="row">
+    <div class="col s12">
+      {{crm-tasks-index}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      {{#crm-companies-index}}
+        <header>
+          <h5 class="white-text-color purple darken-4">Companies</h5>
+        </header>
+        <main>
+          {{#each model as |company|}}
+            <div id="card-panel" class="purple darken white-text ember-view card-panel">
+              {{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}
+              {{company.address}}
+              {{company.city}}
+              {{company.state}}
+              {{company.phone}}
+              {{company.email}}
+            </div>
+          {{/each}}
+        </main>
+      {{/crm-companies-index}}
+    </div>
+  </div>
+</div>
+
+   <!-- {{#each opportunities as |opportunity|}}
+     {{#link-to 'crm.companies.show.opportunities.show' task class="collection-item"}}
      {{opportunity.title}}
      {{opportunity.stage}}
      {{opportunity.estimatedClose}}
      {{opportunity.estimatedAmount}}
      {{opportunity.company.name}}
-     <!-- {{/link-to}} -->
-   {{/each}}
-</ul>
-
-<ul class="collection with-header">
-   <li class="collection-header"><h4>Tasks</h4></li>
-   {{#each tasks as |task|}}
-     <!-- {{#link-to 'crm.companies.show.tasks.show' task class="collection-item"}} -->
-    <div class="collection-item">
-     {{task.name}}
-     {{task.description}}
-     {{task.dueDate}}
-     {{task.employee.fullName}}
-     {{task.user.fullName}}
-     {{task.company.name}}
-    </div>
-     <!-- {{/link-to}} -->
-   {{/each}}
-</ul>
+     {{/link-to}}
+   {{/each}} -->
