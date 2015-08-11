@@ -45,6 +45,9 @@ Router.map(function() {
     this.route('products', function() {
       this.route('new');
       this.route('show', { path: ':product_id' } );
+      this.route('categories', function() {
+        this.route('new');
+      });
     });
     this.route('orders', function() {
       this.route('show', { path: ':order_id' } );
