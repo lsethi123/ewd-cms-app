@@ -9,5 +9,6 @@ export default DS.Model.extend({
   imageUrl: Ember.computed('image', function() {
     return "http://api.ewebdesign.co" + this.get('image');
   }),
-  inStock: DS.attr('boolean')
+  inStock: DS.attr('boolean'),
+  categories: DS.hasMany('category', { async: true } )
 });
