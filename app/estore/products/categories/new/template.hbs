@@ -1,0 +1,9 @@
+<form id="category-form" class="create-form" {{action 'add' on="submit"}}>
+  {{md-input type="text" value=model.name label="Name"}}
+  {{md-btn text='Add Category'
+	action='add'
+	class='indigo darken-2'}}
+  {{md-btn text='Cancel'
+	action='cancel'
+	class='indigo darken-2'}}
+</form>
