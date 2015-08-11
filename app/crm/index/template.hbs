@@ -4,7 +4,7 @@
       <p class="hero-text left-align">
       Welcome {{user.fullName}}Ryan Brady,<br>
       You Have {{!user.events.today}} 2 Events today.<br>
-      {{md-btn text='View Calendar' action='debug' class='btn-flat purple darken-4 white-text'}}</p>
+      {{md-btn text='View Calendar' action='debug' class='btn-flat cyan darken-4 white-text'}}</p>
       <p class="left-align">{{!user.events.demo}}1 Demo
       1 Quote Review{{!other event/or KPI data thats relavent to the day}}
       <span class="3x">20</span> New Tasks.
@@ -20,10 +20,10 @@
   </div>
 
       <!-- <header>
-        <h5 class="white-text-color purple darken-4">Todays Tasks</h5>
+        <h5 class="white-text-color cyan darken-4">Todays Tasks</h5>
       </header>
       <main>
-        {{#md-card-panel class="purple darken white-text" id="card-panel"}}
+        {{#md-card-panel class="cyan darken white-text" id="card-panel"}}
           {{#each tasks as |task|}}
            <div class="collection-item">
             {{task.name}}
@@ -45,11 +45,11 @@
     <div class="col s12">
       {{#crm-companies-index}}
         <header>
-          <h5 class="white-text-color purple darken-4">Companies</h5>
+          <h5 class="white-text-color cyan darken-4">Companies</h5>
         </header>
         <main>
           {{#each model as |company|}}
-            <div id="card-panel" class="purple darken white-text ember-view card-panel">
+            <div id="card-panel" class="cyan darken white-text ember-view card-panel">
               {{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}
               {{company.address}}
               {{company.city}}
