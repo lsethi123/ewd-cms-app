@@ -46,6 +46,6 @@ export default Ember.Controller.extend({
         }
       }
       this.set('isShowingImagesForm', false);
-      }
+    }
     }
 });
