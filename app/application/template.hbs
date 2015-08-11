@@ -29,6 +29,13 @@
 {{/md-navbar}}
 
 <div style="margin: 0 10px;">
+  <div class="flash-list">
+    {{#each flashMessages.queue as |flash|}}
+      <div class="flash-message z-depth-2">
+        {{flash-message flash=flash}}
+      </div>
+    {{/each}}
+  </div>
   {{liquid-outlet}}
 </div>
 {{md-modal-container}}
