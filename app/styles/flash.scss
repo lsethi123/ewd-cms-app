@@ -1,0 +1,52 @@
+.flash-list {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  bottom: 25px;
+  right: 25px;
+  z-index: 10;
+
+  .flash-message {
+    position: relative;
+    width: auto;
+    margin: 10px 0;
+    height: auto;
+    z-index: 11;
+
+    .alert-success {
+      padding: 10px;
+      background-color: #689f38;
+      border-color: #558b2f;
+      color: white;
+    }
+
+    .alert-warning {
+      padding: 10px;
+      background-color: #f57c00;
+      border-color: #ef6c00;
+      color: white;
+    }
+
+    .alert-info {
+      padding: 10px;
+      background-color: #40c4ff;
+      border-color: #00b0ff;
+      color: white;
+    }
+
+    .alert-danger {
+      padding: 10px;
+      background-color: #d32f2f;
+      border-color: #c62828;
+      color: white;
+    }
+
+  }
+
+
+
+}
+
+.success {
+
+}
