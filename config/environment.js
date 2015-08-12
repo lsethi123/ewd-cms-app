@@ -5,7 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'ewd-cms',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    rootURL: '/',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -50,6 +51,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.baseURL = '/';
+    ENV.rootURL = '/';
   }
 
   if (environment === 'test') {
@@ -65,7 +68,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/';
+    ENV.rootURL = '/';
   }
 
   return ENV;
