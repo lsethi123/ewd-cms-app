@@ -2,6 +2,7 @@ import ActiveModelAdapter from 'active-model-adapter';
 
 export default ActiveModelAdapter.extend({
   host: 'http://api.ewebdesign.co',
+  namespace: 'api',
   /* host: 'http://localhost:3000', */
   headers: {
     'Access-Control-Allow-Origin': '*',
