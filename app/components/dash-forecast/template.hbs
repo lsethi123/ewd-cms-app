@@ -1,6 +1,11 @@
 <header class="cyan darken-4"><h5 class="white-text-color">Dash Forecast</h5></header>
 <main>
-  <p>Stuff Goes Here</p>
+  {{#each opportunities as |opportunity|}}
+  {{#md-card-panel class="cyan darken-1"
+      bodyClass="white-text"}}
+      {{opportunity.title}}'s forecast: ${{opportunity.forecast}}
+  {{/md-card-panel}}
+  {{/each}}
 </main>
 
 {{yield}}
