@@ -6,8 +6,8 @@
       Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
       <button class="button primary" {{action 'invalidateSession'}}>Log out</button>
     {{/dash-dash}}
-    {{dash-news-feed}}
-    {{dash-forecast}}
+    {{dash-news-feed tasks=tasks todos=todos}}
+    {{dash-forecast opportunities=opportunities}}
   </article>
   <aside class="box2">
     {{dash-events}}
