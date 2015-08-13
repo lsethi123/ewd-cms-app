@@ -5,19 +5,22 @@ export default Ember.Controller.extend({
 
   actions: {
     add: function(event) {
-      this.get('occurences').pushObject(Ember.Object.extend({
+      this.store.createRecord('event', {
         title: event.get('title'),
         startsAt: event.get('startsAt'),
         endsAt: event.get('endsAt')
-      }));
+      }).save().then((event) => {
+        this.get('flashMessages').success('Event was created.');
+      });
     },
 
     update: function(event, properties) {
-      event.setProperties(properties);
+      event.setProperties(properties).save();
     },
 
     delete: function(event) {
-      this.get('occurences').removeObject(event);
+      event.destroyRecord();
+      return false;
     }
   }
 });
