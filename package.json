@@ -21,6 +21,7 @@
   "devDependencies": {
     "active-model-adapter": "1.13.5",
     "broccoli-asset-rev": "^2.0.2",
+    "broccoli-merge-trees": "^0.2.3",
     "ember-chosen": "0.0.23",
     "ember-cli": "1.13.1",
     "ember-cli-app-version": "0.4.0",
@@ -38,7 +39,7 @@
     "ember-cli-materialize": "0.17.2",
     "ember-cli-mocha": "0.9.1",
     "ember-cli-release": "0.2.3",
-    "ember-cli-sass": "3.3.1",
+    "ember-cli-sass": "^4.0.1",
     "ember-cli-simple-auth": "0.8.0",
     "ember-cli-slick": "git+https://github.com/igorpreston/ember-cli-slick.git#e8e0731b5b11ebe9ec9462396a8ce123844b1dce",
     "ember-cli-uglify": "^1.0.1",
