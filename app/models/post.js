@@ -6,7 +6,8 @@ export default DS.Model.extend({
   body: DS.attr('string'),
   image: DS.attr('file'),
   imageUrl: Ember.computed('image', function() {
-    return "http://api.ewebdesign.co" + this.get('image');
+    // return "http://hcr.ewebdesign.co" + this.get('image');
+    return "http://localhost:3000" + this.get('image');
   }),
   published: DS.attr('boolean'),
   tags: DS.hasMany('tag', { async: true } )

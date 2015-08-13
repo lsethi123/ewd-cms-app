@@ -1,9 +1,10 @@
 import ActiveModelAdapter from 'active-model-adapter';
 
 export default ActiveModelAdapter.extend({
-  host: 'http://api.ewebdesign.co',
+  // host: 'http://hcr.ewebdesign.co',
+  host: 'http://localhost:3000', 
+
   namespace: 'api',
-  /* host: 'http://localhost:3000', */
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Expose-Headers': 'ETag',
