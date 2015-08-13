@@ -8,7 +8,7 @@ export default DS.Model.extend({
   /*
   avatar: DS.attr('file'),
   avatarUrl: Ember.computed('avatar', function() {
-    return "http://api.ewebdesign.co" + this.get('avatar');
+    return "http://hcr.ewebdesign.co" + this.get('avatar');
   }), */
   password: DS.attr('string'),
   team: DS.belongsTo('team', { async: true } ),
