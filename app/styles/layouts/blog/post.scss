@@ -1,6 +1,8 @@
 
 /* User Profile Header */
 .blog-post-banner-header {
+  display: -ms-flexbox;
+	display: -webkit-flex;
   display:flex;
   width: 100%;
   min-height:35vh;
@@ -26,6 +28,8 @@
   .blog-post-banner-footer {
     width:100%;
     min-height:15vh;
+    display: -ms-flexbox;
+  	display: -webkit-flex;
     display:flex;
     justify-content: space-around;
     align-items: center;

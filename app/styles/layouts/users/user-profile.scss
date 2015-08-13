@@ -1,5 +1,7 @@
 /* User Profile Header */
 .user-profile-banner-header {
+  display: -ms-flexbox;
+	display: -webkit-flex;
   display:flex;
   width: 100%;
   min-height:40vh;
@@ -24,6 +26,8 @@
   .user-profile-banner-footer {
     width:100%;
     min-height:15vh;
+    display: -ms-flexbox;
+  	display: -webkit-flex;
     display:flex;
     justify-content: space-around;
     align-items: center;
