@@ -7,8 +7,8 @@ export default DS.Model.extend({
   price: DS.attr('number'),
   image: DS.attr('file'),
   imageUrl: Ember.computed('image', function() {
-    // return "http://hcr.ewebdesign.co" + this.get('image');
-    return 'http://localhost:3000' + this.get('image');
+    return "http://hcr.ewebdesign.co" + this.get('image');
+    // return 'http://localhost:3000' + this.get('image');
 
 
   }),

@@ -1,5 +1,7 @@
-input {
-  color:white;
+.login-form {
+  input {
+    color:white;
+  }
 }
 .flexbox-container-login {
   display: -ms-flexbox;
@@ -56,4 +58,14 @@ input {
 
 .nav-padding {
   padding: 0 1em;
+}
+.else-text {
+  font-size:200%;
+  text-align:center;
+  margin-top:5%;
+}
+
+.side-nav {
+  background: #006064;
+  width:140px;
 }

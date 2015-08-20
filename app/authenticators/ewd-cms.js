@@ -42,6 +42,8 @@ export default Base.extend({
     authenticateUserWith: function(credentials) {
       return Ember.$.ajax({
         url: 'http://hcr.ewebdesign.co/api/sessions',
+        // url: 'http://localhost:3000/api/sessions',
+
         type: 'POST',
         data: credentials,
         dataType: 'json',

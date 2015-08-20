@@ -4,6 +4,8 @@ import Ember from 'ember';
 export default DS.Model.extend({
   file: DS.attr('file'),
   imgUrl: Ember.computed('file', function() {
-    return 'http://hcr.ewebdesign.co' + this.get('file');
+    return 'http://localhost:3000' + this.get('file');
+    // return 'http://localhost:3000' + this.get('file');
+
   })
 });
