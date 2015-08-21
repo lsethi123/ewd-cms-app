@@ -31,10 +31,6 @@
     </main>
     <aside>
       <ul>
-        <li class="center">
-          {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='indigo darken-2'}}{{/link-to}}
-          {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
-        </li><br>
         {{#each posts as |post|}}
           {{#link-to 'blog.posts.show' post}}
             <div class="list-group-item">

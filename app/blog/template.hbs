@@ -1,12 +1,15 @@
-
   <div class="tag-cloud">
-    {{#each model as |tag|}}
-      {{#link-to 'blog.tags.show' tag.id}}
-      <div class="tag-badge card-panel blue lighten-1 white-text">
-        {{tag.name}}
-      </div>
-      {{/link-to}}
-    {{/each}}
+    {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='indigo darken-2'}}{{/link-to}}
+    {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
+    <span class="pad-left-20">
+      {{#each model as |tag|}}
+        {{#link-to 'blog.tags.show' tag.id}}
+        <div class="tag-badge card-panel blue lighten-1 white-text">
+          {{tag.name}}
+        </div>
+        {{/link-to}}
+      {{/each}}
+    </span>
   </div>
 
   {{outlet}}
