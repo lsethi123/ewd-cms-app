@@ -1,4 +1,4 @@
-{{#if posts}}
+{{#if model}}
 <div class="layout-hf-holy-grail">
   <div class="body">
     <main>
@@ -49,5 +49,15 @@
 {{else}}
 <div class="else-text">
   No posts. Start by adding the one.
+</div>
+<div class="text-center">
+  {{#link-to 'blog.tags.new' class="white-text"}}
+  {{md-btn text='Add Tag'
+    class='indigo darken-2'}}
+  {{/link-to}}
+  {{#link-to 'blog.posts.new' class="white-text"}}
+  {{md-btn text='Add Post'
+    class='indigo darken-2'}}
+  {{/link-to}}
 </div>
 {{/if}}

@@ -9,12 +9,6 @@
 <form id="tag-form" class="create-form" {{action 'add' on="submit"}}>
   <div class="modal-content">
   {{md-input type="text" value=model.name label="Name"}}
-  {{md-btn text='Add Tag'
-	action='add'
-	class='indigo darken-2'}}
-  {{md-btn text='Cancel'
-	action='cancel'
-	class='indigo darken-2'}}
 </div>
 <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>

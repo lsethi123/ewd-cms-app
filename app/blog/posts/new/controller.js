@@ -7,20 +7,29 @@ export default Ember.Controller.extend({
     add: function() {
       this.set('sendingData', true);
       let tags = this.get('selectedTags');
-      this.get('model').save().then((post) => {
-        this.get('selectedTags').forEach((tag) => {
-          this.store.findRecord('tag', tag).then((tag) => {
-            let tagPost = this.store.createRecord('tag-post', {
-              tag: tag,
-              post: post
+      if(tags) {
+        this.get('model').save().then((post) => {
+          this.get('selectedTags').forEach((tag) => {
+            this.store.findRecord('tag', tag).then((tag) => {
+              let tagPost = this.store.createRecord('tag-post', {
+                tag: tag,
+                post: post
+              });
+              tagPost.save();
             });
-            tagPost.save();
           });
+          this.set('sendingData', false);
+          this.set('selectedTags', null);
+          this.transitionToRoute('blog.posts.show', post);
         });
-        this.set('sendingData', false);
-        this.set('selectedTags', null);
-        this.transitionToRoute('blog.posts.show', post);
-      });
+      } else {
+        this.get('model').save().then((post) => {
+          this.set('sendingData', false);
+          this.set('selectedTags', null);
+          this.transitionToRoute('blog.posts.show', post);
+        });
+      }
+
 
     },
 
