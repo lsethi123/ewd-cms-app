@@ -1,10 +1,10 @@
 import ActiveModelAdapter from 'active-model-adapter';
+import config from '../config/environment';
 
 export default ActiveModelAdapter.extend({
-  host: 'http://localhost:3000',
-  // host: 'http://localhost:3000',
+  host: config.apiHost,
+  namespace: config.apiName,
 
-  namespace: 'api',
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Expose-Headers': 'ETag',

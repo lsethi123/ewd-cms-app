@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ewd-cms',
     environment: environment,
+    apiHost: 'http://localhost:3000',
+    apiName: 'api',
     baseURL: '/',
     rootURL: '/',
     locationType: 'hash',
@@ -53,6 +55,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.baseURL = '/';
     ENV.rootURL = '/';
+    ENV.apiHost = 'http://localhost:3000';
+    ENV.apiName = 'api';
   }
 
   if (environment === 'test') {
@@ -65,12 +69,19 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.apiHost = 'http://localhost:3000';
+    ENV.apiName = 'api';
+
   }
 
   if (environment === 'production') {
     ENV.baseURL = '/';
     ENV.rootURL = '/';
     ENV.locationType = 'hash';
+
+    ENV.apiHost = 'http://api.ewebdesign.co';
+    ENV.apiName = 'api';
   }
 
   return ENV;
