@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       this.set('sendingData', true);
       this.get('model').save().then((board) => {
         this.set('sendingData', false);
-        this.transitionToRoute('todos.boards.index');
+        this.transitionToRoute('todos.index');
       });
     },
 
