@@ -1,4 +1,83 @@
-<header class="cyan darken-4">
+<div class="collapsible-header-title">
+  <h5>Events</h5>
+</div>
+{{#md-card-collapsible title="events" accordion=false}}
+
+    {{#md-collapsible icon="mdi-image-filter-drama" title="10AM"}}
+      Event Info Goes Here
+    {{/md-collapsible}}
+    {{#md-collapsible icon="mdi-maps-place"
+        title="2PM"}}
+      Event Info Goes Here
+    {{/md-collapsible}}
+    {{#md-collapsible icon="mdi-social-whatshot"
+        title="4PM"}}
+      Event Info Goes Here
+    {{/md-collapsible}}
+{{/md-card-collapsible}}
+
+
+<!--
+<main>
+  <table class="table-fill">
+  <tbody class="table-hover">
+    <tr>
+      <td>8 AM</td>
+      <td class="tiny-event-panel"><strong>Demo</strong></td>
+    </tr>
+    <tr>
+    <td> 9 AM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>10 AM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>11 AM</td>
+    <td class="tiny-event-panel"><strong>Evaluation</strong></td>
+    </tr>
+    <tr>
+    <td>12 PM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td> 1 PM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td> 2 PM</td>
+    <td class="tiny-event-panel"><strong>Evaluation</strong></td>
+    </tr>
+    <tr>
+    <td> 3 PM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td> 4 PM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td> 5 PM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td> 6 PM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td> 7 PM</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>8 PM</td>
+    <td></td>
+    </tr>
+  </tbody>
+  </table>
+</main> -->
+{{yield}}
+<!-- <header class="cyan darken-4">
   <h5 class="white-text-color">Events</h5>
 </header>
 <main>
@@ -60,3 +139,25 @@
   </table>
 </main>
 {{yield}}
+
+
+{{#md-card-collapsible accordion=false}}
+    {{#md-collapsible icon="mdi-image-filter-drama"
+        title="One"}}
+
+        Lorem ipsum dolor sit amet, consectetur
+
+    {{/md-collapsible}}
+    {{#md-collapsible icon="mdi-maps-place"
+        title="Two"}}
+
+        Lorem ipsum dolor sit amet, consectetur
+
+    {{/md-collapsible}}
+    {{#md-collapsible icon="mdi-social-whatshot"
+        title="Three"}}
+
+        Lorem ipsum dolor sit amet, consectetur
+
+    {{/md-collapsible}}
+{{/md-card-collapsible}} -->

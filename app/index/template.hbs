@@ -21,9 +21,18 @@
 </div>
 
 {{else}}
-<div class="else-text">
-  You're currently not logged in. <br>
-  Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
+
+<div class="flexbox-container-login">
+  <div class="login-form">
+      {{#md-card-panel class="teal"
+        bodyClass="white-text"
+        id="card-panel"}}
+        <div class="else-text">
+          You're currently not logged in. <br>
+          Please {{#link-to 'signup' class="button primary"}}Sign up{{/link-to}} or {{#link-to 'login' class="button primary"}}Log in{{/link-to}}
+        </div>
+    {{/md-card-panel}}
+  </div>
 </div>
 {{/if}}
 

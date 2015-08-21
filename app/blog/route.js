@@ -5,7 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model: function() {
     return this.store.findAll('tag');
   },
-  
+
   actions: {
     cancel: function() {
       window.history.back();

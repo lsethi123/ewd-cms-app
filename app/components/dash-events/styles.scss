@@ -1,6 +1,16 @@
 $teal: #009688;
 &{
   margin-bottom:10px;
+  // header {
+  //   padding:.5rem;
+  //   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  // }
+  h5 {
+    text-align:center;
+    margin:0;
+    padding: .25em 0;
+  }
+  
 }
 // & {
 //   border: solid 1px grey;
@@ -14,11 +24,6 @@ $teal: #009688;
 //   }
 
 
-h5 {
-  text-align:center;
-  margin:0;
-  padding:10px;
-}
 .white-text-color {
   color:white;
 }
