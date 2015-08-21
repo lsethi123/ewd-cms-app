@@ -1,139 +1,53 @@
-{{#if model}}
-<div class="row">
-  <div class="col s3">
-    <div class="collection with-header">
-      <div class="collection-header"><h4 class="center">Tags</h4></div>
-    </div>
-  </div>
-  <div class="col s9">
-    <div class="collection with-header">
-      <div class="collection-header"><h4 class="center">Published Blog Posts</h4></div>
-        <div class="published-container wrap">
-          {{#md-card class="published-item" title="Published #1" id="basic-card"}}
-              {{#md-card-content}}
-                  I am a very simple card. I am good at containing
-                  small bits of information. I am convenient because
-                  I require little markup to use effectively.
-              {{/md-card-content}}
-              {{#md-card-action}}
-                  {{#link-to "blog.index"}}Link 1{{/link-to}}
-                  {{#link-to "blog.index"}}Link 2{{/link-to}}
-              {{/md-card-action}}
-          {{/md-card}}
-          <div class="published-item">
-            {{#md-card title="Published #2" id="basic-card"}}
-                {{#md-card-content}}
-                    I am a very simple card. I am good at containing
-                    small bits of information. I am convenient because
-                    I require little markup to use effectively.
-                {{/md-card-content}}
-                {{#md-card-action}}
-                    {{#link-to "blog.index"}}Link 1{{/link-to}}
-                    {{#link-to "blog.index"}}Link 2{{/link-to}}
-                {{/md-card-action}}
-            {{/md-card}}
+{{#if posts}}
+<div class="layout-hf-holy-grail">
+  <div class="body">
+    <main>
+      {{#each posts as |post|}}
+      <div class="blog-post-banner-header one-edge-shadow">
+        <div class="container">
+          {{#link-to 'blog.posts.show' post}}<h3 class="center white-text">{{post.title}}</h3>{{/link-to}}
+          <h5 class="center white-text">{{post.subtitle}}</h5>
+        </div>
+      </div>
+      <div class="blog-post-body">
+        <p class="blog-post-body-text">
+          {{post.body}}
+        </p><br/>
+        <div class="blog-post-banner-footer">
+          {{#if post.published}}
+            {{md-btn text='Unpublish' class='indigo darken-2' action='unpublish' actionArg=post}}
+          {{else}}
+            {{md-btn text='Publish' class='indigo darken-2' action='publish' actionArg=post}}
+          {{/if}}
+          {{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=post}}
+          <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
+          <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div>
           </div>
-        </div>
       </div>
-      <div class="collection with-header">
-        <div class="collection-header"><h4 class="center">Hopper</h4></div>
-        <div class="hopper-container-vertical wrap">
-          {{#md-card class="hopper-item-vertical" title="Hopper #1" titleClass="white-text" id="basic-card"}}
-              {{#md-card-content}}
-                  This is where you nurture an idea for an article/post.  Writers block can be a non-factor with steady progress and multiple iterations.
-              {{/md-card-content}}
-              {{#md-card-action}}
-                  {{#link-to "blog.index"}}Link 1{{/link-to}}
-                  {{#link-to "blog.index"}}Link 2{{/link-to}}
-              {{/md-card-action}}
-          {{/md-card}}
-          {{#md-card class="hopper-item-vertical" title="Hopper #3" titleClass="white-text" id="basic-card"}}
-              {{#md-card-content}}
-                  The third blog post is not unique.  It is no special snowflake and will be forgotten along with all the rest of the fake posts
-              {{/md-card-content}}
-              {{#md-card-action}}
-                  {{#link-to "blog.index"}}Link 1{{/link-to}}
-                  {{#link-to "blog.index"}}Link 2{{/link-to}}
-              {{/md-card-action}}
-          {{/md-card}}
-        </div>
-      </div>
-    </div>
+      <hr>
+      <br>
+      {{/each}}
+    </main>
+    <aside>
+      <ul>
+        <li class="center">
+          {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='indigo darken-2'}}{{/link-to}}
+          {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
+        </li><br>
+        {{#each posts as |post|}}
+          {{#link-to 'blog.posts.show' post}}
+            <div class="list-group-item">
+            <h5 class="o-hidden"><strong>{{post.title}}</strong></h5>
+            <p class="o-hidden">{{post.subtitle}}</p>
+            </div>
+          {{/link-to}}
+        {{/each}}
+      </ul>
+    </aside>
   </div>
-
+</div>
 {{else}}
 <div class="else-text">
-  No posts. Start by adding the one.  
+  No posts. Start by adding the one.
 </div>
 {{/if}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="collection with-header">
-    <div class="collection-header"><h4 class="center">Sarrahs Published Posts</h4></div>
-      <div class="published-container wrap">
-          {{#md-card class="published-item" title="Published #1" id="basic-card"}}
-              {{#md-card-content}}
-                  I am a very simple card. I am good at containing
-                  small bits of information. I am convenient because
-                  I require little markup to use effectively.
-              {{/md-card-content}}
-              {{#md-card-action}}
-                  {{#link-to "blog.index"}}Link 1{{/link-to}}
-                  {{#link-to "blog.index"}}Link 2{{/link-to}}
-              {{/md-card-action}}
-          {{/md-card}}
-        <div class="published-item">
-          {{#md-card title="Published #2" id="basic-card"}}
-              {{#md-card-content}}
-                  I am a very simple card. I am good at containing
-                  small bits of information. I am convenient because
-                  I require little markup to use effectively.
-              {{/md-card-content}}
-              {{#md-card-action}}
-                  {{#link-to "blog.index"}}Link 1{{/link-to}}
-                  {{#link-to "blog.index"}}Link 2{{/link-to}}
-              {{/md-card-action}}
-          {{/md-card}}
-        </div>
-      </div>
-    </div>
-    <div class="collection with-header">
-      <div class="collection-header"><h4 class="center">Hopper</h4></div>
-      <div class="published-container wrap">
-          {{#md-card class="published-item" title="Hopper #1" id="basic-card"}}
-              {{#md-card-content}}
-                  This is where you nurture an idea for an article/post.  Writers block can be a non-factor with steady progress and multiple iterations.
-              {{/md-card-content}}
-              {{#md-card-action}}
-                  {{#link-to "blog.index"}}Link 1{{/link-to}}
-                  {{#link-to "blog.index"}}Link 2{{/link-to}}
-              {{/md-card-action}}
-          {{/md-card}}
-        <div class="published-item">
-          {{#md-card title="Hopper #2" id="basic-card"}}
-              {{#md-card-content}}
-                  This is where you nurture an idea for an article/post.  Writers block can be a non-factor with steady progress and multiple iterations.
-              {{/md-card-content}}
-              {{#md-card-action}}
-                  {{#link-to "blog.index"}}Link 1{{/link-to}}
-                  {{#link-to "blog.index"}}Link 2{{/link-to}}
-              {{/md-card-action}}
-          {{/md-card}}
-        </div>
-      </div>
-    </div> -->

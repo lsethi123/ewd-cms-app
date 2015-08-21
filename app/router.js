@@ -9,7 +9,6 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('settings');
   this.route('blog', function() {
-    this.route('hopper');
     this.route('posts', function() {
       this.route('new');
       this.route('show', { path: ':post_id' } );
