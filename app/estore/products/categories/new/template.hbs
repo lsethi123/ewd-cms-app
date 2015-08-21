@@ -1,9 +1,23 @@
+{{#md-modal close='closeModal' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
 <form id="category-form" class="create-form" {{action 'add' on="submit"}}>
-  {{md-input type="text" value=model.name label="Name"}}
-  {{md-btn text='Add Category'
-	action='add'
-	class='indigo darken-2'}}
-  {{md-btn text='Cancel'
-	action='cancel'
-	class='indigo darken-2'}}
+  <div class="modal-content">
+    {{md-input type="text" value=model.name label="Name"}}
+  </div>
+  <div class="modal-footer">
+      <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+          Add Category
+      </a>
+      <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+          Cancel
+      </a>
+  </div>
 </form>
+{{/if}}
+{{/md-modal}}

@@ -1,6 +1,7 @@
   <div class="tag-cloud">
-    {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='indigo darken-2'}}{{/link-to}}
     {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
+    {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='blue lighten-1'}}{{/link-to}}
+
     <span class="pad-left-20">
       {{#each model as |tag|}}
         {{#link-to 'blog.tags.show' tag.id}}
