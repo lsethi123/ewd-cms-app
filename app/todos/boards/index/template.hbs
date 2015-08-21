@@ -6,13 +6,15 @@
         <button class="modal-action modal-close waves-effect waves-orange btn-flat" {{action 'addTodo' board}}>Add Todo</button>
         {{#each board.todos as |todo|}}
         {{#draggable-object content=todo}}
-          <div id="todo-{{todo.id}}" class="todo-item teal white-text z-depth-1" style="min-height: 150px;" {{action 'showTodo' todo}}><strong>{{todo.title}}</strong>
+          <div id="todo-{{todo.id}}" class="todo-item teal white-text z-depth-1" style="min-height: 50px;" {{action 'showTodo' todo}}><strong>{{todo.title}}</strong>
             <span style="float: right; font-weight: bold;" {{action 'deleteTodo' todo}}>X</span>
-            <br/><strong>Assigned to:</strong> {{#link-to 'users.show' todo.user}}{{todo.user.fullName}}{{/link-to}}<br/><br/>
-          <strong>Checklists:</strong><br/>
-          {{#each todo.checklists as |checklist|}}
-          <span>{{checklist.step}}. {{checklist.description}}</span><br/>
-          {{/each}}
+            <br>{{#link-to 'users.show' todo.user}}{{todo.user.fullName}}{{/link-to}}<br/><br/>
+          {{#if todo.checklists}}
+            <strong>Checklists:</strong><br/>
+            {{#each todo.checklists as |checklist|}}
+            <span>{{checklist.step}}. {{checklist.description}}</span><br/>
+            {{/each}}
+          {{/if}}
           </div>
         {{/draggable-object}}
         {{else}}

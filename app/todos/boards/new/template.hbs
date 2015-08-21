@@ -8,8 +8,8 @@
 {{else}}
 <form id="team-form" class="create-form" {{action 'add' on="submit"}}>
   <div class="modal-content">
-  {{md-input type="text" value=model.title label="Board name"}}
-  {{md-textarea type="text" value=model.description label="Describe board's topic"}}
+  {{md-input type="text" value=model.title label="Bucket Name"}}
+  {{md-textarea type="text" value=model.description label="Describe Topic"}}
 </div>
 <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
