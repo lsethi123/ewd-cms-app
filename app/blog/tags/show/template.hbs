@@ -1,8 +1,7 @@
-{{#if posts}}
 <div class="layout-hf-holy-grail">
   <div class="body">
     <main>
-      {{#each posts as |post|}}
+      {{#each model as |post|}}
       <div class="blog-post-banner-header one-edge-shadow">
         <div class="container">
           {{#link-to 'blog.posts.show' post}}<h3 class="center white-text">{{post.title}}</h3>{{/link-to}}
@@ -35,7 +34,7 @@
           {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='indigo darken-2'}}{{/link-to}}
           {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
         </li><br>
-        {{#each posts as |post|}}
+        {{#each model as |post|}}
           {{#link-to 'blog.posts.show' post}}
             <div class="list-group-item">
             <h5 class="o-hidden"><strong>{{post.title}}</strong></h5>
@@ -47,18 +46,3 @@
     </aside>
   </div>
 </div>
-{{else}}
-<div class="else-text">
-  No posts. Start by adding the one.
-</div>
-<div class="text-center">
-  {{#link-to 'blog.tags.new' class="white-text"}}
-  {{md-btn text='Add Tag'
-    class='indigo darken-2'}}
-  {{/link-to}}
-  {{#link-to 'blog.posts.new' class="white-text"}}
-  {{md-btn text='Add Post'
-    class='indigo darken-2'}}
-  {{/link-to}}
-</div>
-{{/if}}

@@ -148,3 +148,18 @@
     background:indigo;
   }
 }
+
+.tag-cloud {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 25px 10px;
+
+  .tag-badge {
+    position: relative;
+    padding: 5px;
+    margin: 5px 5px;
+    display: inline-block;
+  }
+
+}
