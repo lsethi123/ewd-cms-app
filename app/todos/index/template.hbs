@@ -1,7 +1,9 @@
 <div class="row">
   {{#each model as |board|}}
+  <div class="col s12 m4 l3">
+
     {{#draggable-object-target action="changeBoard" board=board}}
-    <div id="board-{{board.id}}" class="board-item z-depth-1 grey lighten-5 col s12 m6 l3">
+    <div id="board-{{board.id}}" class="board-item z-depth-1 grey lighten-5 ">
         <h5 class="board-title">{{board.title}}</h5>
         <span class="delete-board"  {{action 'deleteBoard' board}}>X</span>
       {{#each board.todos as |todo|}}
@@ -25,5 +27,8 @@
       {{/each}}
     </div>
     {{/draggable-object-target}}
+
+  </div>
+
   {{/each}}
 </div>
