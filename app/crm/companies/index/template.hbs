@@ -1,25 +1,37 @@
 <div class="row">
-  {{#each model as |company|}}
-  <div class="col l4 m6 s12">
-    {{#md-card title=company.name
-        titleClass="indigo-text"
-        image="http://placehold.it/200x100"}}
-        {{#md-card-content}}
-            {{company.description}}
-        {{/md-card-content}}
-        {{#md-card-action}}
-        {{link-to 'View' 'crm.companies.show' company}}
-        <a {{action 'edit' company}}>Edit</a>
-        <a {{action 'delete' company}}>Delete</a>
-        {{/md-card-action}}
-    {{/md-card}}
-      </div>
-  {{/each}}
+  <div class="col s3">
+    {{#link-to 'crm.companies.new'}}Add{{/link-to}}
+  </div>
+  <div class="col s9">
+    <span>Todo => Sortable Header Values \/\/</span>
+  </div>
 </div>
+<div class="row">
+  <div class="col s12">
+    {{#crm-companies-index}}
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |company|}}
+        <tr id="card-panel" class="cyan darken white-text ember-view card-panel">
+              <td>{{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}</td>
+              <td>{{company.address}}</td>
+              <td>{{company.city}}</td>
+              <td>{{company.state}}</td>
+              <td>{{company.phone}}</td>
+              <td>{{company.email}}</td>
+        </tr>
+        {{/each}}
 
-<!-- {{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}
-          {{company.address}}
-          {{company.city}}
-          {{company.state}}
-          {{company.phone}}
-          {{company.email}} -->
+      </tbody>
+    </table>
+    {{/crm-companies-index}}
+  </div>
+</div>
