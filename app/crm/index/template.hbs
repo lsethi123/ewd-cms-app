@@ -20,22 +20,10 @@
       {{crm-news-feed class="hoverable" tasks=tasks opportunities=opportunities}}
     </div>
   </div>
-
-  <main>
-      {{#each tasks as |task|}}
-       <div class="collection-item">
-        {{task.name}}
-        {{task.description}}
-        {{task.dueDate}}
-        {{task.employee.fullName}}
-        {{task.user.fullName}}
-        {{task.company.name}}
-       </div>
-      {{/each}}
-  </main>
+  
   <div class="row">
     <div class="col s12">
-      {{crm-tasks-index class="hoverable"}}
+      {{crm-tasks-index class="hoverable" tasks=tasks}}
     </div>
   </div>
   <div class="row">

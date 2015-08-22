@@ -14,7 +14,7 @@
       </thead>
       <tbody>
         {{#each model as |company|}}
-        <tr id="card-panel" class="ember-view card-panel">
+        <tr class="ember-view card-panel">
               <td>{{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}</td>
               <td>{{company.address}}</td>
               <td>{{company.city}}</td>
