@@ -1,7 +1,7 @@
 <div class="crm-hero">
   <div class="row">
     <div class="col s12">
-      {{#md-card-panel class="teal" bodyClass="white-text" id="card-panel"}}
+      {{#md-card-panel class="teal hoverable" bodyClass="white-text" id="card-panel"}}
         <p class="hero-text left-align">
         Welcome {{user.fullName}}Ryan Brady,<br>
         You Have {{!user.events.today}} 2 Events today.<br>
@@ -17,7 +17,7 @@
 
   <div class="row">
     <div class="col s12">
-      {{crm-news-feed tasks=tasks opportunities=opportunities}}
+      {{crm-news-feed class="hoverable" tasks=tasks opportunities=opportunities}}
     </div>
   </div>
 
@@ -40,12 +40,12 @@
       </main> -->
   <div class="row">
     <div class="col s12">
-      {{crm-tasks-index}}
+      {{crm-tasks-index class="hoverable"}}
     </div>
   </div>
   <div class="row">
     <div class="col s12">
-      {{#crm-companies-index}}
+      {{#crm-companies-index class="hoverable"}}
         <header>
           <h5 class="white-text-color cyan darken-4">Companies</h5>
         </header>

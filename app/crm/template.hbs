@@ -1,25 +1,25 @@
 <br>
 <div class="row">
-  <div class="flex-container-column col l1">
-    <!-- {{#link-to 'crm.craigslist' class="flex-item"}}<i class="flex-item fa fa-contao"></i>{{/link-to}} -->
-    {{#link-to 'crm.companies.index' class="flex-item"}}<i class="mdi-communication-business medium"></i>{{/link-to}}
-    <!-- {{#link-to 'crm.craigslist' class="flex-item"}}<i class="flex-item mdi-communication-phone medium"></i>{{/link-to}} -->
-    {{#link-to 'crm.companies.index' class="flex-item"}}<i class="flex-item mdi-social-group medium"></i>{{/link-to}}
+  <!-- <div class="flex-container-column col l1">
+    {{#link-to 'crm.craigslist' class="flex-item"}}<i class="flex-item fa fa-contao"></i>{{/link-to}}
+    {{#link-to 'crm.companies' class="flex-item"}}<i class="mdi-communication-business medium"></i>{{/link-to}}
+    {{#link-to 'crm.craigslist' class="flex-item"}}<i class="flex-item mdi-communication-phone medium"></i>{{/link-to}}
+    {{#link-to 'crm.companies.show.employees' class="flex-item"}}<i class="flex-item mdi-social-group medium"></i>{{/link-to}}
     {{#link-to 'crm.forecast' class="flex-item"}}<i class="flex-item mdi-action-event medium"></i>{{/link-to}}
-  </div>
+  </div> -->
   <div class="col l8">
     {{outlet}}
   </div>
   <div class="col l2">
-    <aside class="top">
-      <ul>
+    <!-- <aside class="top">
+      <ul class="companies hoverable">
         <li class="list-group-item">
           <h5>{{#link-to 'crm.companies.new'}}
             <span class="modal-action modal-close">
               {{md-btn icon='mdi-image-control-point' buttonType='floating' class='btn-large teal lighten-1'}}
             </span>
           {{/link-to}}
-          Add Company</h5>
+          Companies</h5>
         </li>
         <li class="list-group-item">Total Companies
           <div class="secondary-content"><i class="mdi-action-bug-report">1012</i></div>
@@ -32,50 +32,58 @@
         </li>
       </ul>
 
-      <div class="collection">
-        {{#link-to crm.companies class='collection-item avatar'}}<i class="circle green mdi-maps-beenhere"></i><h5>Engaged</h5>{{/link-to}}
-        {{#link-to crm.companies class='collection-item avatar'}}<i class="circle yellow mdi-maps-beenhere"></i><h5>Courting</h5>{{/link-to}}
-        {{#link-to crm.companies class='collection-item avatar'}}<i class="circle red mdi-maps-beenhere"></i><h5>Unaware</h5>{{/link-to}}
-      </div>
-    </aside>
+      <br>
+
+      <ul class="companies hoverable">
+        <li class="list-group-item">
+          <h5>{{#link-to 'crm.companies.show.employees.new'}}
+            <span class="modal-action modal-close">
+              {{md-btn icon='mdi-image-control-point' buttonType='floating' class='btn-large teal darken-3'}}
+            </span>
+          {{/link-to}}
+          Contacts</h5>
+        </li>
+        <li class="list-group-item">Engaged
+          <div class="secondary-content"><i class="mdi-action-bug-report">1012</i></div>
+        </li>
+        <li class="list-group-item">Courting
+          <div class="secondary-content"><i class="mdi-action-account-box">343</i></div>
+        </li>
+        <li class="list-group-item">Unaware
+          <div class="secondary-content"><i class="mdi-action-announcement">48%</i></div>
+        </li>
+      </ul>
+
+      <br>
+
+      <ul class="companies hoverable">
+        <li class="list-group-item">
+          <h5>{{#link-to 'crm.companies.show.opportunities.new'}}
+            <span class="modal-action modal-close">
+              {{md-btn icon='mdi-image-control-point' buttonType='floating' class='btn-large teal darken-5'}}
+            </span>
+          {{/link-to}}
+          Opportunities</h5>
+        </li>
+        <li class="list-group-item">Demo
+          <div class="secondary-content"><i class="mdi-action-bug-report">12</i></div>
+        </li>
+        <li class="list-group-item">Evaluation
+          <div class="secondary-content"><i class="mdi-action-account-box">3</i></div>
+        </li>
+        <li class="list-group-item">Quote
+          <div class="secondary-content"><i class="mdi-action-announcement">4</i></div>
+        </li>
+      </ul>
+    </aside> -->
   </div>
 </div>
-<!-- {{#md-fixed-btns
-  class="fixed-btns-example"
-  btnIcon="mdi-content-add"
-  btnClass="btn-large lime darken-2"
-  action="firstAction"
-  actionArgs="0"}}
-
-  {{md-fixed-btn
-    btnClass="deep-purple"
-    btnIcon="mdi-content-grade"
-    action="anotherAction"
-    actionArgs="abc"}}
-
-  {{md-fixed-btn
-    btnClass="green"
-    btnIcon="mdi-action-redeem"
-    action="anotherAction"
-    actionArgs=myData}}
-
-  {{md-fixed-btn
-    btnClass="indigo"
-    btnIcon="mdi-alert-warning"
-    action="anotherAction"}}
-
-{{/md-fixed-btns}} -->
 
 
 
 
-<!--
-<br>
-{{#link-to 'crm.companies' class="white-text"}}
-{{md-btn text='Companies'
-  class='indigo darken-2'}}
-{{/link-to}}
-{{#link-to 'crm.companies.new' class="white-text"}}
-{{md-btn text='Create New Company'
-  class='indigo darken-2'}}
-{{/link-to}} -->
+<!-- <div class="collection">
+  {{#link-to crm.companies class='collection-item avatar'}}<i class="circle green mdi-maps-beenhere"></i><h5>Engaged</h5>{{/link-to}}
+  {{#link-to crm.companies class='collection-item avatar'}}<i class="circle yellow mdi-maps-beenhere"></i><h5>Courting</h5>{{/link-to}}
+  {{#link-to crm.companies class='collection-item avatar'}}<i class="circle red mdi-maps-beenhere"></i><h5>Unaware</h5>{{/link-to}}
+</div> -->

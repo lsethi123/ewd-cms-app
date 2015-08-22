@@ -52,7 +52,6 @@
     "ember-key-responder": "0.2.1",
     "ember-modal-dialog": "0.7.5",
     "ember-new-computed": "1.0.2",
-    "ember-radio-button": "1.0.4",
-    "liquid-fire": "0.21.0"
+    "ember-radio-button": "1.0.4"
   }
 }
