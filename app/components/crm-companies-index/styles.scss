@@ -1,5 +1,14 @@
 & {
-  border: solid 1px grey;
+  .header {
+    background:#26a69a;
+  }
+  th {
+    color:white;
+    border-radius:0;
+    font-size:120%;
+    padding:.5em;
+  }
+  // border: solid 1px grey;
   min-height:200px;
   header {
     padding:0;
@@ -23,5 +32,11 @@
   }
   .card-panel {
     margin: 0;
+  }
+  td {
+    border-radius: 0;
+    a {
+      color: #26a69a;
+    }
   }
 }

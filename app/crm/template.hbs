@@ -10,28 +10,33 @@
   <div class="col l8">
     {{outlet}}
   </div>
-  <div class="col l3">
-    <aside>
+  <div class="col l2">
+    <aside class="top">
       <ul>
-        <li class="list-group-item">Thing
-          <div class="secondary-content"><i class="mdi-action-bug-report"></i></div>
+        <li class="list-group-item">
+          <h5>{{#link-to 'crm.companies.new'}}
+            <span class="modal-action modal-close">
+              {{md-btn icon='mdi-image-control-point' buttonType='floating' class='btn-large teal lighten-1'}}
+            </span>
+          {{/link-to}}
+          Add Company</h5>
         </li>
-        <li class="list-group-item">Stuff
-          <div class="secondary-content"><i class="mdi-action-account-box"></i></div>
+        <li class="list-group-item">Total Companies
+          <div class="secondary-content"><i class="mdi-action-bug-report">1012</i></div>
         </li>
-        <li class="list-group-item">Item
-          <div class="secondary-content"><i class="mdi-action-account-box"></i></div>
+        <li class="list-group-item">Engaged
+          <div class="secondary-content"><i class="mdi-action-account-box">343</i></div>
         </li>
-        <li class="list-group-item">More
-          <div class="secondary-content"><i class="mdi-action-announcement"></i></div>
+        <li class="list-group-item">Account Efficiency
+          <div class="secondary-content"><i class="mdi-action-announcement">48%</i></div>
         </li>
-        <!-- <li class="list-group-item">Sweet
-          <div class="secondary-content"><i class="mdi-action-assessment"></i></div>
-        </li>
-        <li class="list-group-item">Features
-          <div class="secondary-content"><i class="mdi-action-favorite"></i></div>
-        </li> -->
       </ul>
+
+      <div class="collection">
+        {{#link-to crm.companies class='collection-item avatar'}}<i class="circle green mdi-maps-beenhere"></i><h5>Engaged</h5>{{/link-to}}
+        {{#link-to crm.companies class='collection-item avatar'}}<i class="circle yellow mdi-maps-beenhere"></i><h5>Courting</h5>{{/link-to}}
+        {{#link-to crm.companies class='collection-item avatar'}}<i class="circle red mdi-maps-beenhere"></i><h5>Unaware</h5>{{/link-to}}
+      </div>
     </aside>
   </div>
 </div>
