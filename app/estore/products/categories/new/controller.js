@@ -8,6 +8,14 @@ export default Ember.Controller.extend({
       }, (error) => {
         console.log('some error happened');
       });
+    },
+    closeModal: function() {
+      this.get('model').destroyRecord();
+      window.history.back();
     }
+    // cancel: function() {
+    //   this.get('model').destroyRecord();
+    //   window.history.back();
+    // },
   }
 });

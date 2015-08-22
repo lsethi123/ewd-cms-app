@@ -1,18 +1,19 @@
 <div class="row">
-  <div class="col l4 m6 s12">
     {{#each model as |category|}}
+    <div class="col l3 m4 s6 pad-20">
       {{#md-card title=category.name
           titleClass="orange-text"
-          image="images/ember-707b388afd234247e9d4ff3a8e73af3d.png"}}
+          id="basic-card"}}
 
           {{#md-card-content}}
-            Content Describing the Category Goes Here
+            Content Describing the Tag Goes Here
           {{/md-card-content}}
 
           {{#md-card-action}}
-            <a {{action 'delete' tag}}>Delete</a>
+          <a {{action 'edit' category}}>Edit</a>
+            <a {{action 'delete' category}}>Delete</a>
           {{/md-card-action}}
       {{/md-card}}
+      </div>
     {{/each}}
-    </div>
 </div>
