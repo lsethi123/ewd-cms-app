@@ -1,18 +1,17 @@
-
-  <div class="body">
-    <main>
-      {{outlet}}
-    </main>
-    <aside>
-      <ul>
-        {{#each model as |post|}}
-          {{#link-to 'blog.posts.show' post}}
-            <div class="list-group-item">
-            <h5 class="o-hidden"><strong>{{post.title}}</strong></h5>
-            <p class="o-hidden">{{post.subtitle}}</p>
-            </div>
-          {{/link-to}}
-        {{/each}}
-      </ul>
-    </aside>
-  </div>
+<div class="body">
+  <main>
+    {{outlet}}
+  </main>
+  <aside>
+    <ul>
+      {{#each model as |post|}}
+        {{#link-to 'blog.posts.show' post}}
+          <div class="list-group-item">
+          <h5 class="o-hidden"><strong>{{post.title}}</strong></h5>
+          <p class="o-hidden">{{post.subtitle}}</p>
+          </div>
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </aside>
+</div>

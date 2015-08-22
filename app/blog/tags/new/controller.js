@@ -9,7 +9,6 @@ export default Ember.Controller.extend({
         console.log('some error happened');
       });
     },
-
     cancel: function() {
       this.get('model').destroyRecord();
       window.history.back();

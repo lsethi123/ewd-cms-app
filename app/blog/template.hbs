@@ -1,28 +1,27 @@
-  <div class="tag-cloud">
-    <!-- {{#link-to 'blog.index' class="white-text"}}{{md-btn text='Posts' class='indigo darken-2'}}{{/link-to}} -->
-    {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
-    {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='blue lighten-1'}}{{/link-to}}
-
+<div class="tag-cloud">
+  <!-- {{#link-to 'blog.index' class="white-text"}}{{md-btn text='Posts' class='indigo darken-2'}}{{/link-to}} -->
+  {{#link-to 'blog.posts.new'}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
+  {{#link-to 'blog.tags.new'}}{{md-btn text='Add Tag' class='blue lighten-1'}}{{/link-to}}
+  <!-- <span class="modal-action modal-close">
+    {{md-btn icon='mdi-image-control-point'
+      action='addPost' buttonType='floating'
+      class='btn-large indigo darken-2'}}
+  </span> -->
+  <span class="pad-left-20">
     <!-- <span class="modal-action modal-close">
       {{md-btn icon='mdi-image-control-point'
-        action='addPost' buttonType='floating'
-        class='btn-large indigo darken-2'}}
-    </span> -->
-    <span class="pad-left-20">
-      <!-- <span class="modal-action modal-close">
-        {{md-btn icon='mdi-image-control-point'
-          action='addTag' buttonType='floating'
-          class='btn-large blue lighten-1'}}
-      </span>
-      {{#link-to 'blog.tags.index' class="white-text"}}{{md-btn text='Tags' class='blue lighten-1'}}{{/link-to}} -->
-      {{#each model as |tag|}}
-        {{#link-to 'blog.tags.show' tag.id}}
-        <div class="tag-badge card-panel blue lighten-1 white-text">
-          {{tag.name}}
-        </div>
-        {{/link-to}}
-      {{/each}}
+        action='addTag' buttonType='floating'
+        class='btn-large blue lighten-1'}}
     </span>
-  </div>
+    {{#link-to 'blog.tags.index' class="white-text"}}{{md-btn text='Tags' class='blue lighten-1'}}{{/link-to}} -->
+    {{#each model as |tag|}}
+      {{#link-to 'blog.tags.show' tag.id}}
+      <div class="tag-badge card-panel blue lighten-1 white-text">
+        {{tag.name}}
+      </div>
+      {{/link-to}}
+    {{/each}}
+  </span>
+</div>
 
-  {{outlet}}
+{{outlet}}

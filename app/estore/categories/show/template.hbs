@@ -1,0 +1,60 @@
+<div class="layout-hf-holy-grail">
+  <div class="body">
+    <main>
+      {{#each model as |product|}}
+      <div class="blog-post-banner-header one-edge-shadow">
+        <div class="container">
+          {{#link-to 'estore.products.show' product}}<h3 class="center white-text">{{product.title}}</h3>{{/link-to}}
+          <h5 class="center white-text">{{product.price}}</h5>
+        </div>
+      </div>
+      <div class="blog-post-body">
+        <p class="blog-post-body-text">
+          {{product.description}}
+        </p><br/>
+        <div class="blog-post-banner-footer">
+          {{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=product}}
+          {{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=product}}
+          <!-- <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
+          <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div> -->
+          </div>
+      </div>
+      <hr>
+      <br>
+      {{/each}}
+    </main>
+    <aside>
+      <ul>
+          <!-- <li class="center">
+            {{#link-to 'blog.tags.new' class="white-text"}}{{md-btn text='Add Tag' class='indigo darken-2'}}{{/link-to}}
+            {{#link-to 'blog.posts.new' class="white-text"}}{{md-btn text='Add Post' class='indigo darken-2'}}{{/link-to}}
+          </li><br> -->
+          {{#each model as |product|}}
+            {{#link-to 'estore.products.show' product}}
+              <div class="list-group-item">
+              <h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
+              <p class="o-hidden">{{product.description}}</p>
+              </div>
+            {{/link-to}}
+          {{/each}}
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- </div>
+
+  <div class="else-text">
+    No products. Start by adding the one.
+  </div>
+  <div class="text-center">
+    {{#link-to 'estore.categories.new' class="white-text"}}
+    {{md-btn text='Add Tag'
+      class='indigo darken-2'}}
+    {{/link-to}}
+    {{#link-to 'estore.products.new' class="white-text"}}
+    {{md-btn text='Add Post'
+      class='indigo darken-2'}}
+    {{/link-to}}
+  </div>
+</div> -->

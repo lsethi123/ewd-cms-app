@@ -1,20 +1,22 @@
-<br>
-{{#link-to 'estore.products.new'}}
-{{md-btn text='Add Product'
-	class='cyan darken-4'}}
-{{/link-to}}
+<!-- <br> -->
+<div class="tag-cloud">
+	{{#link-to 'estore.products.new'}}{{md-btn text='+ Product' class='indigo darken-2'}}{{/link-to}}
+	{{#link-to 'estore.categories.new'}}{{md-btn text='+ Category' class='blue lighten-1'}}{{/link-to}}
 
-{{#link-to 'estore.products.categories.new'}}
-{{md-btn text='Add Category'
-	class='cyan darken-4'}}
-{{/link-to}}
-
-{{#link-to 'estore.products.index'}}
-{{md-btn text='View Products'
-	class='cyan darken-4'}}
-{{/link-to}}
-
-{{#link-to 'estore.orders.index'}}{{md-btn text='List Orders'
-	class='cyan darken-4'}}{{/link-to}}
+	<!-- {{#link-to 'estore.products.index'}}
+	{{md-btn text='View Products'
+		class='cyan darken-4'}}
+	{{/link-to}} -->
+	<span class="pad-left-20">
+	<!-- {{#link-to 'estore.orders.index'}}{{md-btn text='List Orders' class='cyan darken-4'}}{{/link-to}} -->
+		{{#each model as |category|}}
+			{{#link-to 'estore.categories.show' category.id}}
+			<div class="tag-badge card-panel blue lighten-1 white-text">
+				{{category.name}}
+			</div>
+			{{/link-to}}
+		{{/each}}
+	</span>
+</div>
 
 {{outlet}}
