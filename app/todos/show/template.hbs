@@ -1,48 +1,48 @@
 {{#md-modal close='cancel' class="test-modal"}}
-{{#if sendingData}}
-<div class="modal-content">
-<div class="col s10">
-  {{md-loader}}
-</div>
-</div>
-{{else}}
-{{#if isEditing}}
-<form id="todo-form" class="create-form" {{action 'add' on="submit"}}>
-  <div class="modal-content">
-  {{md-input type="text" value=model.title label="Todo name"}}
-  {{md-select content=users
-  value=selectedUser
-  label="Select Assignee"
-  prompt="Please choose..."
-  optionLabelPath="content.fullName"
-  optionValuePath="content"}}
-</div>
-<div class="modal-footer">
-    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
-        Add
-    </a>
-    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancelEdit'}}>
-        Cancel
-    </a>
-</div>
-</form>
-{{else}}
-<div class="modal-content">
-<h3>{{model.title}}</h3>
-<strong>Assigned to:</strong> {{#link-to 'users.show' model.user}}{{model.user.fullName}}{{/link-to}}<br/>
-<h5>Checklists:</h5>
-{{#each model.checklists as |checklist|}}
-  {{checklist.step}}. {{checklist.description}}<br/>
-{{/each}}
-</div>
-<div class="modal-footer">
-    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'edit'}}>
-        Edit
-    </a>
-    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
-        Cancel
-    </a>
-</div>
-{{/if}}
-{{/if}}
+  {{#if sendingData}}
+    <div class="modal-content">
+      <div class="col s10">
+        {{md-loader}}
+      </div>
+    </div>
+  {{else}}
+    {{#if isEditing}}
+    <form id="todo-form" class="create-form" {{action 'add' on="submit"}}>
+      <div class="modal-content">
+      {{md-input type="text" value=model.title label="Todo name"}}
+      {{md-select content=users
+      value=selectedUser
+      label="Select Assignee"
+      prompt="Please choose..."
+      optionLabelPath="content.fullName"
+      optionValuePath="content"}}
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+            Add
+        </a>
+        <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancelEdit'}}>
+            Cancel
+        </a>
+    </div>
+    </form>
+    {{else}}
+    <div class="modal-content">
+    <h3>{{model.title}}</h3>
+    <strong>Assigned to:</strong> {{#link-to 'users.show' model.user}}{{model.user.fullName}}{{/link-to}}<br/>
+    <h5>Checklists:</h5>
+    {{#each model.checklists as |checklist|}}
+      {{checklist.step}}. {{checklist.description}}<br/>
+    {{/each}}
+    </div>
+    <div class="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'edit'}}>
+            Edit
+        </a>
+        <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+            Cancel
+        </a>
+    </div>
+    {{/if}}
+  {{/if}}
 {{/md-modal}}

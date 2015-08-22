@@ -6,29 +6,29 @@
     <div id="board-{{board.id}}" class="board-item z-depth-1 grey lighten-5 ">
         <h5 class="board-title">{{board.title}}</h5>
         <span class="delete-board"  {{action 'deleteBoard' board}}>X</span>
-      {{#each board.todos as |todo|}}
-      {{#draggable-object content=todo}}
-        <div id="todo-{{todo.id}}" class="todo-item teal white-text z-depth-1" {{action 'showTodo' todo}}><strong>{{todo.title}}</strong>
-          <span class="delete-board" {{action 'deleteTodo' todo}}>X</span>
-          <br/><strong>Assigned to:</strong> {{#link-to 'users.show' todo.user}}{{todo.user.fullName}}{{/link-to}}<br/><br/>
-          {{#if todo.checklists}}
-            <strong>Checklist:</strong><br/>
-            {{#each todo.checklists as |checklist|}}
-            <span>{{checklist.step}}. {{checklist.description}}</span><br/>
-            {{/each}}
-          {{else}}
+        <button class="modal-action modal-close waves-effect waves-orange btn-flat" {{action 'addTodo' board}}>Add Todo</button>
+        {{#each board.todos as |todo|}}
+        {{#draggable-object content=todo}}
+          <div id="todo-{{todo.id}}" class="todo-item teal white-text z-depth-1" {{action 'showTodo' todo}}><strong>{{todo.title}}</strong>
+            <span class="delete-board" {{action 'deleteTodo' todo}}>X</span>
+            <br/><strong>Assigned to:</strong> {{#link-to 'users.show' todo.user}}{{todo.user.fullName}}{{/link-to}}<br/><br/>
+            {{#if todo.checklists}}
+              <strong>Checklist:</strong><br/>
+              {{#each todo.checklists as |checklist|}}
+              <span>{{checklist.step}}. {{checklist.description}}</span><br/>
+              {{/each}}
+            {{else}}
 
-          {{/if}}
-        </div>
-      {{/draggable-object}}
-      {{else}}
-        <br/>
-        No todos. Start by adding one.
-      {{/each}}
+            {{/if}}
+          </div>
+        {{/draggable-object}}
+        {{else}}
+          <br/>
+          No todos. Start by adding one.
+        {{/each}}
     </div>
     {{/draggable-object-target}}
 
   </div>
-
   {{/each}}
 </div>
