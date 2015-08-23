@@ -9,6 +9,7 @@
 <form id="todo-form" class="create-form" {{action 'add' on="submit"}}>
   <div class="modal-content">
   {{md-input type="text" value=model.title label="Todo name"}}
+  {{md-input-date type="text" value=model.dueDate label="Enter date"}}
   {{md-select
   content=users
   value=selectedUser

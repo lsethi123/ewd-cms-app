@@ -8,7 +8,7 @@
         {{md-btn text='View Calendar' action='debug' class='btn-flat cyan darken-4 white-text'}}</p>
         <p class="left-align">{{!user.events.demo}}1 Demo
         1 Quote Review{{!other event/or KPI data thats relavent to the day}}
-        <span class="3x">20</span> New Tasks.
+        <span class="3x">{{tasks.length}}</span> New Tasks.
         <span class="3x">10</span> New Leads.
         </p>
       {{/md-card-panel}}
@@ -21,21 +21,9 @@
     </div>
   </div>
 
-  <main>
-      {{#each tasks as |task|}}
-       <div class="collection-item">
-        {{task.name}}
-        {{task.description}}
-        {{task.dueDate}}
-        {{task.employee.fullName}}
-        {{task.user.fullName}}
-        {{task.company.name}}
-       </div>
-      {{/each}}
-  </main>
   <div class="row">
     <div class="col s12">
-      {{crm-tasks-index class="hoverable"}}
+      {{crm-tasks-index class="hoverable" tasks=tasks}}
     </div>
   </div>
   <div class="row">
@@ -59,26 +47,5 @@
       {{/crm-companies-index}}
     </div>
   </div>
-
-  {{#each opportunities as |opportunity|}}
-   {{#link-to 'crm.companies.show.opportunities.show' task class="collection-item"}}
-   {{opportunity.title}}
-   {{opportunity.stage}}
-   {{opportunity.estimatedClose}}
-   {{opportunity.estimatedAmount}}
-   {{opportunity.company.name}}
-   {{/link-to}}
-  {{/each}}
-
-
-
-  {{#each opportunities as |opportunity|}}
-   {{#link-to 'crm.companies.show.opportunities.show' task class="collection-item"}}
-   {{opportunity.title}}
-   {{opportunity.stage}}
-   {{opportunity.estimatedClose}}
-   {{opportunity.estimatedAmount}}
-   {{opportunity.company.name}}
-   {{/link-to}}
-  {{/each}}
+  
 </div>

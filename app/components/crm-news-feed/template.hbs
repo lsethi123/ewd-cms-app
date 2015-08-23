@@ -3,17 +3,17 @@
   <h5 class="white-text-color cyan darken-4">Newsfeed</h5>
 </header>
 <main>
-  {{#each tasks as |task|}}
+  {{#each filteredTasks as |task|}}
     {{#md-card-panel class="cyan lighten-1"
         bodyClass="white-text"}}
-        New Task: {{task.name}}
+        {{task.name}} should be completed {{task.taskDue}}.
     {{/md-card-panel}}
   {{/each}}
 
-  {{#each opportunities as |opportunity|}}
+  {{#each filteredOpps as |opportunity|}}
   {{#md-card-panel class="cyan darken-1"
       bodyClass="white-text"}}
-      New Opportunity: {{opportunity.title}} on {{opportunity.stage}} Stage, should be closed at {{opportunity.estimatedClose}} for ${{opportunity.estimatedAmount}}
+      {{opportunity.title}} should be closed {{opportunity.oppDue}} for ${{opportunity.estimatedAmount}}
   {{/md-card-panel}}
   {{/each}}
 </main>
