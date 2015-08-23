@@ -1,46 +1,48 @@
+<br>
 <div class="row">
-  <div class="col s12">
-    <br>
-    <!-- <span class="modal-action modal-close">
-      {{md-btn icon='mdi-image-control-point'
-        action='signUp' buttonType='floating'
-        class='btn-large indigo darken-2'}}
-    </span> -->
+  <div class="user-index-aside col s12 l3">
 
-    {{#link-to 'users.new' class="white-text"}}
-    {{md-btn text='Add New User'
-      class='indigo darken-2'}}
-    {{/link-to}}
+      {{#link-to 'users.new' class="white-text"}}
+      {{md-btn text='Add New User'
+        class='indigo darken-2'}}
+      {{/link-to}}
 
-    {{#link-to 'teams.new' class="white-text"}}
-    {{md-btn text='Add New Team'
-      class='indigo darken-3'}}
-    {{/link-to}}
-    {{#link-to 'teams' class="white-text"}}
-    {{md-btn text='View Teams'
-      class='indigo darken-4'}}
-    {{/link-to}}
-  </div>
-</div>
-
-<div class="row">
-  <div class="col s12">
-    {{#each model as |user|}}
-    <div class="col m6 l4 card small hoverable">
-      <div class="card-image">
-        <img src="http://placehold.it/100x200"/>
-        <span class="card-title">{{user.fullName}}</span>
-      </div>
-      <div class="card-content">
-        <label>Email </label>{{user.email}}
-        <br><label>Priveleges </label>  {{user.team}}
-      </div>
-      <div class="card-action">
-        {{#link-to 'users.show' user class="collection-item"}}View Profile{{/link-to}}
-        <button {{action 'edit' user}}>Edit</button>
-        <button {{action 'delete' user}}>Delete</button>
-      </div>
+      {{#link-to 'teams.new' class="white-text"}}
+      {{md-btn text='Add New Team'
+        class='indigo darken-3'}}
+      {{/link-to}}
+      {{#link-to 'teams' class="white-text"}}
+      {{md-btn text='View Teams'
+        class='indigo darken-4'}}
+      {{/link-to}}
+      <ul>
+        <li><h5>ScrollSpy Goes Here</h5></li>
+        <li><h5>Administator</h5></li>
+        <li><h5>Director</h5></li>
+        <li><h5>Manager</h5></li>
+        <li><h5>Sales</h5></li>
+        <li><h5>Marketing</h5></li>
+      </ul>
+      <br>
     </div>
+
+    <div class="user-index-main col s12 l9">
+    {{#each model as |user|}}
+      <div class="col m6 l4 card small hoverable">
+        <div class="card-image">
+          <img src="http://placehold.it/100x200"/>
+          <span class="card-title">{{user.fullName}}</span>
+        </div>
+        <div class="card-content">
+          <label>Email </label>{{user.email}}
+          <br><label>Priveleges </label>  {{user.team}}
+        </div>
+        <div class="card-action">
+          {{#link-to 'users.show' user class="collection-item"}}View Profile{{/link-to}}
+          <button {{action 'edit' user}}>Edit</button>
+          <button {{action 'delete' user}}>Delete</button>
+        </div>
+      </div>
     {{/each}}
   </div>
 </div>

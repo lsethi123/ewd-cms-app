@@ -1,0 +1,24 @@
+<div class="user-profile-banner-header">
+  <div class="user-item">
+    <img class="center clip-polygon" src="http://placehold.it/250x250"/>
+  </div>
+  <div class="user-item">
+    <h3 class="center">{{model.fullName}}</h3>
+  </div>
+</div>
+<div class="user-profile-banner-footer one-edge-shadow">
+  <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
+  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
+</div>
+<div class="user-profile-body">
+  <h6><label>Team:</label>{{model.team.name}}</h6>
+  <h6><label>Email:</label>{{model.email}}</h6>
+  <button {{action 'edit'}}>Edit</button>
+</div>
+
+{{yield}}
