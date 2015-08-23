@@ -33,10 +33,10 @@
       <ul>
         {{#each posts as |post|}}
           {{#link-to 'blog.posts.show' post}}
-            <div class="list-group-item">
+          <div class="list-group-item">
             <h5 class="o-hidden"><strong>{{post.title}}</strong></h5>
             <p class="o-hidden">{{post.subtitle}}</p>
-            </div>
+          </div>
           {{/link-to}}
         {{/each}}
       </ul>

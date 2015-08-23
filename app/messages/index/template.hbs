@@ -1,0 +1,22 @@
+<div class="layout-hf-holy-grail">
+  <div class="body">
+    <aside>
+      <ul>
+        {{#each model as |user|}}
+          {{#link-to 'users.show' user}}
+          <div class="list-group-item-parent">
+            <h5 class="child">
+              <img class="center clip-polygon size" src="assets/images/Sarrah.jpg"/>
+              <span class="user-text">{{user.fullName}}</span>
+            </h5>
+          </div>
+          {{/link-to}}
+        {{/each}}
+      </ul>
+    </aside>
+    <main class="main-message">
+      {{outlet}}
+      <h4>Chatting Takes Place Here</h4>
+    </main>
+  </div>
+</div>

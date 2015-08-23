@@ -20,9 +20,15 @@
   <!-- {{#link-to 'teams' tagName='li'}}
   <i class="fa fa-users nav-padding"></i>
   {{/link-to}} -->
-  <!-- {{#link-to 'users' tagName='li'}}
-    <i class="mdi-action-shop"></i>
-  {{/link-to}} -->
+
+  {{#link-to 'users' tagName='li'}}
+  <i class="icon-item mdi-image-timer-auto nav-padding"></i>
+  {{/link-to}}
+
+  {{#link-to 'messages' tagName='li'}}
+  <i class="icon-item mdi-maps-local-post-office nav-padding"></i>
+  {{/link-to}}
+
   {{#link-to 'settings' tagName='li'}}
     <i class="fa fa-cogs nav-padding"></i>
   {{/link-to}}
@@ -38,5 +44,5 @@
   </div>
   {{outlet}}
 </div>
-{{material-footer}}
+<!-- {{material-footer}} -->
 {{md-modal-container}}
