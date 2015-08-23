@@ -2,18 +2,11 @@
   <h5>Events</h5>
 </div>
 {{#md-card-collapsible title="events" accordion=false}}
-
-    {{#md-collapsible icon="mdi-image-filter-drama" title="10AM"}}
-      Event Info Goes Here
-    {{/md-collapsible}}
-    {{#md-collapsible icon="mdi-maps-place"
-        title="2PM"}}
-      Event Info Goes Here
-    {{/md-collapsible}}
-    {{#md-collapsible icon="mdi-social-whatshot"
-        title="4PM"}}
-      Event Info Goes Here
-    {{/md-collapsible}}
+    {{#each todaysEvents as |event|}}
+      {{#md-collapsible icon="mdi-image-filter-drama" title=event.eventRange}}
+        <strong>{{event.title}}</strong><br/>Info about event...
+      {{/md-collapsible}}
+    {{/each}}
 {{/md-card-collapsible}}
 
 

@@ -3,9 +3,9 @@
     <div class="col s12">
       {{#md-card-panel class="teal hoverable" bodyClass="white-text" id="card-panel"}}
         <p class="hero-text left-align">
-        Welcome {{user.fullName}}Ryan Brady,<br>
-        You Have {{!user.events.today}} 2 Events today.<br>
-        {{md-btn text='View Calendar' action='debug' class='btn-flat cyan darken-4 white-text'}}</p>
+        Welcome {{session.secure.first_name}} {{session.secure.last_name}},<br>
+        You have {{todaysEvents.length}} events today.<br>
+        {{md-btn text='View Calendar' action='viewCalendar' class='btn-flat cyan darken-4 white-text'}}</p>
         <p class="left-align">{{!user.events.demo}}1 Demo
         1 Quote Review{{!other event/or KPI data thats relavent to the day}}
         <span class="3x">{{tasks.length}}</span> New Tasks.
@@ -47,5 +47,5 @@
       {{/crm-companies-index}}
     </div>
   </div>
-  
+
 </div>

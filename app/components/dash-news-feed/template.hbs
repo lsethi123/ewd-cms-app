@@ -16,4 +16,11 @@
         New Task: {{task.name}}
     {{/md-card-panel}}
   {{/each}}
+
+  {{#each events as |event|}}
+    {{#md-card-panel class="teal darken-2"
+        bodyClass="white-text"}}
+        New Event: {{event.title}}
+    {{/md-card-panel}}
+  {{/each}}
 </main>

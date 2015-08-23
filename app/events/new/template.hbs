@@ -1,0 +1,26 @@
+{{#md-modal close='closeModal' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
+<form id="event-form" class="create-form" {{action 'add' on="submit"}}>
+  <div class="modal-content">
+  {{md-input type="text" value=model.title label="Event title"}}
+  {{md-input-date type="text" value=model.date label="Enter date"}}
+  {{md-input type="time" value=model.start label="Starts at"}}
+  {{md-input type="time" value=model.end label="Ends at"}}
+</div>
+<div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+        Add
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
+</form>
+{{/if}}
+{{/md-modal}}

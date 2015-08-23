@@ -1,10 +1,11 @@
-<!-- {{as-calendar
-  title="Events"
-  occurrences=occurrences
-  defaultTimeZoneQuery="New York|London|Dubai|Hong Kong"
-  dayStartingTime="9:00"
-  dayEndingTime="18:00"
-  timeSlotDuration="00:30"
-  onAddOccurrence="add"
-  onUpdateOccurrence="update"
-  onRemoveOccurrence="delete"}} -->
+<br/><br/>
+<main>
+  {{#each model as |event|}}
+  {{#link-to 'events.show' event}}
+    {{#md-card-panel class="teal darken-2"
+        bodyClass="white-text"}}
+        New Event: {{event.title}}
+    {{/md-card-panel}}
+  {{/link-to}}
+  {{/each}}
+</main>
