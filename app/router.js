@@ -60,6 +60,7 @@ Router.map(function() {
   });
   this.route('users', function() {
     this.route('show', { path: ':user_id' } );
+    this.route('new');
   });
   this.route('teams', function() {
     this.route('show', { path: ':team_id' } );

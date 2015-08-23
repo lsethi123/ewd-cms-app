@@ -1,0 +1,27 @@
+{{#md-modal close='closeModal' class="test-modal"}}
+{{#if sendingData}}
+<div class="modal-content">
+<div class="col s10">
+  {{md-loader}}
+</div>
+</div>
+{{else}}
+<form id="team-form" class="create-form" {{action 'add' on="submit"}}>
+  <div class="modal-content">
+    <h3 class="text-center">Add New User</h3>
+    {{input type="text" value=model.firstName placeholder="First name"}}
+    {{input type="text" value=model.lastName placeholder="Last name"}}
+    {{input type="email" value=model.email placeholder="Email"}}
+    {{input type="password" value=model.password placeholder="Password"}}
+</div>
+<div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'signUp'}}>
+      Sign up
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
+        Cancel
+    </a>
+</div>
+</form>
+{{/if}}
+{{/md-modal}}
