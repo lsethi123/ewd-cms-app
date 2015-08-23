@@ -113,9 +113,45 @@ nav .button-collapse {
   border-radius: 0;
 }
 
+.size {
+  max-width: 75px;
+  height:auto;
+}
 
 // .z-depth-1, .z-depth-2, .z-depth-3, .z-depth-4, .z-depth-5 {
 //   background: teal;
 //   height:100px;
 //   width:100px;
 // }
+
+h5.o-hidden {
+  padding:0;
+}
+.no-margin {
+  margin:0;
+}
+.list-group-item-parent {
+  line-height:100px;
+  display: table-cell;
+  vertical-align: middle;
+  // display:flex;
+  // justify-content: center;
+  // align-items: center;
+  margin-bottom: -1px;
+  border: 1px solid #ddd;
+  h5 {
+   position:relative;
+   margin:0;
+   padding:.25em;
+   min-width:250px;
+  }
+  .user-text {
+    position: absolute;
+    padding:1em .75em;
+  }
+}
+.main-message {
+  border: 1px solid #ddd;
+  min-height:100vh;
+  margin:0;
+}

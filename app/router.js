@@ -8,6 +8,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('settings');
+  this.route('messages', function() {
+
+  });
   this.route('blog', function() {
     this.route('posts', function() {
       this.route('show', { path: ':post_id' } );
