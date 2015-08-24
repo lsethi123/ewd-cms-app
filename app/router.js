@@ -7,7 +7,13 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('settings');
+  this.route('settings', function() {
+    this.route('user');
+    this.route('estore');
+    this.route('posts');
+    this.route('crm');
+    this.route('events');
+  });
   this.route('messages', function() {
 
   });
@@ -61,6 +67,12 @@ Router.map(function() {
   this.route('users', function() {
     this.route('show', { path: ':user_id' } );
     this.route('new');
+    this.route('admin');
+    this.route('va');
+    this.route('engineer');
+    this.route('guest');
+    this.route('sales');
+    this.route('support');
   });
   this.route('teams', function() {
     this.route('show', { path: ':team_id' } );

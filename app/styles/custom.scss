@@ -218,3 +218,29 @@ h5.board-title {
 .modal {
   max-height:80%;
 }
+
+
+// Users + Settings
+.btn-wrapper {
+  margin: 1em 0;
+  .btn {
+    margin:.8em 0;
+  }
+}
+.waves-effect {
+  display:block;
+}
+.header-margin {
+  margin:1.5em;
+}
+
+.table-of-contents li {
+  padding: 4px 0;
+}
+.table-of-contents a {
+  font-size: 130%;
+}
+.card.small .card-content {
+  height:70px;
+  margin:10px 0;
+}
