@@ -7,10 +7,11 @@
       <button class="button primary" {{action 'invalidateSession'}}>Log out</button>
     {{/dash-dash}}
     {{dash-news-feed tasks=tasks todos=todos events=events}}
-    {{dash-forecast opportunities=opportunities}}
   </article>
   <aside class="box2">
     {{dash-events events=events}}
+
+    {{dash-forecast opportunities=opportunities}}
     <!-- {{dash-support}} -->
   </aside>
   <aside class="box3">

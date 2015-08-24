@@ -1,4 +1,26 @@
-<header class="blue-grey darken-2"><h5 class="white-text-color">Dash Forecast</h5></header>
+
+<header>
+  <h5 class="white-text-color blue-grey darken-1">Sales Projections</h5>
+</header>
+<main>
+  {{#md-card title="Month: $13,259"
+    image="assets/images/d3-forecast.png"
+    activator=true
+    id="card-reveal"}}
+
+    {{#md-card-content}}
+        {{#link-to "crm.forecast"}}Extended Forecast{{/link-to}}
+    {{/md-card-content}}
+
+    {{#md-card-reveal}}
+    <hr>
+    Quarter: $56,421
+    <br><hr>
+    Year: $150,224
+    {{/md-card-reveal}}
+
+{{/md-card}}
+</main>
 
   {{#each opportunities as |opportunity|}}
   {{#md-card-panel class="blue-grey darken-1"

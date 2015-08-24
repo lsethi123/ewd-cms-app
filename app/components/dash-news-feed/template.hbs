@@ -5,37 +5,44 @@
 {{#md-card-collapsible accordion=false}}
   {{#md-collapsible icon="mdi-image-filter-drama"
       title="Todos"}}
-
+Ideally We could combine the HTML/CSS of
+the White Panels => The actual Todo panel.
+Once it is clicked, additional info about
+the item can ve observed.
   {{/md-collapsible}}
 {{/md-card-collapsible}}
+
 {{#each todos as |todo|}}
     {{#md-card-panel class="blue-grey darken-1"
         bodyClass="white-text"}}
-        New Todo: {{#link-to 'todos.index'}}{{todo.title}}{{/link-to}}
+        {{#link-to 'todos.show' todo}}{{todo.title}}{{/link-to}}
     {{/md-card-panel}}
 {{/each}}
+
 {{#md-card-collapsible accordion=false}}
   {{#md-collapsible icon="mdi-social-whatshot"
       title="CRM Tasks"}}
-
   {{/md-collapsible}}
 {{/md-card-collapsible}}
+
 {{#each tasks as |task|}}
   {{#md-card-panel class="blue-grey darken-1"
       bodyClass="white-text"}}
-      New Task: {{task.name}}
+      {{#link-to 'tasks.show' task}}{{task.name}}{{/link-to}}
   {{/md-card-panel}}
 {{/each}}
 {{#md-card-collapsible accordion=false}}
   {{#md-collapsible icon="mdi-social-whatshot"
       title="Recently Booked Events"}}
-
+Ideally this white 'collapsible' section
+would just be an actual Event Panel
   {{/md-collapsible}}
 {{/md-card-collapsible}}
+
 {{#each events as |event|}}
   {{#md-card-panel class="blue-grey darken-2"
       bodyClass="white-text"}}
-      New Event: {{event.title}}
+      {{#link-to 'events.show' event}}View:{{event.title}}{{/link-to}}
   {{/md-card-panel}}
 {{/each}}
 

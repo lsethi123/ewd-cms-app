@@ -28,7 +28,7 @@
     </form>
     {{else}}
     <div class="modal-content">
-    <h3>{{model.title}}</h3>
+    <h3>Event:{{model.title}}</h3>
     <strong>Assigned to:</strong> {{#link-to 'users.show' model.user}}{{model.user.fullName}}{{/link-to}}<br/>
     <h5>Checklists:</h5>
     {{#each model.checklists as |checklist|}}
