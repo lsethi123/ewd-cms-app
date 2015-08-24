@@ -1,22 +1,25 @@
-<div class="row">
-  <!-- Table of Contents -->
-  <div class="col hide-on-small-only m3 l2">
-    <div class="toc-wrapper">
-      <div style="height: 1px;">
-        <ul class="section table-of-contents">
-          <li>{{#link-to 'settings.user'}}User{{/link-to}}</li>
-          <li>{{#link-to 'settings.estore'}}eStore{{/link-to}}</li>
-          <li>{{#link-to 'settings.posts'}}Posts{{/link-to}}</li>
-          <li>{{#link-to 'settings.crm'}}CRM{{/link-to}}</li>
-          <li>{{#link-to 'settings.events'}}Events{{/link-to}}</li>
-        </ul>
+<div class="container">
+  <div class="row">
+    <!-- Table of Contents -->
+    <div class="col hide-on-small-only m3 l2">
+      <div class="toc-wrapper">
+        <div style="height: 1px;">
+          <ul class="section table-of-contents">
+            <li>{{#link-to 'settings.user'}}User{{/link-to}}</li>
+            <li>{{#link-to 'settings.estore'}}eStore{{/link-to}}</li>
+            <li>{{#link-to 'settings.posts'}}Posts{{/link-to}}</li>
+            <li>{{#link-to 'settings.crm'}}CRM{{/link-to}}</li>
+            <li>{{#link-to 'settings.events'}}Events{{/link-to}}</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col s12 m9 l10">
-      {{outlet}}
+    <div class="col s12 m9 l10">
+        {{outlet}}
+    </div>
   </div>
 </div>
+
 <!-- <a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content">
   <i class="material-icons">add</i>
 </a>

@@ -1,13 +1,11 @@
 {{#if isEditing}}
-
   {{#md-modal close='cancel' class="test-modal"}}
-  {{#if sendingData}}
-  <div class="modal-content">
+{{#if sendingData}}
+<div class="modal-content">
   <div class="col s10">
     {{md-loader}}
   </div>
-  </div>
-
+</div>
 {{else}}
 
   <div class="modal-content">
@@ -22,13 +20,8 @@
     optionValuePath="content"}}
   </div>
   <div class="modal-footer">
-      <button class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" type="submit" {{action 'save'}}>
-          Save!
-      </button>
-      <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
-          Cancel
-      </a>
-  </div>
+      <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" type="submit" {{action 'save'}}>Save!</a>
+      <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>Cancel</a></div>
 {{/if}}
 
 {{/md-modal}}
@@ -36,90 +29,66 @@
 
 <!-- {{user-profile}} -->
 
-{{md-parallax image="http://lorempixel.com/580/250/nature/1"}}
-<!-- {{material-parallax}} -->
+<!-- {{md-parallax image="http://lorempixel.com/580/250/nature/1"}} -->
 <div class="user-profile-banner-header">
   <div class="user-item">
-    {{#material-box}}
-      <img class="center clip-polygon" src="http://placehold.it/250x250"/>
-    {{/material-box}}
-  </div>
-  <div class="user-item">
-    <h3 class="center">{{model.fullName}}</h3>
+      <img class="center clip-polygon" src="http://placehold.it/200x200"/>
   </div>
 </div>
-<!-- <div class="user-profile-banner-footer one-edge-shadow">
-  <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
-  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
-  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
-  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
-  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
-  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
-  <div class="user-icon"><i class="mdi-action-favorite"></i></div>
-</div> -->
+<div class="user-profile-banner-footer">
+  <div class="user-icon"><span class="blue-grey darken-1 white-text border-4 skill-badge">Marketing</span></div>
+  <div class="user-icon"><span class="blue-grey darken-1 white-text border-4 skill-badge">CSS3</span></div>
+  <div class="user-icon"><span class="blue-grey darken-1 white-text border-4 skill-badge">HTML5</span></div>
+  <div class="user-item"><h3 class="center">{{model.fullName}}</h3></div>
+  <div class="user-icon"><span class="blue-grey darken-1 white-text border-4 skill-badge">EmberJS</span></div>
+  <div class="user-icon"><span class="blue-grey darken-1 white-text border-4 skill-badge">SEO</span></div>
+  <div class="user-icon"><span class="blue-grey darken-1 white-text border-4 skill-badge">EmberJS</span></div>
+ </div>
 <hr>
 
-<div class="user-profile-body">
+<!-- <div class="user-profile-body">
   <div class="row">
-      <div class="col s12 m6 l4 card small hoverable">
-        <div class="card-image">
-          <img src="http://placehold.it/50x100"/>
-          <span class="card-title">Avengers</span>
-        </div>
-        <div class="card-content">
-        The Avengers is eWebDesign.co's Elite Employment Unit Consisting Entirely of Administrators.
-        We ensure the safety of the business plan as well as secure your childrens future. Do NOT
-        Fuck w/ the avengers.
-        </div>
-        <div class="card-action">
-          {{#link-to 'users.show' user class="collection-item"}}View Profile{{/link-to}}
-          <button {{action 'edit' user}}>Edit</button>
-          <button {{action 'delete' user}}>Delete</button>
-        </div>
+    <div class="col s12 m6 l4 card small hoverable">
+      <div class="card-image">
+        <img src="http://placehold.it/50x100"/>
+        <span class="card-title">Avengers</span>
       </div>
-
-      <!-- Role -->
-      <div class="col s12 m6 l4">
-        {{#md-card title="Card Title" id="basic-card"}}
-          {{#md-card-content}}
-          This area describes the role I play within my company
-          {{/md-card-content}}
-          {{#md-card-action}}
-              {{#link-to "users"}}Link 1{{/link-to}}
-              {{#link-to "users"}}Link 2{{/link-to}}
-          {{/md-card-action}}
-        {{/md-card}}
+      <div class="card-content">
+      The Avengers is eWebDesign.co's Elite Employment Unit Consisting Entirely of Administrators.
+      We ensure the safety of the business plan as well as secure your childrens future. Do NOT
+      Fuck w/ the avengers.
       </div>
+      <div class="card-action">
+        {{#link-to 'users.show' user class="collection-item"}}View Profile{{/link-to}}
+        <button {{action 'edit' user}}>Edit</button>
+        <button {{action 'delete' user}}>Delete</button>
+      </div>
+    </div>
 
-      <!-- Skills -->
-      <div class="col s12 m6 l4">
-        <div class="col l3">
-          <!-- {{#md-badge class='deep-orange darken-1 white-text border-1'}}
-          Marketing{{/md-badge}} -->
-          <div class="deep-orange darken-1 white-text border-1 skill-badge">Marketing</div><br>
-          <div class="deep-orange darken-1 white-text border-2 skill-badge">CSS3</div><br>
-          <div class="deep-orange darken-1 white-text border-3 skill-badge">HTML5</div><br>
-          <div class="deep-orange darken-2 white-text border-4 skill-badge">SEO</div><br>
-          <div class="deep-orange darken-3 white-text border-5 skill-badge">EmberJS</div><br>
-          <div class="deep-orange darken-1 white-text border-6 skill-badge">Marketing</div><br>
-          <div class="deep-orange darken-1 white-text border-7 skill-badge">CSS3</div><br>
-          <div class="deep-orange darken-1 white-text border-8 skill-badge">HTML5</div><br>
-          <div class="deep-orange darken-2 white-text border-9 skill-badge">SEO</div><br>
-          <div class="deep-orange darken-3 white-text border-10 skill-badge">EmberJS</div><br>
-          <br>
-        </div>
-        <div class="col l3">
-          {{#md-badge class='deep-orange darken-1 white-text border-2'}}Ember.JS{{/md-badge}}<br>
-        </div>
-        <!-- {{#md-badge class='deep-orange darken-1 white-text border-3'}}CSS3{{/md-badge}} -->
-        <!-- {{#md-badge class='deep-orange darken-1 white-text border-4'}}HTML5{{/md-badge}}
-        {{#md-badge class='deep-orange darken-1 white-text border-5'}}SEO{{/md-badge}}  -->
+    <!-- Role -->
+    <!-- <div class="col s12 m6 l4">
+      {{#md-card title="Card Title" id="basic-card"}}
+        {{#md-card-content}}
+        This area describes the role I play within my company
+        {{/md-card-content}}
+        {{#md-card-action}}
+            {{#link-to "users"}}Link 1{{/link-to}}
+            {{#link-to "users"}}Link 2{{/link-to}}
+        {{/md-card-action}}
+      {{/md-card}}
+    </div> -->
+
+    <!-- Skills -->
+    <!-- <div class="col s12 m6 l4">
+      <div class="col l3">
+        <br>
+      </div>
+      <div class="col l3">
       </div>
     </div>
   <h6><label>Email:</label>{{model.email}}</h6>
   <button {{action 'edit'}}>Edit</button>
-
-</div>
+</div> -->
 
 {{yield}}
 

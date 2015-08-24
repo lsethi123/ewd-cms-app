@@ -1,21 +1,52 @@
-<main class="row">
-  <div class="col s12 m9 l10">
-    {{#each model as |user|}}
-      <div class="col s12 m6 l4 card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">{{user.fullName}}</span>
-          <p class="white-text">A Brief Description of the person goes here</p>
+<div class="row header-margin">
+  <!-- Table of Contents -->
+  <aside class="col hide-on-small-only m3 l2">
+    <div class="btn-wrapper">
+      {{#link-to 'users.new' class="white-text"}}
+      {{md-btn text='Add New User'
+        class='blue-grey darken-1'}}
+      {{/link-to}}
+      {{#link-to 'teams.new' class="white-text"}}
+      {{md-btn text='Add New Team'
+        class='blue-grey darken-4'}}
+      {{/link-to}}
+      {{#link-to 'teams' class="white-text"}}
+      {{md-btn text='View Teams'
+        class='blue-grey darken-4'}}
+      {{/link-to}}
+    </div>
+    <div class="toc-wrapper">
+      <ul class="section table-of-contents">
+        <li>{{#link-to 'users.admin'}}Admin{{/link-to}}</li>
+        <!-- <li>{{#link-to 'users.va'}}Virtual Admin{{/link-to}}</li> -->
+        <!-- <li>{{#link-to 'users.design'}}Design{{/link-to}}</li> -->
+        <li>{{#link-to 'users.engineer'}}Engineer{{/link-to}}</li>
+        <li>{{#link-to 'users.guest'}}Guest{{/link-to}}</li>
+        <li>{{#link-to 'users.sales'}}Sales{{/link-to}}</li>
+        <li>{{#link-to 'users.support'}}Support{{/link-to}}</li>
+        <!-- <li>{{#link-to 'accounting'}}Accounting{{/link-to}}</li> -->
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <div class="col s12 m9 l10">
+      {{#each model as |user|}}
+        <div class="col s12 m6 l4 card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">{{user.fullName}}</span>
+            <p class="white-text">A Brief Description of the person goes here</p>
+          </div>
+          <div class="card-content white-text">
+            <label>Email </label>{{user.email}}
+            <br><label>Priveleges </label>  {{user.team}}
+          </div>
+          <div class="card-action">
+            {{#link-to 'users.show' user class="collection-item"}}View{{/link-to}}
+            <a class="collection-item" {{action 'edit' user}}>Edit</a>
+            <a class="collection-item" {{action 'delete' user}}>Delete</a>
+          </div>
         </div>
-        <div class="card-content white-text">
-          <label>Email </label>{{user.email}}
-          <br><label>Priveleges </label>  {{user.team}}
-        </div>
-        <div class="card-action">
-          {{#link-to 'users.show' user class="collection-item"}}View{{/link-to}}
-          <a class="collection-item" {{action 'edit' user}}>Edit</a>
-          <a class="collection-item" {{action 'delete' user}}>Delete</a>
-        </div>
-      </div>
-    {{/each}}
-  </div>
-</main>
+      {{/each}}
+    </div>
+  </main>
+</div>
