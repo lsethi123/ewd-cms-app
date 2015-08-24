@@ -14,14 +14,14 @@
       </thead>
       <tbody>
         {{#each model as |company|}}
-        <tr class="ember-view card-panel">
-              <td>{{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}</td>
-              <td>{{company.address}}</td>
-              <td>{{company.city}}</td>
-              <td>{{company.state}}</td>
-              <td>{{company.phone}}</td>
-              <td>{{company.email}}</td>
-        </tr>
+          <tr class="ember-view card-panel">
+            <td>{{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}</td>
+            <td>{{company.address}}</td>
+            <td>{{company.city}}</td>
+            <td>{{company.state}}</td>
+            <td>{{company.phone}}</td>
+            <td>{{company.email}}</td>
+          </tr>
         {{/each}}
       </tbody>
     </table>
