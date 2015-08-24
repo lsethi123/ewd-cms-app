@@ -1,4 +1,4 @@
-$teal: #009688;
+$blue-grey: #009688;
 &{
   margin-bottom:10px;
   // header {
@@ -74,7 +74,7 @@ tr {
 }
 
 tr:hover td {
-  background:$teal;
+  background:$blue-grey;
   color:#FFFFFF;
   // border-top: 1px solid #22262e;
   // border-bottom: 1px solid #22262e;
@@ -93,7 +93,7 @@ tr:nth-child(odd) td {
 }
 
 tr:nth-child(odd):hover td {
-  background:$teal;
+  background:$blue-grey;
 }
 
 tr:last-child td:first-child {

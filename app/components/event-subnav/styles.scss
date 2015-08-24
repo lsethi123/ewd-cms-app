@@ -1,4 +1,4 @@
-
+$blue-grey:#546e7a;
 .event-subnav {
   padding: 0 1em;
 }
@@ -8,13 +8,13 @@
   margin: 10px 0;
   line-height: 50px;
   font-size: 18px;
-  background-color: #0097a7;
+  background-color: $blue-grey;
   color: white;
   padding: 0;
   button.block{
     width:100%;
     display:block;
-    color: #0097a7;
+    color: $blue-grey;
   }
 }
 .event-day {
@@ -25,7 +25,7 @@
   text-align: center;
   font-size:18px;
   line-height:82px;
-  background:#0097a7;
+  background:$blue-grey;
 }
 .pad-free {
   padding:0!important;

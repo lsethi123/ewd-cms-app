@@ -15,8 +15,8 @@
           <label>Category</label>{{product.category}}
         </p><br/>
         <div class="blog-post-banner-footer">
-          {{md-btn text='Edit' class='cyan darken-3' action='edit' actionArg=product}}
-          {{md-btn text='Delete' class='cyan darken-3' action='delete' actionArg=product}}
+          {{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=product}}
+          {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=product}}
           <!-- <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
           <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div> -->
           </div>
@@ -48,11 +48,11 @@
 <div class="text-center">
   {{#link-to 'estore.categories.new' class="white-text"}}
   {{md-btn text='Add Category'
-    class='cyan darken-3'}}
+    class='blue-grey darken-1'}}
   {{/link-to}}
   {{#link-to 'estore.products.new' class="white-text"}}
   {{md-btn text='Add Product'
-    class='cyan darken-3'}}
+    class='blue-grey darken-1'}}
   {{/link-to}}
 </div>
 
@@ -82,7 +82,7 @@
           <td>{{product.description}}</td>
           <td>{{product.price}}</td>
           <td>{{product.inStock}}</td>
-          <td>{{md-btn text='Edit' class='cyan darken-3' action='edit' actionArg=product}}{{md-btn text='Delete' class='cyan darken-3' action='delete' actionArg=product}}</td>
+          <td>{{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=product}}{{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=product}}</td>
         </tr>
     {{/each}}
   </tbody>

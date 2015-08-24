@@ -1,7 +1,11 @@
+$blue-grey-darken-1:#546e7a;
+
 body {
   background: #e1e3e4;
 }
-
+a {
+  color:#ffab40;
+}
 .login-form {
   input {
     color:white;
@@ -74,7 +78,7 @@ body {
 }
 
 .side-nav {
-  background: #006064;
+  background: #546e7a;
   width:140px;
 }
 
@@ -85,8 +89,8 @@ body {
   height: 3rem;
   line-height: 3rem;
   padding: 0 1rem;
-  border: 1px solid #006064;
-  background: #006064;
+  border: 1px solid #546e7a;
+  background: #546e7a;
   margin-bottom: -.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   h5 {
@@ -123,7 +127,7 @@ nav .button-collapse {
 }
 
 // .z-depth-1, .z-depth-2, .z-depth-3, .z-depth-4, .z-depth-5 {
-//   background: teal;
+//   background: blue-grey;
 //   height:100px;
 //   width:100px;
 // }
@@ -171,7 +175,7 @@ h5.o-hidden {
   position:absolute;
   right:15px;
   i {
-    color:#0097a7;
+    color:$blue-grey-darken-1;
     border: 1px solid #ddd;
   }
 }
@@ -182,11 +186,11 @@ h5.o-hidden {
 
 .btn-inverse, .btn-inverse-block, .btn-inverse-bar-4 {
   text-decoration: none;
-  color: #0097a7;
+  color: $blue-grey-darken-1;
   background-color: #fff;
   text-align: center;
   letter-spacing: .5px;
-  border: 1px solid #0097a7;
+  border: 1px solid $blue-grey-darken-1;
   border-radius: 2px;
   display: inline-block;
   height: 36px;
@@ -195,7 +199,7 @@ h5.o-hidden {
   padding: 0 2rem;
   text-transform: uppercase;
   &:hover {
-    background: #0097a7;
+    background: $blue-grey-darken-1;
     color: white;
   }
 }
@@ -205,4 +209,8 @@ h5.o-hidden {
 }
 .btn-inverse-bar-4 {
   width:25%;
+}
+
+.secondary-content {
+  color:#546e7a;
 }

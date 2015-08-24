@@ -1,17 +1,17 @@
 {{yield}}
 <header>
-  <h5 class="white-text-color cyan darken-2">Newsfeed</h5>
+  <h5 class="white-text-color blue-grey darken-2">Newsfeed</h5>
 </header>
 <main>
   {{#each filteredTasks as |task|}}
-    {{#md-card-panel class="cyan lighten-1"
+    {{#md-card-panel class="blue-grey darken-1"
         bodyClass="white-text"}}
         {{task.name}} should be completed {{task.taskDue}}.
     {{/md-card-panel}}
   {{/each}}
 
   {{#each filteredOpps as |opportunity|}}
-  {{#md-card-panel class="cyan darken-1"
+  {{#md-card-panel class="blue-grey darken-1"
       bodyClass="white-text"}}
       {{opportunity.title}} should be closed {{opportunity.oppDue}} for ${{opportunity.estimatedAmount}}
   {{/md-card-panel}}

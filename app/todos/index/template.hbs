@@ -3,13 +3,13 @@
   <div class="col s12 m4 l3">
 
     {{#draggable-object-target action="changeBoard" board=board}}
-    <div id="board-{{board.id}}" class="board-item z-depth-1 grey lighten-5 ">
+    <div id="board-{{board.id}}" class="board-item z-depth-1 grey darken-1 ">
         <h5 class="board-title">{{board.title}}</h5>
         <span class="delete-board"  {{action 'deleteBoard' board}}>X</span>
         <button class="modal-action modal-close waves-effect waves-orange btn-flat" {{action 'addTodo' board}}>Add Todo</button>
         {{#each board.todos as |todo|}}
         {{#draggable-object content=todo}}
-          <div id="todo-{{todo.id}}" class="todo-item teal white-text z-depth-1" {{action 'showTodo' todo}}><strong>{{todo.title}}</strong>
+          <div id="todo-{{todo.id}}" class="todo-item blue-grey white-text z-depth-1" {{action 'showTodo' todo}}><strong>{{todo.title}}</strong>
             <span class="delete-board" {{action 'deleteTodo' todo}}>X</span>
             <br/><strong>Assigned to:</strong> {{#link-to 'users.show' todo.user}}{{todo.user.fullName}}{{/link-to}}<br/><br/>
             {{#if todo.checklists}}

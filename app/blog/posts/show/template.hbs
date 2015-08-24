@@ -35,11 +35,11 @@
     <p class="blog-post-body-text">{{model.body}}</p><br/>
     <div class="blog-post-banner-footer">
       {{#if post.published}}
-        {{md-btn text='Unpublish' class='cyan darken-3' action='unpublish' actionArg=post}}
+        {{md-btn text='Unpublish' class='blue-grey darken-1' action='unpublish' actionArg=post}}
       {{else}}
-        {{md-btn text='Publish' class='cyan darken-3' action='publish' actionArg=post}}
+        {{md-btn text='Publish' class='blue-grey darken-1' action='publish' actionArg=post}}
       {{/if}}
-      {{md-btn text='Edit' class='cyan darken-3' action='edit'}}
+      {{md-btn text='Edit' class='blue-grey darken-1' action='edit'}}
       </div>
   </div>
 {{/if}}
