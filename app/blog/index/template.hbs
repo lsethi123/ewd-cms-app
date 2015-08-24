@@ -10,17 +10,17 @@
         </div>
       </div>
       <div class="blog-post-body">
-        <p class="blog-post-body-text">
+        <p class="cyan-text text-darken-4 blog-post-body-text">
           {{post.body}}
         </p><br/>
         <div class="blog-post-banner-footer">
           {{#if post.published}}
-            {{md-btn text='Unpublish' class='indigo darken-2' action='unpublish' actionArg=post}}
+            {{md-btn text='Unpublish' class='cyan darken-3' action='unpublish' actionArg=post}}
           {{else}}
-            {{md-btn text='Publish' class='indigo darken-2' action='publish' actionArg=post}}
+            {{md-btn text='Publish' class='cyan darken-3' action='publish' actionArg=post}}
           {{/if}}
-          {{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=post}}
-          {{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=post}}
+          {{md-btn text='Edit' class='cyan darken-3' action='edit' actionArg=post}}
+          {{md-btn text='Delete' class='cyan darken-3' action='delete' actionArg=post}}
           <!-- <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
           <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div> -->
           </div>
@@ -34,8 +34,8 @@
         {{#each posts as |post|}}
           {{#link-to 'blog.posts.show' post}}
           <div class="list-group-item">
-            <h5 class="o-hidden"><strong>{{post.title}}</strong></h5>
-            <p class="o-hidden">{{post.subtitle}}</p>
+            <h5 class="cyan-text text-darken-4 o-hidden"><strong>{{post.title}}</strong></h5>
+            <p class="cyan-text text-darken-4 o-hidden">{{post.subtitle}}</p>
           </div>
           {{/link-to}}
         {{/each}}
@@ -50,11 +50,11 @@
 <div class="text-center">
   {{#link-to 'blog.tags.new' class="white-text"}}
   {{md-btn text='Add Tag'
-    class='indigo darken-2'}}
+    class='cyan darken-3'}}
   {{/link-to}}
   {{#link-to 'blog.posts.new' class="white-text"}}
   {{md-btn text='Add Post'
-    class='indigo darken-2'}}
+    class='cyan darken-3'}}
   {{/link-to}}
 </div>
 {{/if}}

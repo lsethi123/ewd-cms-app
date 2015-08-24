@@ -18,7 +18,7 @@
           <td>{{task.dueDate}}</td>
           <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
           <td>{{task.user.fullName}}</td>
-          <td>{{md-btn text='Edit' class='indigo darken-2' action='edit' actionArg=task}}{{md-btn text='Delete' class='indigo darken-2' action='delete' actionArg=task}}</td>
+          <td>{{md-btn text='Edit' class='cyan darken-3' action='edit' actionArg=task}}{{md-btn text='Delete' class='cyan darken-3' action='delete' actionArg=task}}</td>
         </tr>
     {{/each}}
   </tbody>
