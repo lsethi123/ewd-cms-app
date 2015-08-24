@@ -89,10 +89,9 @@ a {
   height: 3rem;
   line-height: 3rem;
   padding: 0 1rem;
-  border: 1px solid #546e7a;
   background: #546e7a;
   margin-bottom: -.5rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
   h5 {
     color:white;
   }
@@ -146,7 +145,6 @@ h5.o-hidden {
   // justify-content: center;
   // align-items: center;
   margin-bottom: -1px;
-  border: 1px solid #ddd;
   h5 {
    position:relative;
    margin:0;
@@ -159,7 +157,6 @@ h5.o-hidden {
   }
 }
 .main-message {
-  border: 1px solid #ddd;
   min-height:100vh;
   margin:0;
 }

@@ -1,9 +1,11 @@
 $blue-grey:#546e7a;
-.event-subnav {
-  padding: 0 1em;
+.row {
+  margin:1em;
+  .event-subnav {
+    padding: 1em;
+  }
 }
 .event-subnav-left, .event-subnav-right, .event-subnav-center  {
-  border: 1px solid #eee;
   text-align: center;
   margin: 10px 0;
   line-height: 50px;
@@ -16,6 +18,10 @@ $blue-grey:#546e7a;
     display:block;
     color: $blue-grey;
   }
+}
+.event-subnav-left {
+  background: none;
+  text-align:center;
 }
 .event-day {
   border:1px solid #eee;

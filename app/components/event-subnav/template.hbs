@@ -1,6 +1,6 @@
 <div class="row event-subnav">
-  <div class="col pad-free s2 event-subnav-left"><button class="block" {{action 'addEvent'}}>Add Event</button></div>
-  <div class="col s1 offset-s2 event-subnav-center">Day</div>
+  <div class="col pad-free s1 event-subnav-left">{{yield}}</div>
+  <div class="col s1 offset-s3 event-subnav-center">Day</div>
   <div class="col s1 event-subnav-center">Week</div>
   <div class="col s1 event-subnav-center">Month</div>
   <div class="col s1 event-subnav-center">Year</div>
@@ -54,4 +54,3 @@
     <div class="col event-day">31</div>
   </div>
 </div>
-{{yield}}

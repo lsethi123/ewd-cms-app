@@ -1,5 +1,4 @@
 & {
-  border: solid 1px grey;
   min-height:200px;
   margin-bottom:10px;
   header {
@@ -19,5 +18,8 @@
   }
   .card-panel {
     margin: 0;
+  }
+  .collapsible {
+    margin:0;
   }
 }
