@@ -11,71 +11,8 @@
     {{outlet}}
   </div>
   <div class="col l2">
-    <aside class="top">
-      <ul class="companies hoverable">
-        <li class="list-group-item">
-          <h5>{{#link-to 'crm.companies.new'}}
-            <span class="modal-action modal-close">
-              {{md-btn icon='mdi-image-control-point' buttonType='floating' class='btn-large blue-grey darken-4'}}
-            </span>
-          {{/link-to}}
-          Companies</h5>
-        </li>
-        <li class="list-group-item">Total Companies
-          <div class="secondary-content"><i class="mdi-action-bug-report">{{companies.length}}</i></div>
-        </li>
-        <li class="list-group-item">Engaged
-          <div class="secondary-content"><i class="mdi-action-account-box">343</i></div>
-        </li>
-        <li class="list-group-item">Account Efficiency
-          <div class="secondary-content"><i class="mdi-action-announcement">48%</i></div>
-        </li>
-      </ul>
-
-      <br>
-
-      <!-- <ul class="companies hoverable">
-        <li class="list-group-item">
-          <h5>{{#link-to 'crm.companies.show.employees.new'}}
-            <span class="modal-action modal-close">
-              {{md-btn icon='mdi-image-control-point' buttonType='floating' class='btn-large blue-grey darken-3'}}
-            </span>
-          {{/link-to}}
-          Contacts</h5>
-        </li>
-        <li class="list-group-item">Engaged
-          <div class="secondary-content"><i class="mdi-action-bug-report">1012</i></div>
-        </li>
-        <li class="list-group-item">Courting
-          <div class="secondary-content"><i class="mdi-action-account-box">343</i></div>
-        </li>
-        <li class="list-group-item">Unaware
-          <div class="secondary-content"><i class="mdi-action-announcement">48%</i></div>
-        </li>
-      </ul> -->
-
-      <br>
-
-      <!-- <ul class="companies hoverable">
-        <li class="list-group-item">
-          <h5>{{#link-to 'crm.companies.show.opportunities.new'}}
-            <span class="modal-action modal-close">
-              {{md-btn icon='mdi-image-control-point' buttonType='floating' class='btn-large blue-grey darken-5'}}
-            </span>
-          {{/link-to}}
-          Opportunities</h5>
-        </li>
-        <li class="list-group-item">Demo
-          <div class="secondary-content"><i class="mdi-action-bug-report">12</i></div>
-        </li>
-        <li class="list-group-item">Evaluation
-          <div class="secondary-content"><i class="mdi-action-account-box">3</i></div>
-        </li>
-        <li class="list-group-item">Quote
-          <div class="secondary-content"><i class="mdi-action-announcement">4</i></div>
-        </li>
-      </ul> -->
-    </aside>
+    {{#crm-rightnav}}
+    {{/crm-rightnav}}  
   </div>
 </div>
 

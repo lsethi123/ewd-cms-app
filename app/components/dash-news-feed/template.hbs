@@ -2,31 +2,35 @@
 <header>
   <h5 class="white-text-color blue-grey darken-2">Newsfeed</h5>
 </header>
-  {{#each todos as |todo|}}
-      {{#md-card-panel class="blue-grey darken-1"
-          bodyClass="white-text"}}
-          New Todo: {{#link-to 'todos.index'}}{{todo.title}}{{/link-to}}
-      {{/md-card-panel}}
-  {{/each}}
+{{#md-card-collapsible accordion=false}}
+  {{#md-collapsible icon="mdi-image-filter-drama"
+      title="Todos"}}
 
-  {{#md-card-collapsible accordion=false}}
-    {{#md-collapsible icon="mdi-image-filter-drama"
-        title="One"}}
+  {{/md-collapsible}}
+{{/md-card-collapsible}}
+{{#each todos as |todo|}}
+    {{#md-card-panel class="blue-grey darken-1"
+        bodyClass="white-text"}}
+        New Todo: {{#link-to 'todos.index'}}{{todo.title}}{{/link-to}}
+    {{/md-card-panel}}
+{{/each}}
+{{#md-card-collapsible accordion=false}}
+  {{#md-collapsible icon="mdi-social-whatshot"
+      title="CRM Tasks"}}
 
-    {{/md-collapsible}}
-    {{#md-collapsible icon="mdi-maps-place"
-        title="Two"}}
-    {{/md-collapsible}}
+  {{/md-collapsible}}
+{{/md-card-collapsible}}
+{{#each tasks as |task|}}
+  {{#md-card-panel class="blue-grey darken-1"
+      bodyClass="white-text"}}
+      New Task: {{task.name}}
+  {{/md-card-panel}}
+{{/each}}
+{{#md-card-collapsible accordion=false}}
+  {{#md-collapsible icon="mdi-social-whatshot"
+      title="Recently Booked Events"}}
 
-    {{#md-collapsible icon="mdi-social-whatshot"
-        title="Three"}}
-
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
-    {{/md-collapsible}}
+  {{/md-collapsible}}
 {{/md-card-collapsible}}
 {{#each events as |event|}}
   {{#md-card-panel class="blue-grey darken-2"
@@ -34,12 +38,8 @@
       New Event: {{event.title}}
   {{/md-card-panel}}
 {{/each}}
-{{#each tasks as |task|}}
-  {{#md-card-panel class="blue-grey darken-1"
-      bodyClass="white-text"}}
-      New Task: {{task.name}}
-  {{/md-card-panel}}
-{{/each}}
+
+
 
 
 
