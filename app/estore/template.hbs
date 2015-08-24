@@ -1,6 +1,10 @@
 <!-- <br> -->
 <div class="tag-cloud">
-	{{#link-to 'estore.products.new'}}{{md-btn text='+ Product' class='cyan darken-3'}}{{/link-to}}
+	{{#link-to 'estore.products.new'}}
+	<!-- {{md-btn text='+ Product' class='cyan darken-3'}} -->
+	<button class="waves-effect waves-light btn-inverse">Add Product</button>
+
+	{{/link-to}}
 	{{#link-to 'estore.categories.new'}}{{md-btn text='+ Category' class='blue lighten-1'}}{{/link-to}}
 
 	<!-- {{#link-to 'estore.products.index'}}

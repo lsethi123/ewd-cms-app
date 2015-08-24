@@ -1,0 +1,32 @@
+
+.event-subnav {
+  padding: 0 1em;
+}
+.event-subnav-left, .event-subnav-right, .event-subnav-center  {
+  border: 1px solid #eee;
+  text-align: center;
+  margin: 10px 0;
+  line-height: 50px;
+  font-size: 18px;
+  background-color: #0097a7;
+  color: white;
+  padding: 0;
+  button.block{
+    width:100%;
+    display:block;
+    color: #0097a7;
+  }
+}
+.event-day {
+  border:1px solid #eee;
+  width:14.25%;
+  margin: 2px 0 0 0;
+  color: white;
+  text-align: center;
+  font-size:18px;
+  line-height:52px;
+  background:#0097a7;
+}
+.pad-free {
+  padding:0!important;
+}

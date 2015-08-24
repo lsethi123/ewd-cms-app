@@ -1,6 +1,10 @@
 <div class="tag-cloud">
   <!-- {{#link-to 'blog.index' class="white-text"}}{{md-btn text='Posts' class='cyan darken-3'}}{{/link-to}} -->
-  {{#link-to 'blog.posts.new'}}{{md-btn text='Add Post' class='cyan darken-3'}}{{/link-to}}
+  {{#link-to 'blog.posts.new'}}
+  <!-- {{md-btn text='Add Post' class='cyan darken-3'}} -->
+  <button class="waves-effect waves-light btn-inverse">Add Post</button>
+
+  {{/link-to}}
   {{#link-to 'blog.tags.new'}}{{md-btn text='Add Tag' class='cyan darken-4'}}{{/link-to}}
   <!-- <span class="modal-action modal-close">
     {{md-btn icon='mdi-image-control-point'

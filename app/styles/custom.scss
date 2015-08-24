@@ -163,7 +163,42 @@ h5.o-hidden {
 
 
 .view-toggle {
-  font-size:200%;
+  font-size:220%;
   position:absolute;
   right:15px;
+  i {
+    color:#0097a7;
+    border: 1px solid #ddd;
+  }
+}
+.view-toggle-event {
+
+}
+
+
+.btn-inverse, .btn-inverse-block, .btn-inverse-bar-4 {
+  text-decoration: none;
+  color: #0097a7;
+  background-color: #fff;
+  text-align: center;
+  letter-spacing: .5px;
+  border: 1px solid #0097a7;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  &:hover {
+    background: #0097a7;
+    color: white;
+  }
+}
+.btn-inverse-block {
+  display:block;
+  width:100%;
+}
+.btn-inverse-bar-4 {
+  width:25%;
 }
