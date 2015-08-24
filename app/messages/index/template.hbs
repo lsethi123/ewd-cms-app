@@ -2,7 +2,7 @@
   <div class="body">
     <aside>
       <ul>
-        {{#each model as |user|}}
+        {{#each users as |user|}}
           {{#link-to 'users.show' user}}
           <div class="list-group-item-parent">
             <h5 class="child">
@@ -15,8 +15,20 @@
       </ul>
     </aside>
     <main class="main-message">
-      {{outlet}}
       <h4>Chatting Takes Place Here</h4>
+      <div class="messages-list">
+        {{#each model as |message|}}
+        <div class="message">
+          {{message.user.fullName}}: {{message.message}}
+        </div>
+        {{/each}}
+      </div>
     </main>
+    <div class="message-input">
+      <form {{action 'sendMessage' on="submit"}}>
+        {{input type="text" value=messageToSend placeholder="Enter message to send..."}}
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </div>
 </div>
