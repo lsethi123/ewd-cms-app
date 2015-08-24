@@ -36,7 +36,8 @@
 
 <!-- {{user-profile}} -->
 
-
+{{md-parallax image="http://lorempixel.com/580/250/nature/1"}}
+<!-- {{material-parallax}} -->
 <div class="user-profile-banner-header">
   <div class="user-item">
     {{#material-box}}
@@ -114,38 +115,27 @@
         <!-- {{#md-badge class='deep-orange darken-1 white-text border-4'}}HTML5{{/md-badge}}
         {{#md-badge class='deep-orange darken-1 white-text border-5'}}SEO{{/md-badge}}  -->
       </div>
-
     </div>
-
-        <!-- <div class="card-image">
-          <img src="http://placehold.it/50x200"/>
-          <span class="card-title">Avengers</span>
-        </div>
-        <div class="card-content">
-        The Avengers is eWebDesign.co's Elite Employment Unit Consisting Entirely of Administrators.
-        We ensure the safety of the business plan as well as secure your childrens future. Do NOT
-        Fuck w/ the avengers.
-        </div>
-        <div class="card-action">
-          {{#link-to 'users.show' user class="collection-item"}}View Profile{{/link-to}}
-          <button {{action 'edit' user}}>Edit</button>
-          <button {{action 'delete' user}}>Delete</button>
-        </div> -->
-
-
   <h6><label>Email:</label>{{model.email}}</h6>
   <button {{action 'edit'}}>Edit</button>
-
-
 
 </div>
 
 {{yield}}
 
-
-
-
-
-
-
 {{/if}}
+
+<!-- <div class="card-image">
+  <img src="http://placehold.it/50x200"/>
+  <span class="card-title">Avengers</span>
+</div>
+<div class="card-content">
+The Avengers is eWebDesign.co's Elite Employment Unit Consisting Entirely of Administrators.
+We ensure the safety of the business plan as well as secure your childrens future. Do NOT
+Fuck w/ the avengers.
+</div>
+<div class="card-action">
+  {{#link-to 'users.show' user class="collection-item"}}View Profile{{/link-to}}
+  <button {{action 'edit' user}}>Edit</button>
+  <button {{action 'delete' user}}>Delete</button>
+</div> -->
