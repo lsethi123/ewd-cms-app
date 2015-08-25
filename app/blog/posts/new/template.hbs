@@ -26,6 +26,10 @@
     <label for="textarea1">Textarea</label>
   </div>
   {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
+  <p class="file-input-field"><input type='file' multiple id='file-field'/> Upload an image</p>
+<div class="file-list">
+
+</div>
   Tags:
   {{ember-chosen
     content=tags
@@ -36,7 +40,7 @@
     value=selectedTags}}
 </div>
 <div class="modal-footer">
-    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'uploadImages'}}>
         Add
     </a>
     <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>

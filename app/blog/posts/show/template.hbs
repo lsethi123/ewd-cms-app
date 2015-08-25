@@ -11,11 +11,22 @@
         {{input type="text" value=model.title placeholder="Post title"}}
         {{input type="text" value=model.subtitle placeholder="Post subtitle"}}
         {{textarea type="text" value=model.body placeholder="Post body..."}}
-        <input type='file' id='file-field' /> Upload an image
+        <p class="file-input-field"><input type='file' multiple id='file-field'/> Upload an image</p>
+      <div class="file-list">
+
+      </div>
         {{md-switch checked=model.published onLabel="Publish" offLabel="Unpublish"}}<br>
       </div>
+      Tags:
+      {{ember-chosen
+        content=tags
+        optionLabelPath="name"
+        optionValuePath="id"
+        placeholder="Select tags for post"
+        multiple=true
+        value=selectedTags}}
       <div class="modal-footer">
-          <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'save'}}>
+          <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'uploadImages'}}>
               Save!
           </a>
           <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>
@@ -33,10 +44,8 @@
   </div>
   <div class="blog-post-body">
     <p class="blog-post-body-text">
-  
-        {{#content-editable value=model.post tagName="h5" enter="ceSave" type="html"}}
-          {{model.body}}
-        {{/content-editable}}
+
+        {{content-editable value=model.body tagName="h5" enter="saveEditable" type="html"}}
 
     </p><br/>
     <div class="blog-post-banner-footer">
