@@ -12,10 +12,21 @@
       {{input type="text" value=model.title placeholder="Product Title"}}
       {{input type="text" value=model.description placeholder="Product Description"}}
       {{textarea type="text" value=model.price placeholder="Product Price..."}}
-      <input type='file' id='file-field' /> Upload an image
+      <p class="file-input-field"><input type='file' multiple id='file-field'/> Upload an image</p>
+    <div class="file-list">
+
+    </div>
+    Categories:
+    {{ember-chosen
+      content=categories
+      optionLabelPath="name"
+      optionValuePath="id"
+      placeholder="Select product categories"
+      multiple=true
+      value=selectedCategories}}
     </div>
     <div class="modal-footer">
-        <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'save'}}>
+        <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'uploadImages'}}>
             Save!
         </a>
         <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'cancel'}}>

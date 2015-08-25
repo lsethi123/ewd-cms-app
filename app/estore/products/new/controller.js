@@ -7,16 +7,6 @@ export default Ember.Controller.extend({
   actions: {
     add: function() {
       this.set('sendingData', true);
-      let files = document.getElementById('file-field').files;
-      if (files) {
-        for (let i = 0; i < files.length; i++) {
-          let file = files[i];
-          let fileRecord = this.store.createRecord('image', {
-            file: file
-          });
-          this.get('imageFiles').pushObject(fileRecord);
-        }
-      }
       let categories = this.get('selectedCategories');
       this.get('model').save().then((product) => {
         this.get('imageFiles').forEach((imageFile) => {
@@ -28,19 +18,21 @@ export default Ember.Controller.extend({
             imageProduct.save();
           });
         });
-
-        this.get('selectedCategories').forEach((category) => {
-          this.store.findRecord('category', category).then((category) => {
-            let categoryProduct = this.store.createRecord('category-product', {
-              category: category,
-              product: product
+        if (categories) {
+          this.get('selectedCategories').forEach((category) => {
+            this.store.findRecord('category', category).then((category) => {
+              let categoryProduct = this.store.createRecord('category-product', {
+                category: category,
+                product: product
+              });
+              categoryProduct.save();
             });
-            categoryProduct.save();
           });
-        });
+        }
         this.set('sendingData', false);
         this.set('selectedCategories', null);
         this.set('imageFiles', []);
+        this.set('imageProducts', []);
         this.transitionToRoute('estore.products.show', product);
       });
     },
@@ -53,6 +45,20 @@ export default Ember.Controller.extend({
     closeModal: function() {
       this.get('model').destroyRecord();
       window.history.back();
+    },
+
+    uploadImages: function() {
+      let files = document.getElementById('file-field').files;
+      if (files) {
+        for (let i = 0; i < files.length; i++) {
+          let file = files[i];
+          let fileRecord = this.store.createRecord('image', {
+            file: file
+          });
+          this.get('imageFiles').pushObject(fileRecord);
+        }
+      }
+      this.send('add');
     }
   }
 });
