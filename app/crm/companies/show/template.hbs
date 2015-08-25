@@ -38,6 +38,9 @@
    <label>Phone:</label>{{model.phone}}
    <label>Email:</label>{{model.email}}
    {{md-btn text='Edit' class='blue-grey darken-1' action='edit'}}
+   <div class="flow-text">
+     {{model.description}}
+   </div>
    <div class="row no-bottom-margin pad-1">
      {{#link-to 'crm.companies.show.employees' class="button"}}{{md-btn text='Employees' class='blue-grey darken-1'}} {{/link-to}}
      {{#link-to 'crm.companies.show.opportunities' class="button"}}{{md-btn text='Opportunities' class='blue-grey darken-1'}} {{/link-to}}

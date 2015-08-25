@@ -3,7 +3,7 @@ $primary-link:#ffab40;
 body {
   background: #e1e3e4;
 }
-a {
+.card-action a, .card-panel a, span a, p a {
   color:#ffab40;
 }
 .login-form {
@@ -247,15 +247,18 @@ aside {
   }
 }
 ul.collection {
-  border:none;
+  border: none;
   margin-top:0;
   label {
     font-size:115%;
     padding:.5em;
   }
+  .flow-text {
+    padding: .25em .5em;
+  }
 }
-// CRM SHOW Tasks
 
+// CRM SHOW Tasks
 .no-bottom-margin {
   margin-bottom:0;
 }
@@ -263,3 +266,4 @@ ul.collection {
 .pad-1 {
   padding:.5em;
 }
+//

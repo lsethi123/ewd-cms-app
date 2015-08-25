@@ -1,6 +1,19 @@
+<!-- PRODUCT CONTENT AREA - FULL WIDTH BELOW SUBNAV -->
 {{#if products}}
 <div class="layout-hf-holy-grail">
   <div class="body">
+    <aside>
+      <ul>
+        {{#each products as |product|}}
+          {{#link-to 'estore.products.show' product}}
+            <div class="list-group-item">
+            <h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
+            <p class="o-hidden">{{product.description}}</p>
+            </div>
+          {{/link-to}}
+        {{/each}}
+      </ul>
+    </aside>
     <main class="z-depth-3">
       {{#each products as |product|}}
       <div class="blog-post-banner-header one-edge-shadow">
@@ -23,23 +36,12 @@
       </div>
       {{/each}}
     </main>
-    <aside>
-      <ul>
-        {{#each products as |product|}}
-          {{#link-to 'estore.products.show' product}}
-            <div class="list-group-item">
-            <h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
-            <p class="o-hidden">{{product.description}}</p>
-            </div>
-          {{/link-to}}
-        {{/each}}
-      </ul>
-    </aside>
+
   </div>
 </div>
 
 {{else}}
-
+<!-- IF NO PRODUCTS YET -->
 <div class="else-text">
   No products. Start by adding the one.
 </div>

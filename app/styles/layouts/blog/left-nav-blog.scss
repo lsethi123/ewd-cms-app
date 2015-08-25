@@ -32,6 +32,9 @@ main {
   padding:10px 15px;
   margin-bottom: -1px;
   background:white;
+  &:hover {
+    background: blue;
+  }
 }
 
 
