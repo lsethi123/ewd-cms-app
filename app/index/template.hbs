@@ -3,7 +3,7 @@
 <div class="dashboard-container">
   <article class="box1">
     {{#dash-dash}}
-    <button class="btn align-right" {{action 'invalidateSession'}}>Log out</button>
+    <button class="btn align-right blue-grey darken-1" {{action 'invalidateSession'}}>Log out</button>
     {{/dash-dash}}
     {{dash-news-feed tasks=tasks todos=todos events=events}}
   </article>
