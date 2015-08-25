@@ -15,7 +15,8 @@ export default Ember.Controller.extend({
       this.toggleProperty('isEditing');
     },
 
-    saveEditable: function() {
+    saveEditable: function(contentEditable, event) {
+      event.preventDefault();
       this.get('model').save();
     },
 

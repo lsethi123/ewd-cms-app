@@ -45,8 +45,15 @@
   <div class="blog-post-body">
     <p class="blog-post-body-text">
 
-        {{content-editable value=model.body tagName="h5" enter="saveEditable" type="html"}}
+        {{content-editable value=model.body tagName="h5" enter="saveEditable" type="text"}}
 
+    </p>
+    <p class="images">
+      {{#each model.images as |image|}}
+        <a href={{image.imgUrl}}>
+          <img src={{image.imgUrl}} style="width: 100px; height: 100px;">
+        </a>
+      {{/each}}
     </p><br/>
     <div class="blog-post-banner-footer">
       {{#if post.published}}
