@@ -246,3 +246,20 @@ aside {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
   }
 }
+ul.collection {
+  border:none;
+  margin-top:0;
+  label {
+    font-size:115%;
+    padding:.5em;
+  }
+}
+// CRM SHOW Tasks
+
+.no-bottom-margin {
+  margin-bottom:0;
+}
+
+.pad-1 {
+  padding:.5em;
+}

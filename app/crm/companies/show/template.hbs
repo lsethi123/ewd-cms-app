@@ -27,19 +27,24 @@
 {{/if}}
 {{/md-modal}}
 {{else}}
-<ul class="collection with-header">
-   <li class="collection-header"><h4>{{model.name}}</h4></li>
+
+<!-- CRM SHOW COMPANY MAIN CONTENT AREA-->
+
+<ul class="collection with-header z-depth-3">
+   <li class="collection-header blue-grey darken-1"><h4 class="white-text">{{model.name}}</h4></li>
    <label>Address:</label>{{model.address}}
    <label>City:</label>{{model.city}}
    <label>State:</label>{{model.state}}
    <label>Phone:</label>{{model.phone}}
    <label>Email:</label>{{model.email}}
    {{md-btn text='Edit' class='blue-grey darken-1' action='edit'}}
+   <div class="row no-bottom-margin pad-1">
+     {{#link-to 'crm.companies.show.employees' class="button"}}{{md-btn text='Employees' class='blue-grey darken-1'}} {{/link-to}}
+     {{#link-to 'crm.companies.show.opportunities' class="button"}}{{md-btn text='Opportunities' class='blue-grey darken-1'}} {{/link-to}}
+     {{#link-to 'crm.companies.show.tasks' class="button"}}{{md-btn text='Tasks' class='blue-grey darken-1'}} {{/link-to}}
+   </div>
 </ul>
 
-{{#link-to 'crm.companies.show.employees' class="button"}}{{md-btn text='Employees' class='blue-grey darken-1'}} {{/link-to}}
-{{#link-to 'crm.companies.show.opportunities' class="button"}}{{md-btn text='Opportunities' class='blue-grey darken-1'}} {{/link-to}}
-{{#link-to 'crm.companies.show.tasks' class="button"}}{{md-btn text='Tasks' class='blue-grey darken-1'}} {{/link-to}}
 <br/>
 {{/if}}
 {{outlet}}

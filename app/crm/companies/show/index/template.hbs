@@ -1,5 +1,5 @@
-
-<ul class="collection with-header">
+<!-- TASKS SUB-MAIN CONTENT -->
+<ul class="collection with-header z-depth-1 blue-grey darken-1">
    <li class="collection-header"><h4>Tasks</h4></li>
    {{#each model.tasks as |task|}}
    {{#link-to 'crm.companies.show.tasks.show' task class="collection-item"}}
@@ -12,8 +12,9 @@
    {{/each}}
 </ul>
 
+<!-- COLLECTION SUB-MAIN CONTENT -->
 
-<ul class="collection with-header">
+<ul class="collection with-header z-depth-1">
    <li class="collection-header"><h4>Opportunities</h4></li>
    {{#each model.opportunities as |opportunity|}}
    {{#link-to 'crm.companies.show.opportunities.show' opportunity class="collection-item"}}
@@ -25,7 +26,9 @@
    {{/each}}
 </ul>
 
-<ul class="collection with-header">
+<!-- EMPLOYEES SUB-MAIN CONTENT -->
+
+<ul class="collection with-header z-depth-1">
    <li class="collection-header"><h4>Employees</h4></li>
    {{#each model.employees as |employee|}}
    {{#link-to 'crm.companies.show.employees.show' employee class="collection-item"}}
