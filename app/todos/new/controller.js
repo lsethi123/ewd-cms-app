@@ -25,7 +25,8 @@ export default Ember.Controller.extend({
         this.set('checklistStep', 1);
         this.set('checklistDescription', null);
         this.set('sendingData', false);
-        this.transitionToRoute('todos.boards.index');
+        this.transitionToRoute('todos.index');
+        this.get('flashMessages').success('Successfully created a todo!');
       });
     },
 
