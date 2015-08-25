@@ -50,5 +50,12 @@
   <div class="blog-post-banner-footer">
     {{md-btn text='Edit' class='blue-grey darken-1' action='edit'}}
     </div>
+    <p class="images">
+      {{#each model.images as |image|}}
+        <a href={{image.imgUrl}}>
+          <img src={{image.imgUrl}} style="width: 100px; height: 100px;">
+        </a>
+      {{/each}}
+    </p>
 </div>
 {{/if}}
