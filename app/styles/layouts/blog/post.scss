@@ -33,7 +33,6 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
-    background:white;
   }
   .user-icon {
     font-size:100%;
@@ -56,6 +55,7 @@
 .blog-post-body {
   width:100%;
   min-height:35vh;
+  background:white;
 }
 h5.o-hidden {
     overflow:hidden;
@@ -64,7 +64,6 @@ h5.o-hidden {
 p.blog-post-body-text {
   padding: 40px;
   font-size:140%;
-  background:white;
 }
 h3.center {
   margin-top:10%;

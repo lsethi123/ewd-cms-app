@@ -1,7 +1,7 @@
 {{#if products}}
 <div class="layout-hf-holy-grail">
   <div class="body">
-    <main>
+    <main class="z-depth-3">
       {{#each products as |product|}}
       <div class="blog-post-banner-header one-edge-shadow">
         <div class="container">
@@ -13,7 +13,7 @@
         <p class="blog-post-body-text">
           <label>Price</label>{{product.price}}
           <label>Category</label>{{product.category}}
-        </p><br/>
+        </p>
         <div class="blog-post-banner-footer">
           {{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=product}}
           {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=product}}
@@ -21,8 +21,6 @@
           <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div> -->
           </div>
       </div>
-      <hr>
-      <br>
       {{/each}}
     </main>
     <aside>
