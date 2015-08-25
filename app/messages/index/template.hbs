@@ -15,11 +15,10 @@
       </ul>
     </aside>
     <main class="main-message">
-      <h4>Chatting Takes Place Here</h4>
       <div class="messages-list">
         {{#each model as |message|}}
         <div class="message">
-          {{message.user.fullName}}: {{message.message}}
+          <p>{{message.user.fullName}}: {{message.message}}</p>
         </div>
         {{/each}}
       </div>
@@ -27,8 +26,9 @@
     <div class="message-input">
       <form {{action 'sendMessage' on="submit"}}>
         {{input type="text" value=messageToSend placeholder="Enter message to send..."}}
-        <button type="submit">Send</button>
+        <button class="hide" type="submit">Send</button>
       </form>
     </div>
-  </div>
-</div>
+    </div>
+
+    </div>

@@ -1,10 +1,50 @@
+form input {
+  font-size:120%;
+}
+
 .message-input {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 800%;
+  form {
+    line-height:50px;
+    input {
+      padding:.25em 18vw;
+      font-size:150%;
+    }
+  }
 }
 
 .message {
   display: block;
+  width:auto;
+  font-size:140%;
+}
+.messages-list {
+  background:white;
+}
+.main-message {
+  margin: 1em 0;
+  max-height:70vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+  margin-right: 1em;
+}
+
+
+::-webkit-input-placeholder {
+   color: #9C9C9C;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #9C9C9C;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #9C9C9C;
+}
+
+:-ms-input-placeholder {
+   color: #9C9C9C;
 }

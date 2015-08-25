@@ -3,8 +3,7 @@
 <div class="dashboard-container">
   <article class="box1">
     {{#dash-dash}}
-      Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong>!<br/>
-      <button class="button primary" {{action 'invalidateSession'}}>Log out</button>
+    <button class="btn align-right" {{action 'invalidateSession'}}>Log out</button>
     {{/dash-dash}}
     {{dash-news-feed tasks=tasks todos=todos events=events}}
   </article>
@@ -25,7 +24,7 @@
 
 <div class="flexbox-container-login">
   <div class="login-form">
-      {{#md-card-panel class="blue-grey"
+      {{#md-card-panel class="z-depth-5 blue-grey"
         bodyClass="white-text"
         id="card-panel"}}
         <div class="else-text">
