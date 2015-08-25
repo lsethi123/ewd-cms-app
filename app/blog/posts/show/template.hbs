@@ -32,7 +32,13 @@
     </div>
   </div>
   <div class="blog-post-body">
-    <p class="blog-post-body-text">{{model.body}}</p><br/>
+    <p class="blog-post-body-text">
+  
+        {{#content-editable value=model.post tagName="h5" enter="ceSave" type="html"}}
+          {{model.body}}
+        {{/content-editable}}
+
+    </p><br/>
     <div class="blog-post-banner-footer">
       {{#if post.published}}
         {{md-btn text='Unpublish' class='blue-grey darken-1' action='unpublish' actionArg=post}}

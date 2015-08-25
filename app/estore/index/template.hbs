@@ -2,11 +2,12 @@
 {{#if products}}
 <div class="layout-hf-holy-grail">
   <div class="body">
+    <!-- LEFT SIDEBAR-->
     <aside>
       <ul>
         {{#each products as |product|}}
-          {{#link-to 'estore.products.show' product}}
-            <div class="list-group-item">
+          {{#link-to 'estore.products.show' product class="rollover"}}
+            <div class="list-group-item rollover">
             <h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
             <p class="o-hidden">{{product.description}}</p>
             </div>

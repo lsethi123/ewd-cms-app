@@ -12,7 +12,7 @@
       </div>
       <div class="blog-post-body">
         <p class="blue-grey-text text-darken-1 blog-post-body-text">
-          {{post.body}}
+          {{content-editable value=name tagName="h5" value=post.body enter="ceSave"}}
         </p>
         <div class="blog-post-banner-footer">
           {{#if post.published}}
@@ -20,6 +20,7 @@
           {{else}}
             {{md-btn text='Publish' class='blue-grey darken-1' action='publish' actionArg=post}}
           {{/if}}
+
           {{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=post}}
           {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=post}}
           <!-- <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
@@ -33,7 +34,13 @@
         {{#each posts as |post|}}
           {{#link-to 'blog.posts.show' post}}
           <div class="list-group-item">
-            <h5 class="blue-grey-text text-darken-4 o-hidden"><strong>{{post.title}}</strong></h5>
+            <h5 class="blue-grey-text text-darken-4 o-hidden"><strong>
+              {{#content-editable value=post.title
+
+                     type="text"}}
+
+            {{/content-editable}}
+            </strong></h5>
             <p class="blue-grey-text text-darken-4 o-hidden">{{post.subtitle}}</p>
           </div>
           {{/link-to}}

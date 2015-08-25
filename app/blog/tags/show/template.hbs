@@ -10,7 +10,7 @@
       </div>
       <div class="blog-post-body">
         <p class="blog-post-body-text">
-          {{post.body}}
+        {{#content-editable value=name tagName="h5" enter="ceSave"}}  {{post.body}}{{/content-editable}}
         </p><br/>
         <div class="blog-post-banner-footer">
           {{#if post.published}}
