@@ -14,11 +14,14 @@
     {{#each model as |employee|}}
     <tr>
       <td>{{#link-to 'crm.companies.show.employees.show' employee}}{{employee.fullName}}{{/link-to}}</td>
-      <td>{{employee.email}}</td>
-      <td>{{employee.role}}</td>
-      <td>{{employee.title}}</td>
-      <td>{{employee.phone}}</td>
-      <td>{{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=employee}}{{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=employee}}{{md-btn text='Send Email' class='blue-grey darken-1' action='sendEmail' actionArg=employee}}</td>
+        {{content-editable value=employee.email tagName="td" focus-out="saveEditable" type="text"}}
+        {{content-editable value=employee.role tagName="td" focus-out="saveEditable" type="text"}}
+        {{content-editable value=employee.title tagName="td" focus-out="saveEditable" type="text"}}
+        {{content-editable value=employee.phone tagName="td" focus-out="saveEditable" type="text"}}
+      <td>
+        {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=employee}}
+        {{md-btn text='Send Email' class='blue-grey darken-1' action='sendEmail' actionArg=employee}}
+      </td>
     </tr>
     {{/each}}
   </tbody>

@@ -31,15 +31,17 @@
 <!-- CRM SHOW COMPANY MAIN CONTENT AREA-->
 
 <ul class="collection with-header z-depth-3">
-   <li class="collection-header blue-grey darken-1"><h4 class="white-text">{{model.name}}</h4></li>
-   <label>Address:</label>{{model.address}}
-   <label>City:</label>{{model.city}}
-   <label>State:</label>{{model.state}}
-   <label>Phone:</label>{{model.phone}}
-   <label>Email:</label>{{model.email}}
-   {{md-btn text='Edit' class='blue-grey darken-1' action='edit'}}
+   <li class="collection-header blue-grey darken-1 white-text">
+     {{content-editable value=model.name tagName="h4" focus-out="saveEditable" type="text"}}
+   </li>
+   <label>Address:</label>{{content-editable value=model.address tagName="span" focus-out="saveEditable" type="text"}}
+
+   <label>City:</label>{{content-editable value=model.city tagName="span" focus-out="saveEditable" type="text"}}
+   <label>State:</label>{{content-editable value=model.state tagName="span" focus-out="saveEditable" type="text"}}
+   <label>Phone:</label>{{content-editable value=model.phone tagName="span" focus-out="saveEditable" type="text"}}
+   <label>Email:</label>{{content-editable value=model.address tagName="span" focus-out="saveEditable" type="text"}}
    <div class="flow-text">
-     {{model.description}}
+     {{content-editable value=model.address tagName="span" focus-out="saveEditable" type="text"}}
    </div>
    <div class="row no-bottom-margin pad-1">
      {{#link-to 'crm.companies.show.employees' class="button"}}{{md-btn text='Employees' class='blue-grey darken-1'}} {{/link-to}}

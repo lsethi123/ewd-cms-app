@@ -14,11 +14,13 @@
     {{#each model as |task|}}
         <tr>
           <td>{{#link-to 'crm.companies.show.tasks.show' task}}{{task.name}}{{/link-to}}</td>
-          <td>{{task.description}}</td>
-          <td>{{task.dueDate}}</td>
-          <td>{{#link-to 'crm.companies.show.employees.show' task.employee}}{{task.employee.fullName}}{{/link-to}}</td>
-          <td>{{task.user.fullName}}</td>
-          <td>{{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=task}}{{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=task}}</td>
+          {{content-editable value=task.description tagName="td" focus-out="saveEditable" type="text"}}
+          {{content-editable value=task.dueDate tagName="td" focus-out="saveEditable" type="text"}}
+          {{content-editable value=task.employee.fullName tagName="td" focus-out="saveEditable" type="text"}}
+          {{#content-editable value=task.user.fullName tagName="td" focus-out="saveEditable" type="html"}}
+          <!--Select dropdown of user to assign to goes here -->
+          {{/content-editable}}
+          <td>{{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=task}}</td>
         </tr>
     {{/each}}
   </tbody>
