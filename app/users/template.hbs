@@ -1,2 +1,34 @@
-
-{{outlet}}
+<div class="row header-margin">
+  <!-- Table of Contents -->
+  <aside class="col hide-on-small-only m3 l2">
+    <div class="btn-wrapper">
+      {{#link-to 'users.new' class="white-text"}}
+      {{md-btn text='Add New User'
+        class='blue-grey darken-1'}}
+      {{/link-to}}
+      {{#link-to 'teams.new' class="white-text"}}
+      {{md-btn text='Add New Team'
+        class='blue-grey darken-4'}}
+      {{/link-to}}
+      {{#link-to 'teams' class="white-text"}}
+      {{md-btn text='View Teams'
+        class='blue-grey darken-4'}}
+      {{/link-to}}
+    </div>
+    <div class="toc-wrapper">
+      <ul class="section table-of-contents">
+        <li>{{#link-to 'users.index'}}Admin{{/link-to}}</li>
+        <!-- <li>{{#link-to 'users.va'}}Virtual Admin{{/link-to}}</li> -->
+        <!-- <li>{{#link-to 'users.design'}}Design{{/link-to}}</li> -->
+        <li>{{#link-to 'users.engineer'}}Engineer{{/link-to}}</li>
+        <li>{{#link-to 'users.guest'}}Guest{{/link-to}}</li>
+        <li>{{#link-to 'users.sales'}}Sales{{/link-to}}</li>
+        <li>{{#link-to 'users.support'}}Support{{/link-to}}</li>
+        <!-- <li>{{#link-to 'accounting'}}Accounting{{/link-to}}</li> -->
+      </ul>
+    </div>
+  </aside>
+  <main>
+    {{outlet}}
+  </main>
+</div>

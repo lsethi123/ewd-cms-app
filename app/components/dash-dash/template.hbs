@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col s12">
       <h5>Hello, <strong>{{session.secure.first_name}} {{session.secure.last_name}}</strong></h5>
-      
+
       <!-- <div class="col s3"><span>Traffic-2-Lead</span></div>
       <div class="col s3"><span>  {{md-select content=sites
         value=selectedSite
@@ -12,12 +12,6 @@
         optionValuePath="content"}}</span></div>
       <div class="col s3"><span>Engagement</span></div> -->
     </div>
+    {{yield}}
   </div>
-  <div class="row">
-    <!-- <div class="col s12">
-      <div class="col s3"><span>ACQ</span></div>
-      <div class="col s3"><span>Overall Score</span></div>
-      <div class="col s3"><span>Efficiency</span></div>
-    </div> -->
-  </div>  {{yield}}
 </main>
