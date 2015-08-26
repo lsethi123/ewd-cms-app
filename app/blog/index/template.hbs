@@ -6,7 +6,10 @@
       {{#each posts as |post|}}
       <div class="blog-post-banner-header one-edge-shadow">
         <div class="container">
-          {{#link-to 'blog.posts.show' post}}<h3 class="center white-text">{{post.title}}</h3>{{/link-to}}
+          {{#link-to 'blog.posts.show' post}}
+
+            {{content-editable value=name tagName="h3" value=post.title enter="ceSave"}}
+            {{/link-to}}
           <h5 class="center white-text">{{post.subtitle}}</h5>
         </div>
       </div>
@@ -42,11 +45,7 @@
           {{#link-to 'blog.posts.show' post}}
           <div class="list-group-item">
             <h5 class="blue-grey-text text-darken-4 o-hidden"><strong>
-              {{#content-editable value=post.title
-
-                     type="text"}}
-
-            {{/content-editable}}
+              {{content-editable value=post.title type="text"}}
             </strong></h5>
             <p class="blue-grey-text text-darken-4 o-hidden">{{post.subtitle}}</p>
           </div>

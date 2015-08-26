@@ -37,16 +37,14 @@
   {{/md-modal}}
 {{else}}
   <div class="blog-post-banner-header one-edge-shadow">
-    <div class="container">
-      <h3 class="center white-text">{{model.title}}</h3>
-      <h5 class="center white-text">{{model.subtitle}}</h5>
+    <div class="container white-text center-align">
+        {{content-editable value=model.title tagName="h3" focus-out="saveEditable" type="text"}}
+        {{content-editable value=model.subtitle tagName="h5" focus-out="saveEditable" type="text"}}
     </div>
   </div>
   <div class="blog-post-body">
     <p class="blog-post-body-text">
-
         {{content-editable value=model.body tagName="h5" focus-out="saveEditable" type="text"}}
-
     </p>
     <p class="images">
       {{#each model.images as |image|}}
@@ -61,7 +59,6 @@
       {{else}}
         {{md-btn text='Publish' class='blue-grey darken-1' action='publish' actionArg=post}}
       {{/if}}
-      {{md-btn text='Edit' class='blue-grey darken-1' action='edit'}}
       </div>
   </div>
 {{/if}}
