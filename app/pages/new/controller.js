@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
       this.get('model').save().then((page) => {
         this.set('sendingData', false);
         this.transitionToRoute('pages.show', page);
+        this.get('flashMessages').success('Successfully created a Page!');
       });
     },
 

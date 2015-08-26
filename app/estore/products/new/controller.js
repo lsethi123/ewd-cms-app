@@ -34,6 +34,7 @@ export default Ember.Controller.extend({
         this.set('imageFiles', []);
         this.set('imageProducts', []);
         this.transitionToRoute('estore.products.show', product);
+        this.get('flashMessages').success('Successfully created a Product!');
       });
     },
 

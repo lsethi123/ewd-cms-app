@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     add: function() {
       this.get('model').save().then((category) => {
         this.transitionToRoute('estore.index');
+        this.get('flashMessages').success('Successfully created a product category!');
       }, (error) => {
         console.log('some error happened');
       });

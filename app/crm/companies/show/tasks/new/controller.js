@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
       this.get('model').set('company', this.get('company')).set('employee', this.get('selectedEmployee')).set('user', this.get('selectedUser')).save().then((task) => {
         this.set('sendingData', false);
         this.transitionToRoute('crm.companies.show.tasks.index');
+        this.get('flashMessages').success('Task Successfully Created!');
       }, (error) => {
         this.set('sendingData', false);
         console.log(error);

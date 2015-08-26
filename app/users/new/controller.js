@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     signUp: function() {
       this.get('model').save().then((user) => {
         this.transitionToRoute('users.index');
+        this.get('flashMessages').success('New User Successfully Created!');
       }, (error) => {
         console.log('error while registering!');
       });

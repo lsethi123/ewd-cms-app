@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     add: function() {
       this.get('model').save().then((tag) => {
         this.transitionToRoute('blog.index');
+        this.get('flashMessages').success('Successfully created a tag!');
       }, (error) => {
         console.log('some error happened');
       });

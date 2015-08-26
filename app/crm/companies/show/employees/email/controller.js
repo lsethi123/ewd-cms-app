@@ -37,7 +37,8 @@ export default Ember.Controller.extend({
 
       this.mandrill.send(email).then((response) => {
         this.set('sentSuccessfully', true);
-      })
+        this.get('flashMessages').success('Email sent Successfully!');
+      });
     },
 
     done: function() {

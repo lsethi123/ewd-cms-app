@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
       this.get('model').save().then((team) => {
         this.set('sendingData', false);
         this.transitionToRoute('teams.show', team);
+        this.get('flashMessages').success('Successfully created a team!');
       });
     },
 

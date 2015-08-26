@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
       this.get('model').save().then((board) => {
         this.set('sendingData', false);
         this.transitionToRoute('todos.index');
+        this.get('flashMessages').success('Board has successfully been created');
       });
     },
 

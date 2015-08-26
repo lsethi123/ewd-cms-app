@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
       event.save().then((event) => {
         this.set('sendingData', false);
         this.transitionToRoute('events.index');
+        this.get('flashMessages').success('Successfully created an Event!');
       });
     },
 

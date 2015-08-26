@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
       this.get('model').save().then((company) => {
         this.set('sendingData', false);
         this.transitionToRoute('crm.companies.index');
+        this.get('flashMessages').success('Successfully created a company!');
       }, (error) => {
         this.set('sendingData', false);
         console.log(error);

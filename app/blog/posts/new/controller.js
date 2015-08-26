@@ -34,6 +34,7 @@ export default Ember.Controller.extend({
           this.set('sendingData', false);
           this.set('selectedTags', null);
           this.transitionToRoute('blog.posts.show', post);
+          this.get('flashMessages').success('Successfully created a Post!');
         });
       } else {
         this.get('model').save().then((post) => {

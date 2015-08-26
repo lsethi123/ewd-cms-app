@@ -13,6 +13,7 @@ export default Ember.Controller.extend({
       this.get('model').set('company', this.get('company')).set('stage', this.get('selectedStage')).save().then((opportunity) => {
         this.set('sendingData', false);
         this.transitionToRoute('crm.companies.show.opportunities.index');
+        this.get('flashMessages').success('Opportunity Successfully Created!');
       }, (error) => {
         this.set('sendingData', false);
         console.log(error);
