@@ -40,16 +40,16 @@
 
 <!-- BLOG POST MAIN CONTENT AREA -->
 <div class="blog-post-banner-header one-edge-shadow">
-  <div class="container">
-    <h3 class="center white-text">{{model.title}}</h3>
-    <h5 class="center white-text">{{model.price}}</h5>
+  <div class="container center white-text">
+    {{content-editable value=model.title tagName="h3" focus-out="saveEditable" type="text"}}
+    {{content-editable value=model.price tagName="h5" focus-out="saveEditable" type="text"}}
   </div>
 </div>
 <div class="blog-post-body">
-  <p class="blog-post-body-text">{{model.description}}</p><br/>
-  <div class="blog-post-banner-footer">
-    {{md-btn text='Edit' class='blue-grey darken-1' action='edit'}}
-    </div>
+  <p class="blog-post-body-text">
+    {{content-editable value=model.description focus-out="saveEditable" type="text"}}
+  </p><br/>
+  <!-- <div class="blog-post-banner-footer"></div> -->
     <p class="images">
       {{#each model.images as |image|}}
         <a href={{image.imgUrl}}>

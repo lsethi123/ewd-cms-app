@@ -17,11 +17,12 @@
         {{#each model as |company|}}
           <tr class="ember-view card-panel">
             <td>{{#link-to 'crm.companies.show' company}}{{company.name}}{{/link-to}}</td>
-            <td>{{company.address}}</td>
-            <td>{{company.city}}</td>
-            <td>{{company.state}}</td>
-            <td>{{company.phone}}</td>
-            <td>{{company.email}}</td>
+            {{content-editable value=company.address tagName="td" focus-out="saveEditable" type="text"}}
+            {{content-editable value=company.city tagName="td" focus-out="saveEditable" type="text"}}
+            {{content-editable value=company.state tagName="td" focus-out="saveEditable" type="text"}}
+            {{content-editable value=company.phone tagName="td" focus-out="saveEditable" type="text"}}
+            {{content-editable value=company.email tagName="td" focus-out="saveEditable" type="text"}}
+            <!--Select dropdown of user to assign to goes here -->
           </tr>
         {{/each}}
       </tbody>

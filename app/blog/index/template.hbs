@@ -7,21 +7,21 @@
       <div class="blog-post-banner-header one-edge-shadow">
         <div class="container">
           {{#link-to 'blog.posts.show' post}}
-
-            {{content-editable value=name tagName="h3" value=post.title enter="ceSave"}}
-            {{/link-to}}
-          <h5 class="center white-text">{{post.subtitle}}</h5>
+            {{content-editable value=post.title class="center white-text" tagName="h3" focus-out="saveEditable" type="text"}}
+          {{/link-to}}
+          {{content-editable value=post.subtitle class="center white-text" tagName="h5" focus-out="saveEditable" type="text"}}
         </div>
       </div>
       <div class="blog-post-body">
         <p class="blue-grey-text text-darken-1 blog-post-body-text">
-          {{content-editable value=name tagName="h5" value=post.body enter="ceSave"}}
+          {{content-editable value=post.body tagName="h5" focus-out="saveEditable" type="text"}}
         </p>
         <p class="images">
           {{#each post.images as |image|}}
-            <a href={{image.imgUrl}}>
-              <img src={{image.imgUrl}} style="width: 100px; height: 100px;">
-            </a>
+          {{#material-box}}
+          <img src={{image.imgUrl}}>
+          {{/material-box}}
+
           {{/each}}
         </p>
         <div class="blog-post-banner-footer">
@@ -30,8 +30,6 @@
           {{else}}
             {{md-btn text='Publish' class='blue-grey darken-1' action='publish' actionArg=post}}
           {{/if}}
-
-          {{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=post}}
           {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=post}}
           <!-- <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
           <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div> -->
