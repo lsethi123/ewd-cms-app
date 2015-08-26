@@ -1,0 +1,16 @@
+<button {{action 'filterByDay'}}>By Day</button>
+<button {{action 'filterByWeek'}}>By Week</button>
+<button {{action 'filterByMonth'}}>By Month</button>
+<br/><br/>
+{{#if isShowingDayForecast}}
+  {{ember-chart type='Line' data=dayCharts width=800 height=400 legend=legend}}
+{{/if}}
+<br/>
+{{#if isShowingWeekForecast}}
+  {{ember-chart type='Line' data=weekCharts width=width height=height legend=legend}}
+{{/if}}
+<br/>
+{{#if isShowingMonthForecast}}
+  {{ember-chart type='Line' data=monthCharts width=width height=height legend=legend}}
+{{/if}}
+<br/>
