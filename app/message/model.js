@@ -3,5 +3,6 @@ import Ember from 'ember';
 
 export default DS.Model.extend({
   user: DS.belongsTo('user'),
-  message: DS.attr('string')
+  message: DS.attr('string'),
+  conversation: DS.belongsTo('conversation')
 });

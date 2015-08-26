@@ -3,7 +3,7 @@
     <aside>
       <ul>
         {{#each users as |user|}}
-          {{#link-to 'users.show' user}}
+          {{#link-to 'messages.private' user}}
           <div class="list-group-item-parent">
             <h5 class="child">
               <img class="center clip-polygon size" src="assets/images/Sarrah.jpg"/>
@@ -15,7 +15,7 @@
       </ul>
     </aside>
     <main class="main-message">
-      <div class="messages-list">
+      <div id="messages-list">
         {{#each model as |message|}}
         <div class="message">
           <p>{{message.user.fullName}}: {{message.message}}</p>

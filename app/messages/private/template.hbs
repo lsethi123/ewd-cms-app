@@ -1,0 +1,14 @@
+hello this is private msgs page
+conversation is {{conversation.id}}
+<br/>{{conversation.sender.fullName}}<br/>{{conversation.recipient.fullName}}<br/>
+{{#each conversation.messages as |message|}}
+  {{message.sender}}: {{message.message}}<br/>
+{{/each}}
+<br/>
+
+<div class="message-input">
+  <form {{action 'sendMessage' on="submit"}}>
+    {{input type="text" value=messageBody placeholder="Enter message to send..."}}
+    <button class="hide" type="submit">Send</button>
+  </form>
+</div>

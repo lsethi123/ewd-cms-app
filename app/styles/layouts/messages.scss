@@ -20,9 +20,14 @@ form input {
   display: block;
   width:auto;
   font-size:140%;
+  position: relative;
+  bottom: 0;
 }
-.messages-list {
+#messages-list {
   background:white;
+  position: relative;
+  height: 500px;
+  overflow: auto;
 }
 .main-message {
   margin: 1em 0;

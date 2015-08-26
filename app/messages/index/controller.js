@@ -11,7 +11,15 @@ export default Ember.Controller.extend({
     reloadMessages: function() {
       setInterval(() => {
         let messages = this.store.findAll('message');
-        this.set('model', messages);
+        let currentMessage = this.get('model');
+        if (currentMessages === messages) {
+          this.send('reloadMessages');
+        } else {
+          this.set('model', messages);
+
+        }
+        var msgList = $("#messages-list").get(0);
+        msgList.scrollTop = msgList.scrollHeight;
       }, 5000);
     },
 

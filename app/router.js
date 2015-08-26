@@ -15,7 +15,7 @@ Router.map(function() {
     this.route('events');
   });
   this.route('messages', function() {
-
+    this.route('private', { path: ':user_id' } );
   });
   this.route('blog', function() {
     this.route('posts', function() {
