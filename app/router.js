@@ -99,6 +99,15 @@ Router.map(function() {
     });
     this.route('new');
   });
+  this.route('websites', function() {
+    this.route('new');
+    this.route('show', { path: ':website_id' }, function() {
+      this.route('pages', function() {
+        this.route('show', { path: ':page_id' } );
+        this.route('new');
+      });
+    });
+  });
 });
 
 export default Router;

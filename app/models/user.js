@@ -14,6 +14,7 @@ export default DS.Model.extend({
   team: DS.belongsTo('team', { async: true } ),
   tasks: DS.hasMany('task', { async: true } ),
   todos: DS.hasMany('todo', { async: true } ),
+  websites: DS.hasMany('website', { async: true } ),
   fullName: Ember.computed('firstName', 'lastName', function() {
     return this.get('firstName') + ' ' + this.get('lastName');
   })

@@ -1,0 +1,13 @@
+<h1>{{model.title}}</h1>
+<h2>{{model.address}}</h2>
+<h3>Pages</h3>
+{{#link-to 'websites.show.pages.new' class="btn blue-grey darken-1"}}New Page{{/link-to}}
+{{#if model.pages}}
+{{#each model.pages as |page|}}
+  {{#link-to 'websites.show.pages.show' page}}{{page.title}}{{/link-to}}<br/>
+{{/each}}
+{{else}}
+No pages. Start by creating one.<br/>
+{{#link-to 'websites.show.pages.new' class="btn blue-grey darken-1"}}New Page{{/link-to}}
+{{/if}}
+{{outlet}}
