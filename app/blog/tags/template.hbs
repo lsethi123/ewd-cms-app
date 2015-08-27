@@ -1,1 +1,10 @@
+<div class="tag-cloud">
+{{#each model as |tag|}}
+  {{#link-to 'blog.tags.show' tag.id}}
+  <div class="tag-badge card-panel blue-grey darken-4 white-text">
+    {{tag.name}}
+  </div>
+  {{/link-to}}
+{{/each}}
+</div>
 {{outlet}}
