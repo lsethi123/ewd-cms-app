@@ -89,6 +89,9 @@ export default Ember.Component.extend({
           }
       ]
     });
+    this.set('isShowingWeekForecast', false)
+    this.set('isShowingMonthForecast', false);
+    this.set('isShowingDayForecast', true);
 
   },
 

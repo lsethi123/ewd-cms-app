@@ -72,18 +72,155 @@
 
 {{#if isShowingDataLayout}}
 	{{#layoutview-data}}
+	<div class="tag-cloud">
+	{{#each tags as |tag|}}
+		{{#link-to 'blog.tags.show' tag.id}}
+		<div class="tag-badge card-panel blue-grey darken-4 white-text">
+			{{tag.name}}
+		</div>
+		{{/link-to}}
+	{{/each}}
+	</div>
 
+	{{#if posts}}
+	<div class="layout-hf-holy-grail">
+	  <div class="body">
+	    <main class="z-depth-3">
+	      {{#each posts as |post|}}
+	      <div class="blog-post-banner-header one-edge-shadow">
+	        <div class="container">
+	          {{#link-to 'blog.posts.show' post}}
+	            {{content-editable value=post.title class="center white-text" tagName="h3" focus-out="saveEditable" type="text"}}
+	          {{/link-to}}
+	          {{content-editable value=post.subtitle class="center white-text" tagName="h5" focus-out="saveEditable" type="text"}}
+	        </div>
+	      </div>
+	      <div class="blog-post-body">
+	        <p class="blue-grey-text text-darken-1 blog-post-body-text">
+	          {{content-editable value=post.body tagName="h5" focus-out="saveEditable" type="text"}}
+	        </p>
+	        <p class="images">
+	          {{#each post.images as |image|}}
+	          {{#material-box}}
+	          <img src={{image.imgUrl}}>
+	          {{/material-box}}
+
+	          {{/each}}
+	        </p>
+	        <div class="blog-post-banner-footer">
+	          {{#if post.published}}
+	            {{md-btn text='Unpublish' class='blue-grey darken-1' action='unpublish' actionArg=post}}
+	          {{else}}
+	            {{md-btn text='Publish' class='blue-grey darken-1' action='publish' actionArg=post}}
+	          {{/if}}
+	          {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=post}}
+	          </div>
+	      </div>
+	      {{/each}}
+	    </main>
+	    <aside>
+	      <ul>
+	        {{#each posts as |post|}}
+	          {{#link-to 'blog.posts.show' post}}
+	          <div class="list-group-item">
+	            <h5 class="blue-grey-text text-darken-4 o-hidden"><strong>
+	              {{content-editable value=post.title type="text"}}
+	            </strong></h5>
+	            <p class="blue-grey-text text-darken-4 o-hidden">{{post.subtitle}}</p>
+	          </div>
+	          {{/link-to}}
+	        {{/each}}
+	      </ul>
+	    </aside>
+	  </div>
+	</div>
+	{{else}}
+	<div class="else-text">
+	  No posts. Start by adding the one.
+	</div>
+	<div class="text-center">
+	  {{#link-to 'blog.tags.new' class="white-text"}}
+	  {{md-btn text='Add Tag'
+	    class='blue-grey darken-1'}}
+	  {{/link-to}}
+	  {{#link-to 'blog.posts.new' class="white-text"}}
+	  {{md-btn text='Add Post'
+	    class='blue-grey darken-1'}}
+	  {{/link-to}}
+	</div>
+	{{/if}}
   {{/layoutview-data}}
 {{/if}}
 
 {{#if isShowingTableLayout}}
 	{{#layoutview-table}}
+	<div class="tag-cloud">
+	{{#each tags as |tag|}}
+		{{#link-to 'blog.tags.show' tag.id}}
+		<div class="tag-badge card-panel blue-grey darken-4 white-text">
+			{{tag.name}}
+		</div>
+		{{/link-to}}
+	{{/each}}
+	</div>
+
+	<div class="row">
+		<div class="col s12">
+
+			<table>
+				<thead>
+					<tr class="header">
+						<th>Title</th>
+						<th>Subtitle</th>
+						<th>Published</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each posts as |post|}}
+						<tr class="ember-view card-panel">
+							<td>{{#link-to 'blog.posts.show' post}}{{post.title}}{{/link-to}}</td>
+							{{content-editable value=post.subtitle tagName="td" focus-out="saveEditable" type="text"}}
+							{{content-editable value=post.published tagName="td" focus-out="saveEditable" type="text"}}
+							<!--Select dropdown of user to assign to goes here -->
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
 
   {{/layoutview-table}}
 {{/if}}
 
 {{#if isShowingCardLayout}}
 	{{#layoutview-card}}
+	<div class="tag-cloud">
+	{{#each tags as |tag|}}
+		{{#link-to 'blog.tags.show' tag.id}}
+		<div class="tag-badge card-panel blue-grey darken-4 white-text">
+			{{tag.name}}
+		</div>
+		{{/link-to}}
+	{{/each}}
+	</div>
+	{{#each posts as |post|}}
+	<div style="display: inline-block; width: 300px; margin: 10px;">
+		{{#md-card title=post.title
+		image=post.images.firstObject.imgUrl
+		activator=true}}
+
+		{{#md-card-content}}
+				{{post.subtitle}}<br/>
+				Published: {{post.published}}
+		{{/md-card-content}}
+
+		{{#md-card-reveal}}
+			{{post.body}}
+		{{/md-card-reveal}}
+
+	{{/md-card}}
+</div>
+	{{/each}}
 
   {{/layoutview-card}}
 {{/if}}
