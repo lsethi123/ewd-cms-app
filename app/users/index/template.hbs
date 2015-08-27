@@ -8,7 +8,7 @@
           </div>
           <div class="card-content white-text">
             <label>Email </label>{{user.email}}
-            <br><label>Priveleges </label>  {{user.team}}
+            <br><label>Priveleges </label>  {{user.team.name}}
           </div>
           <div class="card-action">
             {{#link-to 'users.show' user class="collection-item"}}View{{/link-to}}

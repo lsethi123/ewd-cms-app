@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
   actions: {
     signUp: function() {
       this.get('model').save().then((user) => {
+        user.deleteRecord();
         this.transitionToRoute('users.index');
         this.get('flashMessages').success('New User Successfully Created!');
       }, (error) => {
