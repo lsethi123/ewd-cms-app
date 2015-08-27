@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  isShowingTableLayout: false,
+  isShowingDataLayout: false,
+  isShowingCardLayout: false,
+  
   actions: {
     edit: function(product) {
       this.controllerFor('estore.products.show').set('isEditing', true);
