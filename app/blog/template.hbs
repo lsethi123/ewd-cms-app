@@ -28,6 +28,11 @@
       {{/link-to}}
     {{/each}}
   </span>
+  <span class="view-toggle">
+		<i class="fa fa-table" style="cursor:pointer;" {{action 'showTableLayout'}}></i>
+		<i class="fa fa-list" style="cursor:pointer;" {{action 'showDataLayout'}}></i>
+		<i class="fa fa-list-alt" style="cursor:pointer;" {{action 'showCardLayout'}}></i>
+	</span>
 </div>
 
 {{outlet}}

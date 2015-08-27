@@ -69,15 +69,141 @@
 -->
 
 {{#if isShowingDataLayout}}
-	{{layoutview-data products=products categories=categories}}
+	{{#layoutview-data}}
+
+	<span style="display: inline-block; width: 150px; height: 50px;">
+		{{#each categories as |category|}}
+			{{#link-to 'estore.categories.show' category.id}}
+			<div class="tag-badge card-panel blue-grey darken-1 white-text">
+				{{category.name}}
+			</div>
+			{{/link-to}}
+		{{/each}}
+	</span>
+
+	{{#if products}}
+	<div class="layout-hf-holy-grail">
+		<div class="body">
+
+			<aside>
+				<ul>
+					{{#each products as |product|}}
+						{{#link-to 'estore.products.show' product class="rollover"}}
+							<div class="list-group-item rollover">
+							<h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
+							<p class="o-hidden">{{product.description}}</p>
+							</div>
+						{{/link-to}}
+					{{/each}}
+				</ul>
+			</aside>
+			<main class="z-depth-3">
+				{{#each products as |product|}}
+				<div class="blog-post-banner-header one-edge-shadow">
+					<div class="container">
+						{{#link-to 'estore.products.show' product}}<h3 class="center white-text">{{product.title}}</h3>{{/link-to}}
+						<h5 class="center white-text">{{product.description}}</h5>
+						</div>
+				</div>
+				<div class="blog-post-body">
+					<p class="blog-post-body-text">
+						<label>Price</label>{{product.price}}
+						<label>Category</label>{{product.category}}
+					</p>
+					<p class="images">
+						{{#each product.images as |image|}}
+							<a href={{image.imgUrl}}>
+								<img src={{image.imgUrl}} style="width: 100px; height: 100px;">
+							</a>
+						{{/each}}
+					</p>
+					<div class="blog-post-banner-footer">
+						{{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=product}}
+						{{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=product}}
+						<div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
+						<div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div>
+						</div>
+				</div>
+				{{/each}}
+			</main>
+
+		</div>
+	</div>
+
+	{{else}}
+
+	<div class="else-text">
+		No products. Start by adding the one.
+	</div>
+	<div class="text-center">
+		{{#link-to 'estore.categories.new' class="white-text"}}
+		{{md-btn text='Add Category'
+			class='blue-grey darken-1'}}
+		{{/link-to}}
+		{{#link-to 'estore.products.new' class="white-text"}}
+		{{md-btn text='Add Product'
+			class='blue-grey darken-1'}}
+		{{/link-to}}
+	</div>
+
+	{{/if}}
+  {{/layoutview-data}}
 {{/if}}
 
 {{#if isShowingTableLayout}}
-	{{layoutview-table products=products categories=categories}}
+	{{#layoutview-table}}
+	<div class="row">
+		<div class="col s12">
+
+			<table>
+				<thead>
+					<tr class="header">
+						<th>Title</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>In stock</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each products as |product|}}
+						<tr class="ember-view card-panel">
+							<td>{{#link-to 'estore.products.show' product}}{{product.title}}{{/link-to}}</td>
+							{{content-editable value=product.description tagName="td" focus-out="saveEditable" type="text"}}
+							{{content-editable value=product.price tagName="td" focus-out="saveEditable" type="text"}}
+							<td>{{product.inStock}}</td>
+							<!--Select dropdown of user to assign to goes here -->
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+  {{/layoutview-table}}
 {{/if}}
 
 {{#if isShowingCardLayout}}
-	{{layoutview-card products=products categories=categories}}
+	{{#layoutview-card}}
+		{{#each products as |product|}}
+		<div style="display: inline-block; width: 300px; margin: 10px;">
+			{{#md-card title="Card Title"
+	    image=product.images.firstObject.imgUrl
+	    activator=true
+	    id="card-reveal"}}
+
+	    {{#md-card-content}}
+					Price: {{product.price}}<br/>
+					In stock: {{product.inStock}}
+	    {{/md-card-content}}
+
+	    {{#md-card-reveal}}
+				{{product.description}}
+	    {{/md-card-reveal}}
+
+		{{/md-card}}
+	</div>
+		{{/each}}
+
+  {{/layoutview-card}}
 {{/if}}
 
 <!-- {{#if model}}
