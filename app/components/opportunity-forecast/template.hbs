@@ -1,9 +1,11 @@
+{{#if filterButtons}}
 <button {{action 'filterByDay'}}>By Day</button>
 <button {{action 'filterByWeek'}}>By Week</button>
 <button {{action 'filterByMonth'}}>By Month</button>
 <br/><br/>
+{{/if}}
 {{#if isShowingDayForecast}}
-  {{ember-chart type='Line' data=dayCharts width=800 height=400 legend=legend}}
+  {{ember-chart type='Line' data=dayCharts width=width height=height legend=legend}}
 {{/if}}
 <br/>
 {{#if isShowingWeekForecast}}
