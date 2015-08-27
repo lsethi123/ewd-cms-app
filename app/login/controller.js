@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  isShowingError: false,
+
   actions: {
 
     logIn: function() {
@@ -11,10 +13,11 @@ export default Ember.Controller.extend({
         password: userPassword
       };
 
-      this.get('session').authenticate('authenticator:ewd-cms', options).then(function() {
-
-      }, function() {
-
+      this.get('session').authenticate('authenticator:ewd-cms', options).then((login) => {
+        this.transitionToRoute('index');
+      }, (error) => {
+        this.set('error', "Email or password are invalid. Try again.");
+        this.set('isShowingError', true);
       });
     },
 
