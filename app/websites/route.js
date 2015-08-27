@@ -2,8 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    let currentUser = this.get('session.secure.id');
-    return this.store.query('website', { user_id: currentUser } );
+    let websites = this.store.findAll('website');
+    this.controllerFor('websites.new').set('websites', websites);
+    this.controllerFor('websites.show').set('websites', websites);
+    return websites;
   },
 
   setupController: function(controller, model) {

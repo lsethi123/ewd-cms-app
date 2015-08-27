@@ -1,15 +1,1 @@
-<br/><br/>
-<div style="float:left; margin-right: 50px; display: inline-block;">
-  <select style="margin-bottom: 10px;">
-      <option {{action 'listAll'}}>All Websites</option>
-      {{#each websites as |website|}}
-        <option {{action 'sortByWebsite' website.id}}>{{website.address}}</option>
-      {{/each}}
-    </select>
-    {{#link-to 'websites.new' class="btn blue-grey darken-1"}}Create Website{{/link-to}}
-
-  </div>
-
-<div style="float: left; width: 70%; display: inline-block;">
-  {{outlet}}
-</div>
+{{outlet}}
