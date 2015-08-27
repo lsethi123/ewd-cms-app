@@ -1,28 +1,28 @@
-<br/><br/>
-<div style="float:left; margin-right: 50px; display: inline-block;">
-  <select style="margin-bottom: 10px;">
-      <option {{action 'listAll'}}>All Websites</option>
-      {{#each websites as |website|}}
-        <option {{action 'sortByWebsite' website.id}}>{{website.address}}</option>
-      {{/each}}
-    </select>
-    {{#link-to 'websites.new' class="btn blue-grey darken-1"}}Create Website{{/link-to}}
 
+<div class="tag-cloud">
+{{#each websites as |website|}}
+  {{#link-to 'websites.show' website}}
+  <div class="tag-badge card-panel blue-grey darken-4 white-text">
+    {{website.address}}
   </div>
-
+  {{/link-to}}
+{{/each}}
+</div>
+<div style="float:left; margin-right: 50px; display: inline-block;">
+  {{#link-to 'websites.new' class="btn blue-grey darken-1"}}Create Website{{/link-to}}<br/><br/>
+  {{#link-to 'websites.show.pages.new' class="btn blue-grey darken-1"}}New Page{{/link-to}}<br/><br/>
+  <h5>Pages</h5>
+  {{#if model.pages}}
+  {{#each model.pages as |page|}}
+    {{#link-to 'websites.show.pages.show' page}}{{page.title}}{{/link-to}}<br/>
+  {{/each}}
+  {{else}}
+  No pages. Start by creating one.<br/>
+  {{/if}}
+</div>
 <div style="float: left; width: 70%; display: inline-block;">
 <h1>{{model.title}}</h1>
 <h2>{{model.address}}</h2>
-<h3>Pages</h3>
-{{#link-to 'websites.show.pages.new' class="btn blue-grey darken-1"}}New Page{{/link-to}}
-{{#if model.pages}}
-{{#each model.pages as |page|}}
-  {{#link-to 'websites.show.pages.show' page}}{{page.title}}{{/link-to}}<br/>
-{{/each}}
-{{else}}
-No pages. Start by creating one.<br/>
-{{#link-to 'websites.show.pages.new' class="btn blue-grey darken-1"}}New Page{{/link-to}}
-{{/if}}
 <br/><br/>
 {{outlet}}
 </div>

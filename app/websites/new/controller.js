@@ -8,6 +8,13 @@ export default Ember.Controller.extend({
         this.transitionToRoute('websites.show', website);
         this.get('flashMessages').success('Website successfully created!');
       });
+    },
+    listAll: function() {
+      this.transitionToRoute('websites.index');
+    },
+
+    sortByWebsite: function(website) {
+      this.transitionToRoute('websites.show', website);
     }
   }
 });
