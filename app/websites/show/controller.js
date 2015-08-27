@@ -8,6 +8,11 @@ export default Ember.Controller.extend({
 
     sortByWebsite: function(website) {
       this.transitionToRoute('websites.show', website);
+    },
+
+    delete: function(model) {
+      model.destroyRecord();
+      this.transitionToRoute('websites.index');
     }
   }
 });

@@ -11,6 +11,7 @@
 <div style="float:left; margin-right: 50px; display: inline-block;">
   {{#link-to 'websites.new' class="btn blue-grey darken-1"}}Create Website{{/link-to}}<br/><br/>
   {{#link-to 'websites.show.pages.new' class="btn blue-grey darken-1"}}New Page{{/link-to}}<br/><br/>
+  <button class="btn blue-grey darken-1" {{action 'delete' model}}>Delete Website</button>
   <h5>Pages</h5>
   {{#if model.pages}}
   {{#each model.pages as |page|}}
