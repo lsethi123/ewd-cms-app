@@ -17,6 +17,13 @@
   prompt="Please choose..."
   optionLabelPath="content.fullName"
   optionValuePath="content"}}
+  {{md-select
+  content=boards
+  value=selectedBoard
+  label="Select Board"
+  prompt="Please choose..."
+  optionLabelPath="content.title"
+  optionValuePath="content"}}
   <h5 class="checklists">Checklists:</h5>
   <span class="checklist-item"></span>
   {{#if isAddingStep}}

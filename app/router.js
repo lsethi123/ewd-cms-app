@@ -83,10 +83,7 @@ Router.map(function() {
     this.route('new');
   });
   this.route('todos', function() {
-    this.route('boards', function() {
-      this.route('show', { path: ':board_id' } );
-      this.route('new');
-    });
+    this.route('boards');
     this.route('new');
     this.route('show', { path: ':todo_id' } );
   });

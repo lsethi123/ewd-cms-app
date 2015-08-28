@@ -18,15 +18,6 @@ export default Ember.Controller.extend({
       return false;
     },
 
-    createTodo: function(board) {
-      console.log('todo created');
-    },
-
-    addTodo: function(board) {
-      this.controllerFor('todos.new').set('board', board);
-      this.transitionToRoute('todos.new');
-    },
-
     showTodo: function(todo) {
       this.transitionToRoute('todos.show', todo);
     }

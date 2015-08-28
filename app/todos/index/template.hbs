@@ -6,7 +6,7 @@
     <div id="board-{{board.id}}" class="board-item z-depth-1 grey darken-1 ">
         {{content-editable value=board.title tagName="h5" class="board-title" focus-out="saveEditable" type="text"}}
         <span class="delete-board"  {{action 'deleteBoard' board}}>X</span>
-        <button class="modal-action modal-close waves-effect waves-orange btn-flat" {{action 'addTodo' board}}>Add Todo</button>
+
         {{#each board.todos as |todo|}}
         {{#draggable-object content=todo}}
           <div id="todo-{{todo.id}}" class="todo-item blue-grey white-text z-depth-1" {{action 'showTodo' todo}}><strong>{{todo.title}}</strong>

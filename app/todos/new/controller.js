@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
     add: function() {
       this.set('sendingData', true);
       let todo = this.get('model');
-      todo.set('board', this.get('board')).set('user', this.get('selectedUser')).save().then((todo) => {
+      todo.set('board', this.get('selectedBoard')).set('user', this.get('selectedUser')).save().then((todo) => {
         if(this.get('checklists')) {
           this.get('checklists').forEach((checklist) => {
             let newChecklist = this.store.createRecord('checklist', {
