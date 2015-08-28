@@ -5,23 +5,30 @@
 {{#md-card-collapsible accordion=false}}
   {{#md-collapsible icon="mdi-image-filter-drama"
       title="Todos"}}
-Ideally We could combine the HTML/CSS of
-the White Panels => The actual Todo panel.
-Once it is clicked, additional info about
-the item can ve observed.
+      {{#md-card-collapsible}}
+      {{#each todos as |todo|}}
+          {{#md-collapsible icon="mdi-image-filter-drama"
+            title=todo.title}}
+            {{#each todo.checklists as |checklist|}}
+              {{checklist.step}}. {{checklist.description}}<br/>
+            {{/each}}
+          {{/md-collapsible}}
+      {{/each}}
+      {{/md-card-collapsible}}
   {{/md-collapsible}}
 {{/md-card-collapsible}}
 
-{{#each todos as |todo|}}
-    {{#md-card-panel class="blue-grey darken-1"
-        bodyClass="white-text"}}
-        {{#link-to 'todos.show' todo}}{{todo.title}}{{/link-to}}
-    {{/md-card-panel}}
-{{/each}}
-
 {{#md-card-collapsible accordion=false}}
-  {{#md-collapsible icon="mdi-social-whatshot"
+  {{#md-collapsible icon="mdi-image-filter-drama"
       title="CRM Tasks"}}
+      {{#md-card-collapsible}}
+      {{#each tasks as |task|}}
+          {{#md-collapsible icon="mdi-image-filter-drama"
+            title=task.name}}
+            {{task.description}}
+          {{/md-collapsible}}
+      {{/each}}
+      {{/md-card-collapsible}}
   {{/md-collapsible}}
 {{/md-card-collapsible}}
 
@@ -32,20 +39,17 @@ the item can ve observed.
   {{/md-card-panel}}
 {{/each}} -->
 {{#md-card-collapsible accordion=false}}
-  {{#md-collapsible icon="mdi-social-whatshot"
+  {{#md-collapsible icon="mdi-image-filter-drama"
       title="Recently Booked Events"}}
-Ideally this white 'collapsible' section
-would just be an actual Event Panel
+      {{#md-card-collapsible}}
+      {{#each events as |event|}}
+          {{#md-collapsible icon="mdi-image-filter-drama"
+            title=event.title}}
+          {{/md-collapsible}}
+      {{/each}}
+      {{/md-card-collapsible}}
   {{/md-collapsible}}
 {{/md-card-collapsible}}
-
-{{#each events as |event|}}
-  {{#md-card-panel class="blue-grey darken-2"
-      bodyClass="white-text"}}
-      {{#link-to 'events.show' event}}View:{{event.title}}{{/link-to}}
-  {{/md-card-panel}}
-{{/each}}
-
 
 
 
