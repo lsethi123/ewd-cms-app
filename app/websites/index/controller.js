@@ -9,6 +9,11 @@ export default Ember.Controller.extend({
 
       sortByWebsite: function(website) {
         this.transitionToRoute('websites.show', website);
+      },
+
+      redirect: function(website) {
+        alert("redirect to website");
+        this.transitionToRoute('websites.show', website.id);
       }
     }
 });

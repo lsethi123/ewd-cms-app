@@ -29,6 +29,7 @@
     "jquery": "^1.11.1"
   },
   "devDependencies": {
-    "pickadate": "~3.5.6"
+    "pickadate": "~3.5.6",
+    "jquery-orgchart": "~0.0.2"
   }
 }
