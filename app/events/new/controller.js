@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
 
   actions: {
     add: function() {
+      alert(this.get('model.start'));
       this.set('sendingData', true);
       let event = this.get('model');
       event.save().then((event) => {
