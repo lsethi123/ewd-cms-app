@@ -16,7 +16,9 @@ export default Ember.Controller.extend({
     cancel: function() {
       this.toggleProperty('isEditing');
     },
-
+    saveEditable: function() {
+      this.get('model').save();
+    },
     save: function() {
       this.set('sendingData', true);
       let categories = this.get('selectedCategories');

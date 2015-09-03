@@ -1,72 +1,4 @@
-<!--
 
-{{#if products}}
-<div class="layout-hf-holy-grail">
-  <div class="body">
-
-    <aside>
-      <ul>
-        {{#each products as |product|}}
-          {{#link-to 'estore.products.show' product class="rollover"}}
-            <div class="list-group-item rollover">
-            <h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
-            <p class="o-hidden">{{product.description}}</p>
-            </div>
-          {{/link-to}}
-        {{/each}}
-      </ul>
-    </aside>
-    <main class="z-depth-3">
-      {{#each products as |product|}}
-      <div class="blog-post-banner-header one-edge-shadow">
-        <div class="container">
-          {{#link-to 'estore.products.show' product}}<h3 class="center white-text">{{product.title}}</h3>{{/link-to}}
-          <h5 class="center white-text">{{product.description}}</h5>
-          </div>
-      </div>
-      <div class="blog-post-body">
-        <p class="blog-post-body-text">
-          <label>Price</label>{{product.price}}
-          <label>Category</label>{{product.category}}
-        </p>
-        <p class="images">
-          {{#each product.images as |image|}}
-            <a href={{image.imgUrl}}>
-              <img src={{image.imgUrl}} style="width: 100px; height: 100px;">
-            </a>
-          {{/each}}
-        </p>
-        <div class="blog-post-banner-footer">
-          {{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=product}}
-          {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=product}}
-          <!-- <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
-          <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div>
-          </div>
-      </div>
-      {{/each}}
-    </main>
-
-  </div>
-</div>
-
-{{else}}
-<!-- IF NO PRODUCTS YET
-<div class="else-text">
-  No products. Start by adding the one.
-</div>
-<div class="text-center">
-  {{#link-to 'estore.categories.new' class="white-text"}}
-  {{md-btn text='Add Category'
-    class='blue-grey darken-1'}}
-  {{/link-to}}
-  {{#link-to 'estore.products.new' class="white-text"}}
-  {{md-btn text='Add Product'
-    class='blue-grey darken-1'}}
-  {{/link-to}}
-</div>
-
-{{/if}}
--->
 
 {{#if isShowingDataLayout}}
 	{{#layoutview-data}}
@@ -91,7 +23,7 @@
 						{{#link-to 'estore.products.show' product class="rollover"}}
 							<div class="list-group-item rollover">
 							<h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
-							<p class="o-hidden">{{product.description}}</p>
+							<p class="o-hidden truncate">{{product.description}}</p>
 							</div>
 						{{/link-to}}
 					{{/each}}
@@ -100,15 +32,34 @@
 			<main class="z-depth-3">
 				{{#each products as |product|}}
 				<div class="blog-post-banner-header one-edge-shadow">
+				  <div class="container center white-text">
+				    {{content-editable value=product.title tagName="h3" focus-out="saveEditable" type="text"}}
+				    {{content-editable value=product.price tagName="h5" focus-out="saveEditable" type="text"}}
+				  </div>
+				</div>
+				<div class="blog-post-body">
+				  <p class="blog-post-body-text">
+				    {{content-editable value=product.description focus-out="saveEditable" type="text"}}
+				  </p><br/>
+				  <!-- <div class="blog-post-banner-footer"></div> -->
+				    <p class="images">
+				      {{#each model.images as |image|}}
+				        <a href={{image.imgUrl}}>
+				          <img src={{image.imgUrl}} style="width: 100px; height: 100px;">
+				        </a>
+				      {{/each}}
+				    </p>
+				</div>
+				<!-- <div class="blog-post-banner-header one-edge-shadow">
 					<div class="container">
 						{{#link-to 'estore.products.show' product}}<h3 class="center white-text">{{product.title}}</h3>{{/link-to}}
-						<h5 class="center white-text">{{product.description}}</h5>
-						</div>
+						<label>Price</label>{{product.price}}
+						<label>Category</label>{{product.category}}
+					</div>
 				</div>
 				<div class="blog-post-body">
 					<p class="blog-post-body-text">
-						<label>Price</label>{{product.price}}
-						<label>Category</label>{{product.category}}
+						<h5 class="center white-text">{{product.description}}</h5>
 					</p>
 					<p class="images">
 						{{#each product.images as |image|}}
@@ -121,7 +72,7 @@
 						{{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=product}}
 						{{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=product}}
 						</div>
-				</div>
+				</div> -->
 				{{/each}}
 			</main>
 
@@ -221,6 +172,82 @@
 
   {{/layoutview-card}}
 {{/if}}
+
+
+
+
+<!--
+
+{{#if products}}
+<div class="layout-hf-holy-grail">
+  <div class="body">
+
+    <aside>
+      <ul>
+        {{#each products as |product|}}
+          {{#link-to 'estore.products.show' product class="rollover"}}
+            <div class="list-group-item rollover">
+            <h5 class="o-hidden"><strong>{{product.title}}</strong></h5>
+            <p class="o-hidden">{{product.description}}</p>
+            </div>
+          {{/link-to}}
+        {{/each}}
+      </ul>
+    </aside>
+    <main class="z-depth-3">
+      {{#each products as |product|}}
+      <div class="blog-post-banner-header one-edge-shadow">
+        <div class="container">
+          {{#link-to 'estore.products.show' product}}<h3 class="center white-text">{{product.title}}</h3>{{/link-to}}
+          <h5 class="center white-text">{{product.description}}</h5>
+          </div>
+      </div>
+      <div class="blog-post-body">
+        <p class="blog-post-body-text">
+          <label>Price</label>{{product.price}}
+          <label>Category</label>{{product.category}}
+        </p>
+        <p class="images">
+          {{#each product.images as |image|}}
+            <a href={{image.imgUrl}}>
+              <img src={{image.imgUrl}} style="width: 100px; height: 100px;">
+            </a>
+          {{/each}}
+        </p>
+        <div class="blog-post-banner-footer">
+          {{md-btn text='Edit' class='blue-grey darken-1' action='edit' actionArg=product}}
+          {{md-btn text='Delete' class='blue-grey darken-1' action='delete' actionArg=product}}
+          <!-- <div class="user-icon"><i class="mdi-maps-local-laundry-service indigo-color"></i></div>
+          <div class="user-icon"><i class="mdi-hardware-phone-iphone indigo-color"></i></div>
+          </div>
+      </div>
+      {{/each}}
+    </main>
+
+  </div>
+</div>
+
+{{else}}
+<!-- IF NO PRODUCTS YET
+<div class="else-text">
+  No products. Start by adding the one.
+</div>
+<div class="text-center">
+  {{#link-to 'estore.categories.new' class="white-text"}}
+  {{md-btn text='Add Category'
+    class='blue-grey darken-1'}}
+  {{/link-to}}
+  {{#link-to 'estore.products.new' class="white-text"}}
+  {{md-btn text='Add Product'
+    class='blue-grey darken-1'}}
+  {{/link-to}}
+</div>
+
+{{/if}}
+-->
+
+
+
 
 <!-- {{#if model}}
 <table>

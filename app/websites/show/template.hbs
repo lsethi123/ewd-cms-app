@@ -15,7 +15,9 @@
   <h5>Pages</h5>
   {{#if model.pages}}
   {{#each model.pages as |page|}}
-    {{#link-to 'websites.show.pages.show' page}}{{page.title}}{{/link-to}}<br/>
+    <div class="orgChart">
+      {{#link-to 'websites.show.pages.show' page}}{{page.title}}{{/link-to}}<br/>
+    </div>
   {{/each}}
   {{else}}
   No pages. Start by creating one.<br/>
