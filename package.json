@@ -20,8 +20,8 @@
   "license": "MIT",
   "devDependencies": {
     "active-model-adapter": "1.13.5",
-    "broccoli-asset-rev": "^2.0.2",
     "broccoli-merge-trees": "^0.2.3",
+    "broccoli-sass": "0.6.6",
     "ember-chosen": "0.0.23",
     "ember-cli": "1.13.1",
     "ember-cli-app-version": "0.4.0",
@@ -39,10 +39,9 @@
     "ember-cli-mandrill": "0.2.0",
     "ember-cli-materialize": "0.17.2",
     "ember-cli-mocha": "0.9.1",
-    "ember-cli-moment-shim": "0.6.2",
+    "ember-cli-paint": "1.12.1",
     "ember-cli-pickadate": "0.3.0",
     "ember-cli-release": "0.2.3",
-    "ember-cli-sass": "^4.0.1",
     "ember-cli-simple-auth": "0.8.0",
     "ember-cli-slick": "git+https://github.com/igorpreston/ember-cli-slick.git#e8e0731b5b11ebe9ec9462396a8ce123844b1dce",
     "ember-cli-uglify": "^1.0.1",
@@ -50,7 +49,6 @@
     "ember-composability": "0.0.5",
     "ember-content-editable": "0.6.1",
     "ember-data": "1.13.5",
-    "ember-data-offline": "0.1.1",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-drag-drop": "^0.1.5",
     "ember-export-application-global": "^1.0.2",
@@ -58,8 +56,9 @@
     "ember-key-responder": "0.2.1",
     "ember-localforage-adapter": "git+https://github.com/igorrKurr/ember-localforage-adapter.git#f7a337be134d7c51afe70f9702d04b6e6be52867",
     "ember-modal-dialog": "0.7.5",
-    "ember-moment": "2.0.1",
     "ember-new-computed": "1.0.2",
-    "ember-radio-button": "1.0.4"
+    "ember-radio-button": "1.0.4",
+    "ewd-calendar": "git+https://github.com/e-karma/ewd-calendar.git#a4a36bf58b4e8a799e129518d66ba1958ef6f492",
+    "ewd-sass": "git+https://github.com/e-karma/ewd-sass.git#66fbc6041cf6eeb649f43c797ab8d541877cf7a4"
   }
 }

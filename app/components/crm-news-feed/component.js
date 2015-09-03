@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       }
       task.set('taskDue', taskDue);
     });
-
+    /*
     this.get('opportunities').forEach((opportunity) => {
       let now = moment();
       let estClose = opportunity.get('estimatedClose');
@@ -28,5 +28,6 @@ export default Ember.Component.extend({
       }
       opportunity.set('oppDue', oppDue);
     });
+    */
   }
 });

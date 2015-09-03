@@ -10,8 +10,8 @@
   <div class="modal-content">
   {{md-input type="text" value=model.title label="Event title"}}
   {{md-input-date type="text" value=model.date label="Enter date"}}
-  {{pick-a-time date=model.start placeholder="Starts at"}}
-  {{pick-a-time date=model.end placeholder="Ends at"}}
+  {{pick-a-time date=model.startsAt placeholder="Starts at"}}
+  {{pick-a-time date=model.endsAt placeholder="Ends at"}}
 </div>
 <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>

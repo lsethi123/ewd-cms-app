@@ -81,6 +81,7 @@ Router.map(function() {
   this.route('events', function() {
     this.route('show', { path: ':event_id' } );
     this.route('new');
+    this.route('user', { path: 'users/:user_id' } );
   });
   this.route('todos', function() {
     this.route('boards', function() {

@@ -9,11 +9,7 @@ module.exports = function(defaults) {
     }
   });
 
-  app.import('bower_components/moment/min/moment.min.js');
-  app.import('bower_components/jquery-orgchart/add.png');
-  app.import('bower_components/jquery-orgchart/delete.png');
-  app.import('bower_components/jquery-orgchart/jquery.orgchart.css');
-  app.import('bower_components/jquery-orgchart/jquery.orgchart.js');
+  app.import('bower_components/moment/moment.js');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

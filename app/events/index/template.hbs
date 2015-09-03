@@ -1,11 +1,30 @@
 <br/><br/>
 <main>
-  {{#each model as |event|}}
-  {{#link-to 'events.show' event}}
-    {{#md-card-panel class="blue-grey darken-2"
-        bodyClass="white-text"}}
-        New Event: {{event.title}}
-    {{/md-card-panel}}
-  {{/link-to}}
-  {{/each}}
+  {{as-calendar
+    title="Calendar"
+    occurrences=model
+    defaultTimeZoneQuery="New York|London|Dubai|Hong Kong"
+    dayStartingTime="9:00"
+    dayEndingTime="18:00"
+    timeSlotDuration="00:30"
+    onAddOccurrence="calendarAddOccurrence"
+    onUpdateOccurrence="calendarUpdateOccurrence"
+    onRemoveOccurrence="calendarRemoveOccurrence"}}
 </main>
+{{#if isShowingTitleInput}}
+{{#md-modal close='closeModal' class="test-modal"}}
+<form id="event-form" class="create-form" {{action 'add' on="submit"}}>
+  <div class="modal-content">
+  {{md-input type="text" value=eventTitle label="How you'd like to name it?"}}
+</div>
+<div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'add'}}>
+        Add
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+        Cancel
+    </a>
+</div>
+</form>
+{{/md-modal}}
+{{/if}}
