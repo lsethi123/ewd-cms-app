@@ -1,6 +1,6 @@
 <br/>
 {{#link-to 'events.new' class="btn blue-grey darken-1"}}New Event{{/link-to}}
 {{#each model as |user|}}
-{{#link-to 'events.user' user.id}}{{user.fullName}}{{/link-to}}
+{{#link-to 'events.user' user.id}}<span style="padding:.5em;" class="tag-badge blue-grey darken-4 white-text">{{user.fullName}}</span>{{/link-to}}
 {{/each}}
 {{outlet}}
